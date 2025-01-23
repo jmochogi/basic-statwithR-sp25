@@ -1,0 +1,414 @@
+[
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "",
+    "text": "Instructor: Dr. Joash Geteregechi\nContact: jgeteregechi@ithaca.edu.\nOffice Location: Williams Hall 311E. If you use the elevator, press 3 (not 3R). If you use the staircase, enter the door written “Faculty Offices” on the third floor.\nOpen Hours: Mon 1:00-2:00 pm, Fri 10.00 - 11:00 am, or by appointment: click here.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#about-the-course",
+    "href": "course-syllabus.html#about-the-course",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "About the Course",
+    "text": "About the Course\n\nCourse Description\nAn introduction to R, a free scientific computing platform, as applied to basic statistics. Students learn how to manage data, create appropriate graphs, perform basic statistical tests (t-tests, chi-square, ANOVA, regression, etc), and compute confidence intervals. Additional topics include tests of assumptions (e.g., normality) and post hoc tests.\n\n\nPrerequisites and Credits\nPrerequisites include MATH 14400, MATH 14500, MATH 21600, MATH 24600 or PSYC 20700 with a grade of C- or better. (S,Y).\nWorkload Expectation:\nThis is a 1-credit course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit).\n\n\nMeeting Times\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 310\n10:00 - 11:00 am\n\n\n\n\n\nStudent Learning Objectives\nThe course has two main learning objectives:\n\nDemonstrate proficiency with basic procedures in R, including importing data, preparing data for analysis(data wrangling), summarizing data (numerically and graphically), and performing descriptive and inferential statistics.\nApply statistical tools in the real-world (especially answering a research question using real-world data).",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-resources",
+    "href": "course-syllabus.html#course-resources",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nTextbooks\nThere is no textbook to purchase. All materials will be provided by the instructor.\n\n\nComputing:\n\nR: We will use R statistical environment with the RStudio interface. You’ll be using R primarily through a version of RStudio accessible on posit cloud. Once you are on this page, sign in or click on sign up to create a new account in case you don’t already have an account.\nGitHub: GitHub is a web-based platform that allows people to store, share, and manage versions of their code. For example, a team of programmers working on different parts of a certain project may use GitHub for collaboration. We shall use these features only sparingly in this course. Copilot, on the other hand, is a popular AI-powered tool used for a vast range of purposes including code generation. Copilot is a paid service but college students can access and use it for free via GitHub (GitHub Copilot). To use GitHub copilot and use it within RStudio, there are three steps involved:\nStep 1: Sign up for a free GitHub account at GitHub.\nStep 2: Sign up for a free GitHub Student Developer Pack account at GitHub Studente Developer.\nStep 3: Install the GitHub Copilot extension in RStudio to activate your Copilot in RStudio.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#assessment",
+    "href": "course-syllabus.html#assessment",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "Assessment",
+    "text": "Assessment\nYour learning will be assessed primarily via weekly labs and a final project.\n\nAttendance and Participation (AP)\nYou’re expected to attend all classes and participate during class discussions. Consistent attendance and participation are strong indicators of success in MATH classes. You will be responsible for all course material, announcements, assessments done in class, whether you attended that day’s class or not. I may post the announcements and materials on Canvas and/or send them out as emails. You are responsible for checking your emails or Canvas website regularly (at least one a day).\nIf you anticipate needing to miss more than two class sessions, be sure to discuss this with me early in the semester so we can find ways for you to participate and be successful in the course.\nPlease check the college attendance policy on the college-wide policies section.\n\n\nWeekly Labs\nThere will be a Lab assignment every week. Initially, the assignments will be very similar to the lab explorations (done in class) but as the semester progresses, you will encounter more challenging tasks. Labs will be available on the course website every week.\n\n\nFinal Project\nThere will be one final project in this course. The project will be done in groups of two to 3 students. More details will be available later.\n\n\nGrading Policy\nYour final letter grade in the course will be weighted by category as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and Participation\n10%\n\n\nWeekly Labs\n40%\n\n\nFinal Project\n50%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n\\(\\ge\\) 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n\\(&lt;\\) 60",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "Course policies",
+    "text": "Course policies\n\nAcademic honesty\nThe point is very simple - you should not cheat. You should not present “someone” else’s work as your own.\nAbide by the following guidelines:\n\nCollaboration:\n\nWork that is not assigned as a collaborative assignment should not be completed collaboratively. This does not mean you should not seek support from peers. If you seek help from your peers, be sure that you write your own solutions, otherwise the work will be similar and flagged for cheating. Submitting similar work will be considered a violation of the academic integrity policy by all students involved.\nFor team assignments, you may collaborate freely within your team. Each group will submit one document contained agreed upon responses. No multiple file submissions.\n\nOn individual assignments you may not directly share work with another student in this class, and on team assignments you may not directly share work with another team in this class.\n\nOnline resources: In this century, the internet is a go to place for many things. While much of the information on the internet is useful, I expect that you will use it responsibly. The course policy is that you may use online resources (e.g., StackOverflow, Wolfram Alpha, etc.) but you must explicitly cite where you obtained any solutions you directly use (or use as inspiration).\nUse of generative artificial intelligence (AI): Generative AI tools such as ChatGPT should be treated as other online resources. There are two guiding principles that govern how you can use AI in this course:\n\nCognitive dimension: Using AI tools should make you more efficient and productive rather than hampering your ability to think clearly and critically.\nEthical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. AI is an integral part of this course and we will practice using generative AI tools responsibly without losing sight of the learning objectives.\n✅ AI tools: If you use AI in any way for course assignments, be sure to disclose it in your submission. Follow these guidelines for citing AI-generated content.\n❌ AI warning AI-generated content may be inaccurate and even misleading in some cases. You will likely be temoted to use AI to write essays for this class but be warned that doing so in akin to copying and pasting someone else’s work. I suggest you use AI only to check your grammar or to generate an initial document that you should then sit down and edit to make sure it meets the need. Your experiences in this course will be unique and AI does not have any knowledge about these so it cannot generate a great essay.\n\n\nIf you are unsure if the use of a particular resource complies with the academic honesty policy, please contact your instructor.\n\n\nLate Work\nThe due date & time for all assignments will be posted on Canvas and/or emailed out and/or announced in class. To enable me to prepare for class meetings and give you feedback, I will not accept late work except under extreme circumstances. If you know that you won’t be able to turn in an assignment on time, reach out to me in writing (email) at least one day before the due date to discuss your options.\n\n\nMobile devices & Other Technologies\nThis class allows use of technology devices (e.g., computers, tablets, etc.) only for purposes of the course. Such purpose includes taking notes, completing OneNote collaborative activities, among others. However, there will be moments (e.g., brief interactive discussion, completing paper activities) when I require that students put away (or turn off) their technology devices. Use of these devices for purposes other than the one for the course is prohibited. Research on this matter shows that it distracts you as well as other students in class. Two violations per week will result in a 0 score on the next attendance and participation grade. Persistent violation may necessitate further action to prevent you from distracting other students.\n\n\nTeams\nThis class will mostly run through small group work (teams). You will be randomly assigned to a team at the start of the semester. About midway into the semester, I will switch people teams based partly on my professional judgement. I will allow you to suggest members you would like to work with but there are no guarantees that you will get grouped with all members of your choice. I generally seek to have mixed ability teams and to ensure that everyone has a chance to work with different people. It is expected that every team member will contribute equally on team assignments.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#getting-support",
+    "href": "course-syllabus.html#getting-support",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "Getting Support",
+    "text": "Getting Support\nThere are various resources available to help you succeed in this course. Should you feel like you are struggling too much, please don’t hesitate to reach out to me so we can discuss possible ways forward. Below are some academic support services available to you.\n\nOpen Hours\nI will be available during open hours (Mon 1.00 - 2.00 pm; Fri 10.00-11.00 am) to answer questions or concerns that you may have in the course. You can simply walk in during the stated time above. More times may be available but you will need to check my schedule on this link. Open hours may be held in-person or virtually depending on circumstances of the day. Below are the zoom link and password for virtual meetings:\nZoom Link: click here\nPassword: 850 424\n\n\nMath Tutoring Sessions\nThe mathematics department is committed to the success of all students enrolled in mathematics courses. Free one-on-one support for your mathematics coursework is available during select daytime and evening hours Monday-Friday at the Mathematics Room (Williams Hall 209). The Mathematics Room is staffed by mathematics faculty and vetted students. Student tutors offer support to fellow students in courses numbered 200 and below while math faculty offer support in any of the math courses. For more information and the schedule, please visit the Math Support Center.\n\n\nTutoring and Academic Enrichment Services\nAs a supplement to faculty advising and office hours, Tutoring and Academic Enrichment Services offers exceptional peer resources free of charge. Learning Coaches provide content-specific peer tutoring in a variety of courses. Peer Success Coaches mentor students who wish to develop collegiate-level academic and social engagement skills. To access these courses and for more information, please visit the Center for Student Success.\n\n\nWriting Center\nThe Writing Center aims to help students from all disciplines, backgrounds, and experiences to develop greater independence as writers. We are committed to helping students see writing as central to critical and creative thinking. The physical location in Smiddy 107 will not be open to clients. For more information and scheduling appointments please visit the writing center website.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#tips-for-success",
+    "href": "course-syllabus.html#tips-for-success",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "Tips for Success",
+    "text": "Tips for Success\nHere are a few basic suggestions for how to succeed in this course:\n\nKeep up with Homework\nIt is absolutely essential that you understand how to solve the assigned homework problems/exercises and, more importantly, how and why the skills and techniques presented in the course are used in solving the problems/exercises. I suggest that you begin working on the how as soon as possible. Do not pile your haw or work near the deadline. The advantage of getting the homework done on time is that you will get timely feedback that will help you understand the material better and hence do well in other assessment categories such as exams.\n\n\nAttend Class\nAs noted earlier, attendance is a critical part of your success in this course. You should try to attend every class because it is during class time that we will delve deeper into the course material and practice with applications.\n\n\nStay Caught Up\nMost concepts in this course build on each other cumulatively and you need to stay on top of the material at every stage. If you are having difficulty, don’t expect that the problem will take care of itself and disappear later. Contact me immediately and discuss the problem.\n\n\nCollaborate with Peers\nMany students benefit from sharing their work with others or by having their work questioned by their peers. You should attempt homework problems ahead of time by yourself and then note down any difficulties/questions that you can discuss with your peers. Even if you have no difficulties, you may still learn different and perhaps more efficient ways of solving the same problem during collaborative work. Below are some of the ways through which you can do this: - Canvas Discussion Forums & One Note Collaboration Space - You can post questions and answer others’ questions here. I encourage you to scan hand-written work (if necessary) and upload it alongside your question so people can see how you are thinking.\n\nZoom sessions – If you cannot meet in person, you can initiate Zoom sessions for collaborating. Zoom whiteboards are available to write on or you may simply have discussions. You can record these for later playback. If you want to invite me to your Zoom session, please send me an email with the link ahead of time and I will let you know if I am available to join.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#college-wide-policies",
+    "href": "course-syllabus.html#college-wide-policies",
+    "title": "MATH 240 - Basic Statistics with R",
+    "section": "College-wide Policies",
+    "text": "College-wide Policies\n\nAttendance Policy\nStudents at Ithaca College are expected to attend all classes, and they are responsible for work missed during any absence from class. At the beginning of each semester, instructors must provide the students in their courses with written guidelines regarding possible penalties for failure to attend class. These guidelines may vary from course to course but are subject to the following conditions:\n\nIn accordance with Federal Law, students with a disability documented through Student Accessibility Services (SAS) may require reasonable accommodations to ensure equitable access. A student with an attendance accommodation, who misses a scheduled course time due to a documented disability, must be provided an equivalent opportunity to make up missed time and/or coursework within a reasonable time-frame. An accommodation that affects attendance is not an attendance waiver and no accommodation can fundamentally alter a course requirement. If a faculty member thinks an attendance-related accommodation would result in a fundamental alteration, concerns and potential alternatives should be discussed with SAS.\nIn accordance with New York State law, students who miss class due to their religious beliefs shall be excused from class or examinations on that day. The faculty member is responsible for providing the student with an equivalent opportunity to make up any examination, study, or work requirement that the student may have missed. Any such work is to be completed within a reasonable time frame, as determined by the faculty member.\nAny student who misses class due to a family or individual health emergency or to a required appearance in a court of law shall be excused. If the emergency is prolonged or if the student is incapacitated, the student or a family member/legal guardian should report the absence to the Dean of Students or the Dean of the academic school where the student’s program is housed. Students may consider a leave of absence, medical leave of absence, selected course withdrawals, etc., if they miss a significant portion of classwork. (Note: Graduate students may not take a leave of absence.)\nA student may be excused to participate in local, state, or federal elections. The student is responsible to make up any work that is missed due to the absence. Any such work is to be completed within a reasonable time frame, as determined by the faculty member.\n\nA student may be excused for participation in College-authorized co-curricular and extracurricular activities if, in the instructor’s judgment, this does not impair the specific student’s or the other students’ ability to succeed in the course. For all absences except those due to religious beliefs, the course instructor has the right to determine if the number of absences has been excessive in view of the nature of the class that was missed and the stated attendance policy.\nStudents should notify their instructors as soon as possible of any anticipated absences.\n\n\nStudent Accessibility Services\nIn compliance with Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act, reasonable accommodation will be provided to students with documented disabilities on a case-by-case basis. Students must register with Student Accessibility Services and provide appropriate documentation to Ithaca College before any academic adjustment will be provided. Please note that accommodations are not retroactive, so timely contact with Student Accessibility Services is encouraged. To discuss accommodations or the accommodation process, students should schedule to meet with a SAS specialist. 607-274-1005 | sas@ithaca.edu.\n\n\nMental Health statement\nThe Ithaca College Center for Counseling and Psychological Services (CAPS) promotes and fosters the academic, personal, and interpersonal development of Ithaca College students by providing short-term individual, group, and relationship counseling, crisis intervention, educational programs to the campus community, and consultation for faculty, staff, parents, and students. Their team of licensed and licensed-eligible professionals value inclusivity, and they are dedicated to creating a diverse, accessible, and welcoming environment that is safe and comfortable for all those they serve and with whom they interact. CAPS sees students in-person at their offices in the Hammond Health building (side entrance), but Telehealth meetings through Zoom can be arranged in some circumstances. Staff in the office will answer questions by phone at 607-274-3136; please leave a voicemail if you do not reach a live person. You can also reach the office via email at counseling@ithaca.edu. CAPS hours remain Monday-Friday 8:30 a.m. to 5:00 p.m. After-hours connections to a live counselor are available by calling the CAPS number and following the prompts.\nIn the event I suspect you need additional support, expect that I will express to you my concerns. It is not my intent to know the details of what might be troubling you, but simply to let you know I am concerned and that help, if needed, is available. Remember, getting help is a smart and courageous thing to do.\n\n\nAcademic Integrity\nThe College is an academic community, which values academic integrity and takes seriously its responsibility for upholding academic honesty. All members of the academic community have an obligation to uphold high intellectual and ethical standards. All forms of dishonesty including cheating and plagiarism are unacceptable. Failure to appropriately cite material used in a paper is plagiarism. The minimum penalty for cheating or plagiarism is a zero for the test or paper in question. Referral to college judiciaries is also possible. For more information on academic integrity and academic dishonesty, please refer to the Student Handbook, the College Catalog and the Code of Student Conduct and Related Policies or ask your instructor.\n\n\nTitle IX\nAt Ithaca College, we believe that every individual has the right to be treated with respect and dignity and we support the creation and maintenance of a safe and positive living and learning environment. Students who experience sexual violence (including dating violence, stalking and sexual assault), sexual harassment, or discrimination based on gender or sexual identity) are encouraged to report their experience to the Title IX Coordinator, lkoenig@ithaca.edu to explore formal and informal reporting options, and explore the support and resources available. The Title IX Coordinator will work with you to determine the best way to proceed and enhance the safety of our community. For more information go to: https://www.ithaca.edu/share.\nInformation shared in class assignments, class discussions, and at public events do not constitute an official disclosure, and faculty and staff do not have to report these to the Title IX Coordinator. Faculty and staff should be sure that access to campus and community resources related to sexual misconduct are available to students in the case these subjects do arise. Any other disclosure to faculty and staff can be reported to the Title IX Coordinator.\n\n\nAcademic Advising Center\nStudents are asked to consult with their faculty advisor, or the advising contact within their school, for all advising matters. Faculty advisors will be able to assist students with most advising questions, or they may collaborate with the dean’s office for more complicated matters. Students can find the name of their assigned faculty advisor in Homer or in Degree Works.\n\n\nDiversity and Inclusion\nIthaca College values diversity because it enriches our community and the myriad experiences that characterize an Ithaca College education. Diversity encompasses multiple dimensions, including but not limited to race, culture, nationality, ethnicity, religion, ideas, beliefs, geographic origin, class, sexual orientation, gender, gender identity and expression, disability, and age. We are dedicated to addressing current and past injustices and promoting excellence and equity. Ithaca College continually strives to build an inclusive and welcoming community of individuals with diverse talents and skills from a multitude of backgrounds who are committed to civility, mutual respect, social justice, and the free and open exchange of ideas. We commit ourselves to change, growth, and actions that embrace diversity as an integral part of the educational experience and of the community we create.Please learn more about Ithaca College’s commitment to diversity, equity and inclusion: https://www.ithaca.edu/diversity-and-inclusion/diversity-statement.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "If you have an iPhone, you can use the Notes app to scan a document to a PDF. To do this, follow the following steps:\n\nOpen the Notes app\nCreate a new note and name it.\nTap the camera icon and select “Scan Documents”. I suggest you use the manual capture option as this allows you to capture only once the camera is in focus.\nPosition your phone over the document and tap the shutter button. Make sure the camera is directly over the document and is in focus.\nContinue to the next page if there are multiple pages.\nTap “Save” when you are finished scanning all the pages.\n\nIf you have an Android device, you can use the Google Drive app to scan a document to a PDF. To do this, follow the following steps:\n\nOpen the Google Drive app\nTap the “+” icon in the bottom right corner\nTap “Scan”\nPosition your phone over the document and tap the shutter button. Make sure the camera is directly over the document and is in focus.\nContinue to the next page if there are multiple pages.\nTap the checkmark when you are finished scanning all the pages.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course-faq.html#how-do-i-use-my-mobile-device-to-scan-a-document-to-a-pdf",
+    "href": "course-faq.html#how-do-i-use-my-mobile-device-to-scan-a-document-to-a-pdf",
+    "title": "FAQ",
+    "section": "",
+    "text": "If you have an iPhone, you can use the Notes app to scan a document to a PDF. To do this, follow the following steps:\n\nOpen the Notes app\nCreate a new note and name it.\nTap the camera icon and select “Scan Documents”. I suggest you use the manual capture option as this allows you to capture only once the camera is in focus.\nPosition your phone over the document and tap the shutter button. Make sure the camera is directly over the document and is in focus.\nContinue to the next page if there are multiple pages.\nTap “Save” when you are finished scanning all the pages.\n\nIf you have an Android device, you can use the Google Drive app to scan a document to a PDF. To do this, follow the following steps:\n\nOpen the Google Drive app\nTap the “+” icon in the bottom right corner\nTap “Scan”\nPosition your phone over the document and tap the shutter button. Make sure the camera is directly over the document and is in focus.\nContinue to the next page if there are multiple pages.\nTap the checkmark when you are finished scanning all the pages.",
+    "crumbs": [
+      "Course information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MATH 240: Basic Statistics with R",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule may change as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n\n2\nMon, Jan 27\n\nIntroductions\nGetting started with R \n\n\nCreate posit cloud account \nR and RStudio interface \n\n\n\n\nAssign Lab 1\n\n\n\n3\nMon, Feb 3\n\nBase R basics\n\n\nInstalling packages\nCreating vectors\nBasic data summarization - numerical\nBasic data summarization - visualizations\n\n\n\n\n\n\n\n4\nMon, Feb 10\n\n\n\n\n\n\n\n\n\n\n5\nMon, Feb 17\n\n\n\n\n\n\n\n\n\n\n6\nMon, Feb 24\n\n\n\n\n\n\n\n\n\n\n7\nMon, Mar 3\n\n\n\n\n\n\n\n\n\n\n8\nMon, Mar 10\n\n\n\n\n\n\n\n\n\n\n9\nMon, Mar 17\n\n\n\n\n\n\n\n\n\n\n10\nMon, Mar 24\n\n\n\n\n\n\n\n\n\n\n11\nMon, Mar 31\n\n\n\n\n\n\n\n\n\n\n12\nMon, Apr 7\n\n\n\n\n\n\n\n\n\n\n13\nMon, Apr 14\n\n\n\n\n\n\n\n\n\n\n14\nMon, Apr 21\n\n\n\n\n\n\n\n\n\n\n15\nMon, Apr 28\n\n\n\n\n\n\n\n\n\n\n16\nMon, May 5\n\n\n\n\n\n\n\n\n\n\n17\nMon, May 12",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course-downloads/datasets.html",
+    "href": "course-downloads/datasets.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "Currently unavailable!",
+    "crumbs": [
+      "Downloads",
+      "Datasets"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html",
+    "href": "labs/Lab_1.html",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "It is possible that some of you have heard/seen the phrase, Hello, World!, before. That is usually the first thing you learn in programming, i.e., to learn to write a computer program to print this sentence to screen. In this lab, we will not print Hello, World! to the screen. Instead, we will learn how to use R (via RStudio) to perform statistical analyses and to write reports in order to communicate the insights learned from data. While the analysis involves writing computer code, it is in no way going to involve writing computer programs. The goal of today’s lab is to introduce you to R and RStudio. You will learn to access and use RStudio, as well as perform the basic functions regarding statistical analysis. To clarify which is which: R is the name of the programming language itself and RStudio is a convenient interface (Integrated Development Environment or IDE) for working with R. I like to think about R as the car engine and RStudio as a nice driver dashboard. The engine drives the car, but the dashboard makes it easier for the driver to control the car. Most R users work with RStudio.\n\n\nCar Engine and Dashboard\n\nWe will work with the cloud (online) version of RStudio. To access RStudio online, click on the link https://posit.cloud to create an account or to sign in if you already have an account.\n\nAfter signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.\n\nYour new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.\n\nR is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.\n\nSuppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.\n\nYou can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.\n\nWe can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.\n\nYou can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))\n\n\n\n\n\n\n\n\n\nCreate an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?\n\n\n\n\n\n\n\nSubmission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-a-new-project",
+    "href": "labs/Lab_1.html#creating-a-new-project",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "After signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#the-r-studio-interface",
+    "href": "labs/Lab_1.html#the-r-studio-interface",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Your new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#r-packages",
+    "href": "labs/Lab_1.html#r-packages",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "R is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-vectors-in-r",
+    "href": "labs/Lab_1.html#creating-vectors-in-r",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Suppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-data-frames",
+    "href": "labs/Lab_1.html#creating-data-frames",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "You can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#using-data-frames",
+    "href": "labs/Lab_1.html#using-data-frames",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#basic-visualizations",
+    "href": "labs/Lab_1.html#basic-visualizations",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "You can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#exercises",
+    "href": "labs/Lab_1.html#exercises",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Create an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#submission",
+    "href": "labs/Lab_1.html#submission",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Submission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "course-downloads/templates.html",
+    "href": "course-downloads/templates.html",
+    "title": "templates",
+    "section": "",
+    "text": "Currently unavailable.",
+    "crumbs": [
+      "Downloads",
+      "Templates"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "About the Course",
+    "section": "",
+    "text": "This course will be taught using a flipped model. A flipped classroom is one in which students engage with the course material before class. Class time is spent addressing any questions that students may have about the material, delving deeper into the material, and applying the material.\nConsistent with the above philosophy, majority of class time will be spent working on problems and/or activities individually or collaboratively, sharing your ideas/solutions, asking and investigating questions. Research shows that some of the deepest learning comes out of analyzing misconceptions and methods that don’t work, so we will strive to make failures productive. I may give mini–lectures to set the context for the class activities, but my main role will be to support and facilitate your deeper understanding of the course content. This course will place a lot of emphasis on real-life applications of statistics and will, from time to time, require you to collect data from the real world and use statistical concepts learned to draw useful insights. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning : In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up : If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier."
+  },
+  {
+    "objectID": "course-overview.html#corse-format-and-philosophy",
+    "href": "course-overview.html#corse-format-and-philosophy",
+    "title": "About the Course",
+    "section": "",
+    "text": "This course will be taught using a flipped model. A flipped classroom is one in which students engage with the course material before class. Class time is spent addressing any questions that students may have about the material, delving deeper into the material, and applying the material.\nConsistent with the above philosophy, majority of class time will be spent working on problems and/or activities individually or collaboratively, sharing your ideas/solutions, asking and investigating questions. Research shows that some of the deepest learning comes out of analyzing misconceptions and methods that don’t work, so we will strive to make failures productive. I may give mini–lectures to set the context for the class activities, but my main role will be to support and facilitate your deeper understanding of the course content. This course will place a lot of emphasis on real-life applications of statistics and will, from time to time, require you to collect data from the real world and use statistical concepts learned to draw useful insights. Here are some benefits associated with using Flipped Classroom Models:\n\nIndependent Learning Skills: not everything you learn in school will be applicable directly in your job or in the real world. In most cases, you need to transfer your knowledge to new contexts and that often involves new learning (often on your own). A flipped class model sets you up for success as an independent learner. You will learn how to learn on your own.\nActive Learning : In a flipped classroom, you will be actively engaged in the learning process. You will be asked to think, to write, to discuss, to solve problems, to analyze, to create, to evaluate, and to apply. This is a much more effective way to learn than passively listening to a lecture.\nCatching up : If you miss a given class and you had completed your CPA, that means you will still have some understanding of the basic ideas. You do not miss out entirely and that means catching up is easier."
+  },
+  {
+    "objectID": "course-overview.html#course-objectives",
+    "href": "course-overview.html#course-objectives",
+    "title": "About the Course",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nUpon successful completion of this course, students will be able to:\n\nDemonstrate an understanding of data and its types, and various data collection methods.\nChoose and use various basic statistical tools (numerical and visual) for summarizing data.\nDevelop basic proficiency in using statistical software (e.g., Tinker plots) for data analysis.\nDemonstrate a basic understanding of the statistical inference techniques including hypothesis testing and parameter estimation.\nUse simulation-based methods to perform statistical inference using real-world data set.\nApply statistical concepts learned to design and implement a study, and write a report to communicate insights to non-technical audiences."
+  },
+  {
+    "objectID": "course-overview.html#meeting-times-location",
+    "href": "course-overview.html#meeting-times-location",
+    "title": "About the Course",
+    "section": "Meeting Times & Location",
+    "text": "Meeting Times & Location\n\n\n\nDay\nRoom/Hall\nTime\n\n\n\n\nMonday\nWilliams Hall 317\n11:00 - 11:50 am\n\n\nWednesday\nWilliams Hall 317\n11:00 - 11:50 am\n\n\nFriday\nWilliams Hall 317\n11:00 - 11:50 am"
+  },
+  {
+    "objectID": "course-overview.html#prerequisites",
+    "href": "course-overview.html#prerequisites",
+    "title": "About the Course",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nPrerequisites include math placement in group 3 or higher, math placement assessment score of 46 or greater, or completion of MATH 10000 or MATH 18000 with a grade of C- or better. (F,S,Y)."
+  },
+  {
+    "objectID": "course-overview.html#workload-expectations",
+    "href": "course-overview.html#workload-expectations",
+    "title": "About the Course",
+    "section": "Workload Expectations",
+    "text": "Workload Expectations\nThis is a 3-credit course. Credit is earned at Ithaca College in credit hours as measured by the Carnegie unit. The Carnegie unit is defined as one hour of classroom instruction and two hours of assignments outside the classroom, for a period of 15 weeks for each unit (credit)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Course Support",
+    "section": "",
+    "text": "There are various resources available to help you succeed in this course and other college math courses. Should you feel like you are struggling too much, please don’t hesitate to reach out to me so we can discuss possible ways forward. Below are some support services available to you.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#open-hours",
+    "href": "course-support.html#open-hours",
+    "title": "Course Support",
+    "section": "Open Hours",
+    "text": "Open Hours\n\nI will be available during open hours (Mon 1.00 - 2.00 pm and Fri 10.00-11 am) to answer questions or concerns that you may have in the course. You can simply walk in during the stated times above. Even if you don’t have any question, you can just stop by to say hi. If these times don’t work for you, please click this link to see more options or email me directly. Open hours may be held in-person or virtually depending on your preference and the circumstances of the day. Below are the zoom link and password for virtual meetings:\nZoom Link: click here\nPassword: 850 424",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#mathematics-support-center",
+    "href": "course-support.html#mathematics-support-center",
+    "title": "Course Support",
+    "section": "Mathematics Support Center",
+    "text": "Mathematics Support Center\nThe mathematics department is committed to the success of all students enrolled in mathematics courses. Free one-on-one support for your mathematics coursework is available during select daytime and evening hours Monday-Friday at the Mathematics Room (Williams Hall 209). The Mathematics Room is staffed by mathematics faculty and vetted students. Student tutors offer support to fellow students in courses numbered 200 and below while math faculty offer support in any of the math courses. For more information and the schedule, please visit the Math Support Center.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#discussion-forums",
+    "href": "course-support.html#discussion-forums",
+    "title": "Course Support",
+    "section": "Discussion Forums",
+    "text": "Discussion Forums\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The Canvas Discussion forums, might be the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on before asking a new question. If you know the answer to a question that is posted, I encourage you to respond! In Canvas discussion section, anybody is able to start threads and others can jump in with replies.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#email",
+    "href": "course-support.html#email",
+    "title": "Course Support",
+    "section": "Email",
+    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Canvas Discussion forums), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). My email address is jgeteregechi@ithaca.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “MATH 155” in the subject line. Barring extenuating circumstances, I will respond to MATH 155 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday. If I take too long, please reach out again or talk to me before or after class as I may have missed your email.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#tutoring-and-academic-enrichment-services",
+    "href": "course-support.html#tutoring-and-academic-enrichment-services",
+    "title": "Course Support",
+    "section": "Tutoring and Academic Enrichment Services",
+    "text": "Tutoring and Academic Enrichment Services\nAs a supplement to faculty advising and office hours, Tutoring and Academic Enrichment Services offers exceptional peer resources free of charge. Learning Coaches provide content-specific peer tutoring in a variety of courses. Peer Success Coaches mentor students who wish to develop collegiate-level academic and social engagement skills. To access these courses and for more information, please visit the Center for Student Success.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#writing-center",
+    "href": "course-support.html#writing-center",
+    "title": "Course Support",
+    "section": "Writing Center",
+    "text": "Writing Center\nThe Writing Center aims to help students from all disciplines, backgrounds, and experiences to develop greater independence as writers. We are committed to helping students see writing as central to critical and creative thinking. The physical location in Smiddy 107 will not be open to clients. For more information and scheduling appointments please visit the writing center website.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#mental-health-and-wellness",
+    "href": "course-support.html#mental-health-and-wellness",
+    "title": "Course Support",
+    "section": "Mental health and wellness",
+    "text": "Mental health and wellness\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Please visit the Mental Health Services for more information. Ithaca College encourages all students to access these resources.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#course-costs",
+    "href": "course-support.html#course-costs",
+    "title": "Course Support",
+    "section": "Course costs",
+    "text": "Course costs\n\nTextbooks: The textbooks for this course are open-source and freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture and lab.\nSoftware subscriptions:\n\nTinkerplots: We will use a software called Tinkerplots for this course. More information on how to get the software will be provided later. Expect to pay $10 fo this software.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#assistance-with-zoom-or-canvas",
+    "href": "course-support.html#assistance-with-zoom-or-canvas",
+    "title": "Course Support",
+    "section": "Assistance with Zoom or Canvas",
+    "text": "Assistance with Zoom or Canvas\nFor technical help with Canvas or Zoom, contact the Ithaca College IT support team at (607) 274-1000 or email them at servicedesk@ithaca.edu",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  }
+]
