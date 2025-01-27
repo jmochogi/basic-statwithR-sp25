@@ -1,6 +1,6 @@
 ---
 title: "MATH 240 - Basic Statistics with R"
-subtitle: "Ithaca College Mathematics Department - Spring 2025"
+subtitle: "Ithaca College, Mathematics Department - Spring 2025"
 format:
   html: default
   pdf: default

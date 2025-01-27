@@ -6,9 +6,9 @@ website:
   page-navigation: true
   title: "MATH 240"
   description: "Homepage for MATH 240 - Basic Statistics with R, Spring 2025."
-  site-url: "https://jmochogi.github.io/basic-stat/"
+  site-url: "https://jmochogi.github.io/basic-statwithR-sp25/"
 
-  repo-url: https://github.com/jmochogi/basic-stat.git
+  repo-url: https://github.com/jmochogi/basic-statwithR.git
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -23,7 +23,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/jmochogi/finite-math
+        href: https://github.com/jmochogi/basic-statwithR
         text: "GitHub repository"
       #- icon: code-square
        # href: https://cmgr.oit.duke.edu/containers
