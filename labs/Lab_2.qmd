@@ -232,16 +232,8 @@ Answer the following exercises. Be sure to show/explain your work on each questi
 
 1.  ***(4 pts)*** Create a new quarto document with the title "Basic Data Wrangling". Save the document as `Lab_02_Exe`. Delete everything on the page EXCEPT the YAML section. In the YAML area change the output format to pdf, and make sure your name is written under author.
 
-```{=html}
-<!--                                                                            data(loan50)
- -->
-```
-
-2.  ***(4 pts)*** Create a code chunk and load the packages `openintro` and `tidyverse`. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called `ames` (this is contained in the `openintro` package). How many variables and how many observations/cases does this data fame have? <!--
-        ```{r}
-          data(ames)                                                                        
-        ```
-        -->
+2.  ***(4 pts)*** Create a code chunk and load the packages `openintro` and `tidyverse`. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called `ames` (this is contained in the `openintro` package). How many variables and how many observations/cases does this data fame have?
+            
 
 3.  ***(4 pts)*** Examine the detailed documentation of this dataset by clicking on the link <https://jse.amstat.org/v19n3/decock/DataDocumentation.txt>. What does the variable `Bsmt.Qual` measure? Be sure to provide information on each level/value of this variable.
 
