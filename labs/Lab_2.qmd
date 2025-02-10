@@ -61,24 +61,22 @@ By default, the code chunks are for R code. Quarto supports other languages such
 
 ## Notes on Rendering
 
-- When you are ready to generate your report, you click on the `render` button. Put this to the test by clicking on the render button. Study the report. If you want any changes, you make them in the source file (quarto), then click on render to see the results. It takes a while to become good with editing quarto documents, but most of that stuff is easily found online.
+-   When you are ready to generate your report, you click on the `render` button. Put this to the test by clicking on the render button. Study the report. If you want any changes, you make them in the source file (quarto), then click on render to see the results. It takes a while to become good with editing quarto documents, but most of that stuff is easily found online.
 
-- When you render a quarto document, quarto outputs your report by running all code chunks ***sequentially*** from top to bottom. All operations in code chunks should be laid out in the right order. For example, if operation A must run before operation B, the code chunk in which operation A runs should come before the code chunk in which operation B runs.  
+-   When you render a quarto document, quarto outputs your report by running all code chunks ***sequentially*** from top to bottom. All operations in code chunks should be laid out in the right order. For example, if operation A must run before operation B, the code chunk in which operation A runs should come before the code chunk in which operation B runs.
 
-- Operations such as installing packages that [should be done only in the console]{style="color:red"}. If any code chunk has code for package installation, quarto will try to install the package every time you render the document (imagine if you had to install TikTok on your phone evry time you needed to use it!!). 
+-   Operations such as installing packages that [should be done only in the console]{style="color:red"}. If any code chunk has code for package installation, quarto will try to install the package every time you render the document (imagine if you had to install TikTok on your phone evry time you needed to use it!!).
 
-- Operations such as activating (waking up) packages, i.e., `library(package name)`, can be included in the code chunks.
-
+-   Operations such as activating (waking up) packages, i.e., `library(package name)`, can be included in the code chunks.
 
 ## Tidyverse Framework
 
-The tidyverse is a collection of open-source R packages that help with data manipulation, exploration, and visualization. In the first lab, our code was mostly base R (not Tidyverse).
-In this lab, you be introduced to the `tidyverse` as a framework for working with data structures in R. Although we will use Tidyverse for most of this lab and future labs, there are certain commands that are easier to do in base R. So, expect to see both Tidyverse and base R code from time to time. 
-
+The tidyverse is a collection of open-source R packages that help with data manipulation, exploration, and visualization. In the first lab, our code was mostly base R (not Tidyverse). In this lab, you be introduced to the `tidyverse` as a framework for working with data structures in R. Although we will use Tidyverse for most of this lab and future labs, there are certain commands that are easier to do in base R. So, expect to see both Tidyverse and base R code from time to time.
 
 ## The Structre of a Quarto Document
 
-### YAML 
+### YAML
+
 The top portion of your quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
 
 ### Packages
@@ -94,9 +92,7 @@ Run the code chunk with the packages to ensure that they are all working. If any
 
 ## Loading Data
 
-There are several ways to load data into a quarto document. Today, we will explore the first way - loading data stored in a package (openintro to be specific). 
-Remember that the openintro package contains the data that comes with the openintro text. To view a complete list of the data frames in `openintro`, visit the site <https://www.openintro.org/data/>. 
-Today, we will use a data frame called `nycflights` contained in the `openintro` package. To load this data into your work space, you will use the following command after running the packages.
+There are several ways to load data into a quarto document. Today, we will explore the first way - loading data stored in a package (openintro to be specific). Remember that the openintro package contains the data that comes with the openintro text. To view a complete list of the data frames in `openintro`, visit the site <https://www.openintro.org/data/>. Today, we will use a data frame called `nycflights` contained in the `openintro` package. To load this data into your work space, you will use the following command after running the packages.
 
 To learn more about this data frame, run the following code in the ***nycflights***:
 
@@ -108,23 +104,20 @@ data(nycflights)
 data("nycflights")
 ```
 
-
 When you run the above code, a new object should appear in the environment area. Click on `penguins` to view and study the data.
 
 To learn more about this data frame, you can run the command `?nycflights` in the console. It is ***very important*** that you do this.
-
 
 ## A little more about Tidyverse
 
 The creators of the tidyverse noted that it is “an opionated collection of R packages designed for data science.” It’s a suite of packages designed with a consistent philosophy and aesthetic. This is nice because all of the packages are designed to work well together, providing a consistent framework to do many of the most common tasks in R, including, but not limited to…
 
-- data manipulation (`dplyr`)
-- reshaping data (`tidyr`)
-- data visualization (`ggplot`)
-- working with strings (`stringr`)
+-   data manipulation (`dplyr`)
+-   reshaping data (`tidyr`)
+-   data visualization (`ggplot`)
+-   working with strings (`stringr`)
 
 It is important to note that tidyverse functions are designed to be like grammar for their tasks, so we’ll be using functions that are named as verbs to discuss the tidyverse. The idea is that you can string these grammatical elements together to form more complex statements, just like with language.
-
 
 ### Tidyverse Workflow
 
@@ -132,7 +125,7 @@ In lab_01, we performed the analyses using base R code. We saw that to compute t
 
 For example, to compute the mean of the variable `hour` in the nycflights data, you would write your code as follows:
 
-```toml
+``` toml
 mean(nycflights$hour)
 ```
 
@@ -147,36 +140,33 @@ The symbol `%>%` is called a pipe and is very common in tidyverse. It takes anyt
 
 You can compute other summary statistics in a similar manner as above and if there is an NA one way to deal with would be to remove it. In some cases, one would replace NA with the average of the other values.
 
-
 ## Basic Data Wrangling
 
 Data wrangling, broadly speaking, means getting your data into a useful form for visualizing and modelling it. Hadley Wickham, who has developed a lot of the tidyverse, conceptualizes the main steps involved in data wrangling as follows:
 
-- Importing your data
-- Tidying your data 
-- Transforming your data
+-   Importing your data
+-   Tidying your data
+-   Transforming your data
 
 Data is considered tidy if
 
-- Each variable has its own column
-- Each observation/case has its own row
-- Each value has its own cell.
+-   Each variable has its own column
+-   Each observation/case has its own row
+-   Each value has its own cell.
 
 The figure below illustrate the idea of tidy data:
 
 ![](images/tidy.jpeg){width="70%"}
 
-If your data is not already in tidy format when you import it, you can use functions from the `tidyR` package, e.g. `gather()` and `spread()`, to “reshape” your data to get it into tidy format. 
+If your data is not already in tidy format when you import it, you can use functions from the `tidyR` package, e.g. `gather()` and `spread()`, to “reshape” your data to get it into tidy format.
 
+Today we are going to look at the following important functions: `select()`, `mutate()`, `filter()`, `arrange()`, `group_by()`, and `drop_na()`.
 
-Today we are going to look at the following important functions: `select()`, `mutate()`, `filter()`, `arrange()`, `group_by()`, and `drop_na()`. 
-
-### select() 
+### select()
 
 The select function is used to select specific variables (columns) from a larger data set.
 
 The nycflights data frame has many variables. Suppose we are interested in the variables carrier, origin, arrival delay, and destination only. We achieve this as follows:
-
 
 ```{r}
 nycflights_a <- nycflights %>% 
@@ -185,14 +175,12 @@ select (carrier, arr_delay, dest, origin)
 
 **Note:**
 
-- A new object named `nycflights_a` appears in the environment area when you run the above code. 
-- The variable spelling in your code must match the names used in the data frame. This is a common mistake many students make.
-
+-   A new object named `nycflights_a` appears in the environment area when you run the above code.
+-   The variable spelling in your code must match the names used in the data frame. This is a common mistake many students make.
 
 ### mutate()
 
-The mutate function alters (mutates) an existing variable in some way and creates a new column(variable) with a name that you designate. 
-Suppose you want to create a new variable called converts the arrival delay to hours (note that it is provided in minutes). You can run the following code:
+The mutate function alters (mutates) an existing variable in some way and creates a new column(variable) with a name that you designate. Suppose you want to create a new variable called converts the arrival delay to hours (note that it is provided in minutes). You can run the following code:
 
 ```{r}
 nycflights_b <- nycflights %>% 
@@ -201,9 +189,8 @@ nycflights_b <- nycflights %>%
 
 **Note:**
 
-- After running the above code, the new data frame will have one more variable (at the end). This is the new variable (column) you created. Check it out.
-- Most mathematical operations can be done as above as long as it makes sense to do so. For example, you cannot perform the divide operation on a variable such as `origin`.  
-
+-   After running the above code, the new data frame will have one more variable (at the end). This is the new variable (column) you created. Check it out.
+-   Most mathematical operations can be done as above as long as it makes sense to do so. For example, you cannot perform the divide operation on a variable such as `origin`.
 
 ### filter()
 
@@ -215,7 +202,6 @@ Suppose you have you interested in flights that originated from JFK only. You ca
 nycflights_c <- nycflights %>% 
 filter (origin == "JFK")
 ```
-
 
 ### group_by()
 
@@ -229,43 +215,41 @@ nycflights %>%
 
 Here, you can see the delay times by origin airport.
 
-
 ### drop_na()
 
 Some statistics may not be computed with if the variable of interest has missing values (these appear as na in R). In such cases, it might be necessary to drop missing values before moving forward with your analysis. To drop missing values from a given column (variable), you use the drop_na() function as shown below:
 
-
-```toml
+``` toml
 name_of_your_choice <- original_data %>% 
 drop_na(variable_name)
 ```
 
 If you want to drop_na from multiple variables, you simply list the variables in the drop_na function separated by commas.
 
-
-
 ## Exercises
 
 Answer the following exercises. Be sure to show/explain your work on each question. You can copy and paste each question into the quarto document that you will submit. Have the code chunks below each question that requires code.
 
-1.  ***(4 pts)*** Create a new quarto document with the title "Basic Data Wrangling". Save the document as `Lab_02_Exe`. Delete everything on the page EXCEPT the YAML section. In the YAML area change the output format to pdf, and make sure your name is written under author.  
+1.  ***(4 pts)*** Create a new quarto document with the title "Basic Data Wrangling". Save the document as `Lab_02_Exe`. Delete everything on the page EXCEPT the YAML section. In the YAML area change the output format to pdf, and make sure your name is written under author.
 
+```{=html}
 <!--                                                                            data(loan50)
  -->
-2.  ***(4 pts)*** Create a code chunk and load the packages `openintro` and `tidyverse`. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called `ames` (this is contained in the `openintro` package). How many variables and how many observations/cases does this data fame have? 
-<!--
-```{r}
-  data(ames)                                                                        
 ```
---> 
+
+2.  ***(4 pts)*** Create a code chunk and load the packages `openintro` and `tidyverse`. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called `ames` (this is contained in the `openintro` package). How many variables and how many observations/cases does this data fame have? <!--
+        ```{r}
+          data(ames)                                                                        
+        ```
+        -->
+
 3.  ***(4 pts)*** Examine the detailed documentation of this dataset by clicking on the link <https://jse.amstat.org/v19n3/decock/DataDocumentation.txt>. What does the variable `Bsmt.Qual` measure? Be sure to provide information on each level/value of this variable.
-                                                                            
+
 4.  ***(2 pts)*** Create a new data set and save it as `ames_new`. This new data set should have the variables price, `Bsmt.Qual`, and `Lot.Shape` only.
 
-5. ***(2 pts)*** Determine the number of cases in the `ames_new` data frame that have the value `Gd` for the variable `Bsmt.Qual`. To do this, you may use the `filter()` function.
+5.  ***(2 pts)*** Determine the number of cases in the `ames_new` data frame that have the value `Gd` for the variable `Bsmt.Qual`. To do this, you may use the `filter()` function.
 
 6.  ***(6 pts)*** Use the group_by() function to create a summary table that shows the average house prices by lot shape (`Lot.Shape`). What can you comment based on this result?
-
 
 ## Submission
 
@@ -275,5 +259,5 @@ Answer the following exercises. Be sure to show/explain your work on each questi
 -   Attempt all questions
 -   Render your work to pdf. Do not take pictures of your screen.
 -   Submit the pdf to Canvas
--   If code errors prevent you from rendering your quarto file, you can suppress them (look this up). This should be a last resort thing. Consider seeking support early if you need it. 
+-   If code errors prevent you from rendering your quarto file, you can suppress them (look this up). This should be a last resort thing. Consider seeking support early if you need it.
 :::

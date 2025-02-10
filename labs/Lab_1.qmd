@@ -134,7 +134,7 @@ a<-c(3,3,2,2,3,4,1,2)
 b<-c("F", "M", "F", "M", "M", "F", "M", "M")
 ```
 
-You can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it. 
+You can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.
 
 ```{r}
 practice_data <- data.frame(name=y, age=x, sex=b, year=a)

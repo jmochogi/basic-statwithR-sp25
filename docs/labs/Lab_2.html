@@ -471,15 +471,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong><em>(4 pts)</em></strong> Create a code chunk and load the packages <code>openintro</code> and <code>tidyverse</code>. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called <code>ames</code> (this is contained in the <code>openintro</code> package). How many variables and how many observations/cases does this data fame have? <!--
 
 
-::: {.cell}
 
-```{.r .cell-code}
-  data(ames)                                                                        
-```
-:::
+        ::: {.cell}
+        
+        ```{.r .cell-code}
+          data(ames)                                                                        
+        ```
+        :::
 
 
---></p></li>
+
+        --></p></li>
 <li><p><strong><em>(4 pts)</em></strong> Examine the detailed documentation of this dataset by clicking on the link <a href="https://jse.amstat.org/v19n3/decock/DataDocumentation.txt" class="uri">https://jse.amstat.org/v19n3/decock/DataDocumentation.txt</a>. What does the variable <code>Bsmt.Qual</code> measure? Be sure to provide information on each level/value of this variable.</p></li>
 <li><p><strong><em>(2 pts)</em></strong> Create a new data set and save it as <code>ames_new</code>. This new data set should have the variables price, <code>Bsmt.Qual</code>, and <code>Lot.Shape</code> only.</p></li>
 <li><p><strong><em>(2 pts)</em></strong> Determine the number of cases in the <code>ames_new</code> data frame that have the value <code>Gd</code> for the variable <code>Bsmt.Qual</code>. To do this, you may use the <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> function.</p></li>
