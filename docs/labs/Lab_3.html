@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.36">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Importing Data into R – MATH 240</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d9ea220ee908cb7322d1b5aeb522d8d4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d9ea220ee908cb7322d1b5aeb522d8d4.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c3ef435ebc7018cd3b12a09d23b9ad2d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1750cd0bd54d72b751336e925cf9bd8d.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta property="og:title" content="Importing Data into R – MATH 240">
+<meta property="og:description" content="Homepage for MATH 240 - Basic Statistics with R, Spring 2025.">
+<meta property="og:image" content="https://jmochogi.github.io/basic-statwithR-sp25/img/ d.png">
+<meta property="og:site_name" content="MATH 240">
+<meta property="og:image:height" content="1798">
+<meta property="og:image:width" content="3172">
+<meta name="twitter:title" content="Importing Data into R – MATH 240">
+<meta name="twitter:description" content="Homepage for MATH 240 - Basic Statistics with R, Spring 2025.">
+<meta name="twitter:image" content="https://jmochogi.github.io/basic-statwithR-sp25/labs/img/twitter-card.png">
+<meta name="twitter:creator" content="@jmochogi">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Importing Data into R</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.jpeg" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/jmochogi/basic-statwithR" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+    <a href="https://calendly.com/jmochogi/20min" title="Office hours" class="quarto-navigation-tool px-1" aria-label="Office hours"><i class="bi bi-life-preserver"></i></a>
+    <a href="https://canvas.ithaca.edu/" title="Canvas Discussions" class="quarto-navigation-tool px-1" aria-label="Canvas Discussions"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://ithaca.zoom.us/j/3364817575?pwd=WlA1S3hJWWZNTTFoWUVaZlA1clhtdz09" title="Zoom link" class="quarto-navigation-tool px-1" aria-label="Zoom link"><i class="bi bi-camera-reels-fill"></i></a>
+    <a href="https://canvas.ithaca.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-check-square-fill"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Lab_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab_3.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab_4.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab_5.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/first_project.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/final_project.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Downloads</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-downloads/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-downloads/templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Templates</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li>
+<a href="#importing-from-spreadsheets" id="toc-importing-from-spreadsheets" class="nav-link" data-scroll-target="#importing-from-spreadsheets">Importing from Spreadsheets</a>
+  <ul class="collapse">
+<li><a href="#excel-files" id="toc-excel-files" class="nav-link" data-scroll-target="#excel-files">Excel Files</a></li>
+  <li>
+<a href="#google-sheets" id="toc-google-sheets" class="nav-link" data-scroll-target="#google-sheets">Google Sheets</a>
+  <ul class="collapse">
+<li><a href="#google-sheets-api" id="toc-google-sheets-api" class="nav-link" data-scroll-target="#google-sheets-api"><em>Google Sheets API</em></a></li>
+  <li><a href="#authenticating-api-with-google" id="toc-authenticating-api-with-google" class="nav-link" data-scroll-target="#authenticating-api-with-google"><em>Authenticating API with Google</em></a></li>
+  <li><a href="#reading-data-from-google-sheets" id="toc-reading-data-from-google-sheets" class="nav-link" data-scroll-target="#reading-data-from-google-sheets"><em>Reading Data from Google Sheets</em></a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">CSV Files</a></li>
+  <li><a href="#text-files-tsvs" id="toc-text-files-tsvs" class="nav-link" data-scroll-target="#text-files-tsvs">Text Files (TSVs)</a></li>
+  <li>
+<a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a>
+  <ul class="collapse">
+<li><a href="#relational-databases" id="toc-relational-databases" class="nav-link" data-scroll-target="#relational-databases"><strong>Relational Databases</strong></a></li>
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages"><strong>Advantages</strong></a></li>
+  <li><a href="#database-storage" id="toc-database-storage" class="nav-link" data-scroll-target="#database-storage"><strong>Database Storage</strong></a></li>
+  <li><a href="#connecting-to-a-database" id="toc-connecting-to-a-database" class="nav-link" data-scroll-target="#connecting-to-a-database"><strong>Connecting to a Database</strong></a></li>
+  <li><a href="#viewing-table-list" id="toc-viewing-table-list" class="nav-link" data-scroll-target="#viewing-table-list"><strong>Viewing Table List</strong></a></li>
+  <li><a href="#extracting-data" id="toc-extracting-data" class="nav-link" data-scroll-target="#extracting-data"><strong>Extracting Data</strong></a></li>
+  <li>
+<a href="#joining-tables-mutating-joins" id="toc-joining-tables-mutating-joins" class="nav-link" data-scroll-target="#joining-tables-mutating-joins"><strong>Joining Tables: Mutating Joins</strong></a>
+  <ul class="collapse">
+<li><a href="#inner-joins" id="toc-inner-joins" class="nav-link" data-scroll-target="#inner-joins"><strong>Inner Joins</strong></a></li>
+  <li><a href="#left-joins" id="toc-left-joins" class="nav-link" data-scroll-target="#left-joins"><strong>Left Joins</strong></a></li>
+  <li><a href="#right-joins" id="toc-right-joins" class="nav-link" data-scroll-target="#right-joins"><strong>Right Joins</strong></a></li>
+  <li><a href="#full-joins" id="toc-full-joins" class="nav-link" data-scroll-target="#full-joins"><strong>Full Joins</strong></a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li><a href="#exporting-data-from-r" id="toc-exporting-data-from-r" class="nav-link" data-scroll-target="#exporting-data-from-r">Exporting Data from R</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Importing Data into R</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Lab 3</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><section id="introduction" class="level1 unnumbered"><h1 class="unnumbered">Introduction</h1>
+<p>The goal of this lab is to introduce you to the concept of importing data into R. In the previous labs, we have been using data that is already available in R or in R packages. However, in real life, you will often need to import data from external sources such as Excel, CSV, or text files. In this lab, we will learn how to “import” data into R from various sources including:</p>
+<ul>
+<li>Spreadsheets:
+<ul>
+<li>Excel files</li>
+<li>Google Sheets</li>
+</ul>
+</li>
+<li>CSV files</li>
+<li>Text files</li>
+<li>Databases</li>
+</ul></section><section id="packages" class="level1"><h1>Packages</h1>
+<p>In this lab, you will need the following packages.</p>
+<ul>
+<li>
+<code>readxl</code> for reading excel files</li>
+<li>
+<code>googlesheets4</code> for reading data from Google Sheets</li>
+<li>
+<code>RSQLite</code> for connecting to databases</li>
+<li>
+<code>Tidyverse</code> packages:
+<ul>
+<li>
+<code>readr</code> for reading CSV and TSV files. Part of Tidyverse.</li>
+<li>
+<code>dbplyr</code> for working with relational data. Part of Tidyverse.</li>
+<li>
+<code>dplyr</code> for data manipulation. Part of Tidyverse.</li>
+</ul>
+</li>
+</ul>
+<p>Start by installing any packages that you don’t already have (likely the first three) then create a code chunk for loading the packages. Note that package installation is to be done in the console using the <code>install.packages("package name")</code> command.</p>
+<p>Load packages in the packages code chunk as shown below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">readxl</span><span class="er">)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">googlesheets4</span><span class="er">)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">RSQLite</span><span class="er">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="importing-from-spreadsheets" class="level1"><h1>Importing from Spreadsheets</h1>
+<section id="excel-files" class="level2"><h2 class="anchored" data-anchor-id="excel-files">Excel Files</h2>
+<p>Reading excel files into R is made possible by the <code>readxl</code> package (installed above).</p>
+<p>To read an excel file into R, we use the <code>read_excel()</code> function from the <code>readxl</code> package. Follow these steps:</p>
+<ol type="a">
+<li><p>Obtain your excel data (.xslx) data set and upload it into your project (files section) using the upload option.</p></li>
+<li>
+<p>Click on the file then choose the <strong>import dataset</strong> option (see figure below). This will open a pop-up window that shows a preview of the data set and the file path. Click on import.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="../img/ d.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Importing an Excel Spreadsheet</figcaption></figure>
+</div>
+</li>
+<li><p>Finally, open a code chunk for your data and use the <code>read_excel()</code> function to read the file into R as shown below. If the file is in a folder, make sure to set the correct path.</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">read_excel</span><span class="er">(</span><span class="dt">"filename.xlsx"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Practice:</em></strong> You received an email with an attachment of an excel data set named absenteeism. Read file into your R.</p>
+</section><section id="google-sheets" class="level2"><h2 class="anchored" data-anchor-id="google-sheets">Google Sheets</h2>
+<p>Google is a popular cloud-based platform for storing and sharing data. To read data stored in Google sheets, we the package <code>googlesheets4</code>.</p>
+<p>The fact that Google documents live in the cloud makes sharing and updating data easy especially if there are multiple people collaborating on the same project. Since <code>googlesheets4</code> allows R to read the data from Google directly, you do not have to download the data. If you share a link with edit privileges, people can enter the data directly and you can analyze it in real-time.</p>
+<section id="google-sheets-api" class="level3"><h3 class="anchored" data-anchor-id="google-sheets-api"><em>Google Sheets API</em></h3>
+<p>Since R and Google Sheets are different products, the two have to communicate in some way. This happens through what is known as <strong><em>Application Programming Interface (API)</em></strong>. APIs are means through which different applications are able to communicate with one another. Google has an API that allows R to communicate with Google Sheets. To use this API, you will need to authenticate your R session with Google every time.</p>
+</section><section id="authenticating-api-with-google" class="level3"><h3 class="anchored" data-anchor-id="authenticating-api-with-google"><em>Authenticating API with Google</em></h3>
+<p>To set up the connection between Google Sheets and R, start by running the command <code>gs4_auth()</code> in the console. This will open a new page in your browser that asks you which Google account you’d like to have access to. Click on the appropriate Google user to provide <code>googlesheets4</code> access to the Google Sheets API. After this, you will be given a code that you will need to copy and paste into your R console. This will authenticate your R session with Google Sheets.</p>
+</section><section id="reading-data-from-google-sheets" class="level3"><h3 class="anchored" data-anchor-id="reading-data-from-google-sheets"><em>Reading Data from Google Sheets</em></h3>
+<p>The last step is to read the data into R. We use the function <code>read_sheet()</code> for this. The function takes the URL of the Google Sheet as an argument. The URL can be obtained by clicking on the share button on the Google Sheet and copying the link. Make sure you have the correct permissions to access the data.</p>
+<p>As an example, we will read in a data set available on the link <a href="https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing</a> This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">g_sheet</span> <span class="er">&lt;</span><span class="dt">-read_sheet</span><span class="er">(</span><span class="dt">"https://docs.google.com/spreadsheets/d/1Q</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section></section><section id="csv-files" class="level1"><h1>CSV Files</h1>
+<p>CSV stands for Comma Separated Values. It is a simple file format used to store tabular data, such as a spreadsheet or database. CSV files are plain text files that contain data separated by commas and are preferred by many data scientists because of their simplicity. To read a CSV file into R, you can use the <code>read_csv()</code> function from the <code>readr</code> package. The <code>readr</code> package is part of the <code>tidyverse</code> package, so you do not need to install it separately if you have <code>tidyverse</code> already. The process for reading in csv files is very similar to that of excel file.</p>
+<p>Here are the steps:</p>
+<ol type="a">
+<li><p>Obtain your CSV data set and upload it into your Project (files section) using the upload option.</p></li>
+<li><p>Click on the file then choose the <strong>import dataset</strong> option. This will open a pop-up window that shows a preview of the data set and the file path. Click on import.</p></li>
+<li><p>Finally, open a code chunk for your data and use the <code>read_csv("filename")</code> function to read the file into R as shown below. If the file is in a folder, make sure to get the correct path.</p></li>
+</ol>
+<p><strong><em>Practice:</em></strong> Download the csv file named baby_names from the the sits <a href="https://www.openintro.org/data/index.php?data=baby_names" class="uri">https://www.openintro.org/data/index.php?data=baby_names</a> and read it in your R project.</p>
+</section><section id="text-files-tsvs" class="level1"><h1>Text Files (TSVs)</h1>
+<p>Another common form of data is text files that usually come in the form of TXT or TSV file formats. Like CSVs, text files are simple, plain-text files; however, rather than columns being separated by commas, they are separated by tabs (represented by ” in plain-text). Like CSVs, they don’t allow text formatting (i.e.&nbsp;text colors in cells) and are able to be opened on many different software platforms. This makes them good candidates for storing data.</p>
+<p>To read a TSV file into R, you can use the <code>read_tsv()</code> function from the <code>readr</code> package. The process for reading in TSV files is very similar to that of CSV files.</p>
+</section><section id="databases" class="level1"><h1>Databases</h1>
+<p>Up to this point, we have considered data stored as a single file in various formats. However, in many real life scenarios, data are often stored in databases. A database is a collection of data that are organized so that they can be easily accessed, managed, and updated. A key point to note about databases is that they are designed to store large amounts of data. There are many types of databases, but the most common ones are <strong><em>relational databases</em></strong>.</p>
+<section id="relational-databases" class="level2"><h2 class="anchored" data-anchor-id="relational-databases"><strong>Relational Databases</strong></h2>
+<p>In a relational database, data is stored in tables, and the tables are related to each other. As an example, consider a college database that has several tables about their students including</p>
+<ul>
+<li>
+<strong><em>Demographics:</em></strong> ID, name, email, year of study, etc.</li>
+<li>
+<strong><em>Courses:</em></strong> ID, course name, credits, grade, department, etc.</li>
+<li>
+<strong><em>Instructors:</em></strong> ID, name, email, rank, etc.</li>
+</ul>
+<p>Although each table contains different information, there is a common column in each of the tables that allows information to be linked (in this <strong>ID</strong>). The <strong>ID</strong> values are referred to as <strong><em>unique identifiers</em></strong> because they uniquely identify each student. No two students will have the same <strong>ID</strong>.</p>
+</section><section id="advantages" class="level2"><h2 class="anchored" data-anchor-id="advantages"><strong>Advantages</strong></h2>
+<p>Storing data in databases is considered <em>secure</em>, <em>efficient</em>, and <em>reduces ambiguity</em>.</p>
+<ul>
+<li><p>The <em>efficiency</em> comes from the fact that databases are optimized for reading and writing data. Storing data in separate tables also limits the need to repeat information.</p></li>
+<li><p>The <em>security</em> comes from the fact that databases can be set up to allow only authorized users to access certain data. If the data were all stored in one table, you lose this advantage.</p></li>
+<li><p><em>Ambiguity</em> is reduced by, among other things, the fact that databases are better at handling multiple cases with same name but different characteristics.</p></li>
+</ul></section><section id="database-storage" class="level2"><h2 class="anchored" data-anchor-id="database-storage"><strong>Database Storage</strong></h2>
+<p>Databases are stored in a database management system (DBMS). A DBMS is a software that allows you to interact with the database. The most common DBMS are MySQL and SQLite. In order to use data stored in a data base, there has to be a way to pull information from the database. Doing this is called <strong><em>querying the database</em></strong>. For example, one may want to know all female students who took MATH 240 at IC in the last 5 years. To do this, one would have to use SQL query commands. Using SQL commands is beyond the scope of this course, but you will learn how to use an R package known as <code>RSQLite</code> for establishing a connection to a database and using <code>dbplr</code> and <code>dbplyr</code> to work with relational data.</p>
+</section><section id="connecting-to-a-database" class="level2"><h2 class="anchored" data-anchor-id="connecting-to-a-database"><strong>Connecting to a Database</strong></h2>
+<p>We are going to use a database called <code>comany.db</code> containing several tables with information about digital media (artistes, customers, artiste’s work, etc). We are going to focus only on <code>artists</code> and the <code>albums</code> tables. The unique identifier here will be <code>artistId</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="../img/e.png" class="img-fluid figure-img"></p>
+<figcaption>Image credit: Carrie Wright, et al.</figcaption></figure>
+</div>
+<p>Follow the following steps to connect to the database:</p>
+<ol type="1">
+<li><p>Download the database from <a href="https://drive.google.com/file/d/19u68_tknOIM_IPBQlvA7kTl2aTxbLH-v/view?usp=sharing">this link</a> and unzip it. Upload it to your project.</p></li>
+<li>
+<p>Install and load the <code>RSQLite</code> package.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"RSQLite"</span><span class="er">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Do this in the console</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">RSQLite</span><span class="er">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Do this in the packages code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</li>
+<li>
+<p>Specify driver and create a connection to the database.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sqlite</span> <span class="op">&lt;-</span> <span class="fu">dbDriver</span><span class="op">(</span><span class="st">"SQLite"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</li>
+<li>
+<p>Create a connection to the database using the command below. Notice that the connection is saved as an object named <code>con</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">con</span> <span class="er">&lt;</span><span class="dt">-</span> <span class="dt">dbConnect</span><span class="er">(</span><span class="dt">sqlite</span><span class="er">,</span> <span class="dt">"company.db"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</li>
+</ol>
+<p><strong><em>Note:</em></strong> that if you are using desktop version of R, you will need to specify a path to the database file.</p>
+</section><section id="viewing-table-list" class="level2"><h2 class="anchored" data-anchor-id="viewing-table-list"><strong>Viewing Table List</strong></h2>
+<p>First, we want to know the tables contained in this database. To do this, use the function <code>dbListTables()</code> as shown below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">dbListTables</span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1] "albums"          "artists"         "customers"       "employees"      
+ [5] "genres"          "invoice_items"   "invoices"        "media_types"    
+ [9] "playlist_track"  "playlists"       "sqlite_sequence" "sqlite_stat1"   
+[13] "tracks"         </code></pre>
+</div>
+</div>
+<p>Notice that there are 13 tables, but we are only interested in the <code>artists</code> and <code>albums</code> tables.</p>
+<p>Although here we are using a downloaded database, the common practice is to connect to databases remotely especially if they are huge in size.</p>
+</section><section id="extracting-data" class="level2"><h2 class="anchored" data-anchor-id="extracting-data"><strong>Extracting Data</strong></h2>
+<p>We will use the <code>dbplyr</code> package to access the tables we are interested in. Start by loading the package in the packages chunk. The package works under the hood with <code>dplyr</code> to allow you to work with databases as if they were data frames. You will not notice that you are using the <code>dbplyr</code>.</p>
+<p>To extract the <code>artists</code> table, use the command below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">artists</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">con</span>, <span class="st">"artists"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>To extract the <code>albums</code> table, use the command below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">albums</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">con</span>, <span class="st">"albums"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>You want to view the tables as <code>tibbles</code> (nice format that works well with tidyverse). To do this, use the <code>as_tibble()</code> function as shown below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">artists_tibble</span> <span class="op">&lt;-</span> <span class="fu">as_tibble</span><span class="op">(</span><span class="va">artists</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">albums_tibble</span> <span class="op">&lt;-</span> <span class="fu">as_tibble</span><span class="op">(</span><span class="va">albums</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="joining-tables-mutating-joins" class="level2"><h2 class="anchored" data-anchor-id="joining-tables-mutating-joins"><strong>Joining Tables: Mutating Joins</strong></h2>
+<p>Before you do your analyses, you may want to merge the tables. This is done using joins. There are several types of joins, but the most common ones are:</p>
+<ul>
+<li>
+<strong><em>Inner join:</em></strong> This only keeps observations found in both left(<code>x</code>) and right (<code>y</code>) tables.</li>
+<li>
+<strong><em>Left join:</em></strong> This keeps all observations in the left table (artists) and only those in the right table (albums) that match.</li>
+<li>
+<strong><em>Right join:</em></strong> This keeps all observations in the right table and only those in the left table that match.</li>
+<li>
+<strong><em>Full join:</em></strong> This keeps any observations in <code>x</code> or <code>y</code>.</li>
+</ul>
+<section id="inner-joins" class="level3"><h3 class="anchored" data-anchor-id="inner-joins"><strong>Inner Joins</strong></h3>
+<p>Below is a diagrammatic illustration of an inner join:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="../img/inner.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Image credit: Carrie Wright, et al.</figcaption></figure>
+</div>
+<p>To join the <code>artists</code> and <code>albums</code> tables using an inner join, we use the function <code>inner_join()</code> as shown below. Notice that we are using tibble format for both albums and artists because tidyverse works best in this format.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inner_data</span> <span class="op">&lt;-</span> <span class="fu">inner_join</span><span class="op">(</span><span class="va">artists_tibble</span>, <span class="va">albums_tibble</span>, by <span class="op">=</span> <span class="st">"ArtistId"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="left-joins" class="level3"><h3 class="anchored" data-anchor-id="left-joins"><strong>Left Joins</strong></h3>
+<p>Below is a diagrammatic illustration of a left join:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="../img/left.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Image credit: Carrie Wright, et al.</figcaption></figure>
+</div>
+<p>To join the <code>artists</code> and <code>albums</code> tables using a left join, we use the function <code>left_join()</code> as shown below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">left_data</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">artists_tibble</span>, <span class="va">albums_tibble</span>, by <span class="op">=</span> <span class="st">"ArtistId"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="right-joins" class="level3"><h3 class="anchored" data-anchor-id="right-joins"><strong>Right Joins</strong></h3>
+<p>A right join is similar to a left join, but it keeps all observations in the right table and only those in the left table that match. Right joins return rows with NA values in the left table where there is no match. To join the <code>artists</code> and <code>albums</code> tables using a right join, we use the function <code>right_join()</code> as shown below.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">right_data</span> <span class="op">&lt;-</span> <span class="fu">right_join</span><span class="op">(</span><span class="va">artists_tibble</span>, <span class="va">albums_tibble</span>, by <span class="op">=</span> <span class="st">"ArtistId"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong><em>Note:</em></strong> The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.</p>
+</section><section id="full-joins" class="level3"><h3 class="anchored" data-anchor-id="full-joins"><strong>Full Joins</strong></h3>
+<p>Lastly, a full join keeps any observations in <code>x</code> or <code>y</code>. NAs are used when data are missing for an observation(s). To join the <code>artists</code> and <code>albums</code> tables using a full join, we use the function <code>full_join()</code> as shown below.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">full_data</span> <span class="op">&lt;-</span> <span class="fu">full_join</span><span class="op">(</span><span class="va">artists_tibble</span>, <span class="va">albums_tibble</span>, by <span class="op">=</span> <span class="st">"ArtistId"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong><em>Note:</em></strong></p>
+<ul>
+<li>To learn more about joins, Garrick Aden-Buie has a great resource on GitHub. Check it out: <a href="https://github.com/gadenbuie/tidyexplain">here</a>.</li>
+<li>Our focus was on mutating joins. There are also the aspect of filtering joins that focuses on observations (rows).</li>
+</ul></section></section></section><section id="exporting-data-from-r" class="level1"><h1>Exporting Data from R</h1>
+<p>After you have analyzed your data in R, you may want to export the results back to a file. It is also possible that you have performed some data wrangling and you want to share the file with someone else. To do this, you need to learn how to export a dataset from R. The most common formats for exporting data are: csv, excel, and text files. Here is how to go about it:</p>
+<p>Assuming your data frame is called <code>my_data</code>, and you want to export under the name <code>my_new_data</code>, you can use the following commands:</p>
+<p><strong><em>To exports to CSV, use:</em></strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">write_csv</span><span class="er">(</span><span class="dt">my_data</span><span class="er">,</span> <span class="dt">path</span> <span class="op">=</span> <span class="st">"my_new_data.csv"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>To export to Excel, use:</em></strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dt">write_excel_csv</span><span class="er">(</span><span class="dt">my_data</span><span class="er">,</span> <span class="dt">path</span> <span class="op">=</span> <span class="st">"my_new_data.xlsx"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>To export to a text file, use:</em></strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">write_tsv</span><span class="er">(</span><span class="dt">my_data</span><span class="er">,</span> <span class="dt">path</span> <span class="op">=</span> <span class="st">"my_new_data.txt"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Running the above commands will create a new file in your project folder with the name <code>my_new_data</code> and the appropriate file extension. You can then download the file and share it with others.</p>
+</section><section id="exercises" class="level1"><h1>Exercises</h1>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jmochogi\.github\.io\/basic-statwithR-sp25\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Joash Geteregechi</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
