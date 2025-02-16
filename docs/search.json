@@ -378,70 +378,110 @@
     "href": "labs/Lab_3.html",
     "title": "Importing Data into R",
     "section": "",
-    "text": "The goal of this lab is to introduce you to the concept of importing data into R. In the previous labs, we have been using data that is already available in R or in R packages. However, in real life, you will often need to import data from external sources such as Excel, CSV, or text files. In this lab, we will learn how to “import” data into R from various sources including:\n\nSpreadsheets:\n\nExcel files\nGoogle Sheets\n\n\nCSV files\nText files\nDatabases"
+    "text": "The goal of this lab is to introduce you to the concept of importing data into R. In the previous labs, we have been using data that is already available in R or in R packages. However, in real life, you will often need to import data from external sources such as Excel, CSV, or text files. In this lab, we will learn how to “import” data into R from various sources including:\n\nSpreadsheets:\n\nExcel files\nGoogle Sheets\n\n\nCSV files\nText files\nDatabases",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#excel-files",
     "href": "labs/Lab_3.html#excel-files",
     "title": "Importing Data into R",
     "section": "Excel Files",
-    "text": "Excel Files\nReading excel files into R is made possible by the readxl package (installed above).\nTo read an excel file into R, we use the read_excel() function from the readxl package. Follow these steps:\n\nObtain your excel data (.xslx) data set and upload it into your project (files section) using the upload option.\n\nClick on the file then choose the import dataset option (see figure below). This will open a pop-up window that shows a preview of the data set and the file path. Click on import.\n\n\nImporting an Excel Spreadsheet\n\n\nFinally, open a code chunk for your data and use the read_excel() function to read the file into R as shown below. If the file is in a folder, make sure to set the correct path.\n\nread_excel(\"filename.xlsx\")\nPractice: You received an email with an attachment of an excel data set named absenteeism. Read file into your R."
+    "text": "Excel Files\nReading excel files into R is made possible by the readxl package (installed above).\nTo read an excel file into R, we use the read_excel() function from the readxl package. Follow these steps:\n\nObtain your excel data (.xslx) data set and upload it into your project (files section) using the upload option.\n\nClick on the file then choose the import dataset option (see figure below). This will open a pop-up window that shows a preview of the data set and the file path. Click on import.\n\n\nImporting an Excel Spreadsheet\n\n\nFinally, open a code chunk for your data and use the read_excel() function to read the file into R as shown below. If the file is in a folder, make sure to set the correct path.\n\nread_excel(\"filename.xlsx\")\nPractice: You received an email with an attachment of an excel data set named absenteeism. Read file into your R.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#google-sheets",
     "href": "labs/Lab_3.html#google-sheets",
     "title": "Importing Data into R",
     "section": "Google Sheets",
-    "text": "Google Sheets\nGoogle is a popular cloud-based platform for storing and sharing data. To read data stored in Google sheets, we the package googlesheets4.\nThe fact that Google documents live in the cloud makes sharing and updating data easy especially if there are multiple people collaborating on the same project. Since googlesheets4 allows R to read the data from Google directly, you do not have to download the data. If you share a link with edit privileges, people can enter the data directly and you can analyze it in real-time.\nGoogle Sheets API\nSince R and Google Sheets are different products, the two have to communicate in some way. This happens through what is known as Application Programming Interface (API). APIs are means through which different applications are able to communicate with one another. Google has an API that allows R to communicate with Google Sheets. To use this API, you will need to authenticate your R session with Google every time.\nAuthenticating API with Google\nTo set up the connection between Google Sheets and R, start by running the command gs4_auth() in the console. This will open a new page in your browser that asks you which Google account you’d like to have access to. Click on the appropriate Google user to provide googlesheets4 access to the Google Sheets API. After this, you will be given a code that you will need to copy and paste into your R console. This will authenticate your R session with Google Sheets.\nReading Data from Google Sheets\nThe last step is to read the data into R. We use the function read_sheet() for this. The function takes the URL of the Google Sheet as an argument. The URL can be obtained by clicking on the share button on the Google Sheet and copying the link. Make sure you have the correct permissions to access the data.\nAs an example, we will read in a data set available on the link https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):\ng_sheet &lt;-read_sheet(\"https://docs.google.com/spreadsheets/d/1Q"
+    "text": "Google Sheets\nGoogle is a popular cloud-based platform for storing and sharing data. To read data stored in Google sheets, we the package googlesheets4.\nThe fact that Google documents live in the cloud makes sharing and updating data easy especially if there are multiple people collaborating on the same project. Since googlesheets4 allows R to read the data from Google directly, you do not have to download the data. If you share a link with edit privileges, people can enter the data directly and you can analyze it in real-time.\nGoogle Sheets API\nSince R and Google Sheets are different products, the two have to communicate in some way. This happens through what is known as Application Programming Interface (API). APIs are means through which different applications are able to communicate with one another. Google has an API that allows R to communicate with Google Sheets. To use this API, you will need to authenticate your R session with Google every time.\nAuthenticating API with Google\nTo set up the connection between Google Sheets and R, start by running the command gs4_auth() in the console. This will open a new page in your browser that asks you which Google account you’d like to have access to. Click on the appropriate Google user to provide googlesheets4 access to the Google Sheets API. After this, you will be given a code that you will need to copy and paste into your R console. This will authenticate your R session with Google Sheets.\nReading Data from Google Sheets\nThe last step is to read the data into R. We use the function read_sheet() for this. The function takes the URL of the Google Sheet as an argument. The URL can be obtained by clicking on the share button on the Google Sheet and copying the link. Make sure you have the correct permissions to access the data.\nAs an example, we will read in a data set available on the link https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):\ng_sheet &lt;-read_sheet(\"https://docs.google.com/spreadsheets/d/1Q",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#relational-databases",
     "href": "labs/Lab_3.html#relational-databases",
     "title": "Importing Data into R",
     "section": "Relational Databases",
-    "text": "Relational Databases\nIn a relational database, data is stored in tables, and the tables are related to each other. As an example, consider a college database that has several tables about their students including\n\n\nDemographics: ID, name, email, year of study, etc.\n\nCourses: ID, course name, credits, grade, department, etc.\n\nInstructors: ID, name, email, rank, etc.\n\nAlthough each table contains different information, there is a common column in each of the tables that allows information to be linked (in this ID). The ID values are referred to as unique identifiers because they uniquely identify each student. No two students will have the same ID."
+    "text": "Relational Databases\nIn a relational database, data is stored in tables, and the tables are related to each other. As an example, consider a college database that has several tables about their students including\n\n\nDemographics: ID, name, email, year of study, etc.\n\nCourses: ID, course name, credits, grade, department, etc.\n\nInstructors: ID, name, email, rank, etc.\n\nAlthough each table contains different information, there is a common column in each of the tables that allows information to be linked (in this ID). The ID values are referred to as unique identifiers because they uniquely identify each student. No two students will have the same ID.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#advantages",
     "href": "labs/Lab_3.html#advantages",
     "title": "Importing Data into R",
     "section": "Advantages",
-    "text": "Advantages\nStoring data in databases is considered secure, efficient, and reduces ambiguity.\n\nThe efficiency comes from the fact that databases are optimized for reading and writing data. Storing data in separate tables also limits the need to repeat information.\nThe security comes from the fact that databases can be set up to allow only authorized users to access certain data. If the data were all stored in one table, you lose this advantage.\nAmbiguity is reduced by, among other things, the fact that databases are better at handling multiple cases with same name but different characteristics."
+    "text": "Advantages\nStoring data in databases is considered secure, efficient, and reduces ambiguity.\n\nThe efficiency comes from the fact that databases are optimized for reading and writing data. Storing data in separate tables also limits the need to repeat information.\nThe security comes from the fact that databases can be set up to allow only authorized users to access certain data. If the data were all stored in one table, you lose this advantage.\nAmbiguity is reduced by, among other things, the fact that databases are better at handling multiple cases with same name but different characteristics.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#database-storage",
     "href": "labs/Lab_3.html#database-storage",
     "title": "Importing Data into R",
     "section": "Database Storage",
-    "text": "Database Storage\nDatabases are stored in a database management system (DBMS). A DBMS is a software that allows you to interact with the database. The most common DBMS are MySQL and SQLite. In order to use data stored in a data base, there has to be a way to pull information from the database. Doing this is called querying the database. For example, one may want to know all female students who took MATH 240 at IC in the last 5 years. To do this, one would have to use SQL query commands. Using SQL commands is beyond the scope of this course, but you will learn how to use an R package known as RSQLite for establishing a connection to a database and using dbplr and dbplyr to work with relational data."
+    "text": "Database Storage\nDatabases are stored in a database management system (DBMS). A DBMS is a software that allows you to interact with the database. The most common DBMS are MySQL and SQLite. In order to use data stored in a data base, there has to be a way to pull information from the database. Doing this is called querying the database. For example, one may want to know all female students who took MATH 240 at IC in the last 5 years. To do this, one would have to use SQL query commands. Using SQL commands is beyond the scope of this course, but you will learn how to use an R package known as RSQLite for establishing a connection to a database and using dbplr and dbplyr to work with relational data.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#connecting-to-a-database",
     "href": "labs/Lab_3.html#connecting-to-a-database",
     "title": "Importing Data into R",
     "section": "Connecting to a Database",
-    "text": "Connecting to a Database\nWe are going to use a database called comany.db containing several tables with information about digital media (artistes, customers, artiste’s work, etc). We are going to focus only on artists and the albums tables. The unique identifier here will be artistId.\n\n\nImage credit: Carrie Wright, et al.\n\nFollow the following steps to connect to the database:\n\nDownload the database from this link and unzip it. Upload it to your project.\n\nInstall and load the RSQLite package.\ninstall.packages(\"RSQLite\")\n# Do this in the console\nlibrary(RSQLite)\n# Do this in the packages code chunk\n\n\nSpecify driver and create a connection to the database.\n\nCodesqlite &lt;- dbDriver(\"SQLite\")\n\n\n\n\nCreate a connection to the database using the command below. Notice that the connection is saved as an object named con.\ncon &lt;- dbConnect(sqlite, \"company.db\")\n\n\nNote: that if you are using desktop version of R, you will need to specify a path to the database file."
+    "text": "Connecting to a Database\nWe are going to use a database called comany.db containing several tables with information about digital media (artistes, customers, artiste’s work, etc). We are going to focus only on artists and the albums tables. The unique identifier here will be artistId.\n\n\nImage credit: Carrie Wright, et al.\n\nFollow the following steps to connect to the database:\n\nDownload the database from this link and unzip it. Upload it to your project.\n\nInstall and load the RSQLite package.\ninstall.packages(\"RSQLite\")\n# Do this in the console\nlibrary(RSQLite)\n# Do this in the packages code chunk\n\n\nSpecify driver and create a connection to the database.\n\nCodesqlite &lt;- dbDriver(\"SQLite\")\n\n\n\n\nCreate a connection to the database using the command below. Notice that the connection is saved as an object named con.\ncon &lt;- dbConnect(sqlite, \"company.db\")\n\n\nNote: that if you are using desktop version of R, you will need to specify a path to the database file.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#viewing-table-list",
     "href": "labs/Lab_3.html#viewing-table-list",
     "title": "Importing Data into R",
     "section": "Viewing Table List",
-    "text": "Viewing Table List\nFirst, we want to know the tables contained in this database. To do this, use the function dbListTables() as shown below:\n\nCodedbListTables(con)\n\n [1] \"albums\"          \"artists\"         \"customers\"       \"employees\"      \n [5] \"genres\"          \"invoice_items\"   \"invoices\"        \"media_types\"    \n [9] \"playlist_track\"  \"playlists\"       \"sqlite_sequence\" \"sqlite_stat1\"   \n[13] \"tracks\"         \n\n\nNotice that there are 13 tables, but we are only interested in the artists and albums tables.\nAlthough here we are using a downloaded database, the common practice is to connect to databases remotely especially if they are huge in size."
+    "text": "Viewing Table List\nFirst, we want to know the tables contained in this database. To do this, use the function dbListTables() as shown below:\n\nCodedbListTables(con)\n\n [1] \"albums\"          \"artists\"         \"customers\"       \"employees\"      \n [5] \"genres\"          \"invoice_items\"   \"invoices\"        \"media_types\"    \n [9] \"playlist_track\"  \"playlists\"       \"sqlite_sequence\" \"sqlite_stat1\"   \n[13] \"tracks\"         \n\n\nNotice that there are 13 tables, but we are only interested in the artists and albums tables.\nAlthough here we are using a downloaded database, the common practice is to connect to databases remotely especially if they are huge in size.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#extracting-data",
     "href": "labs/Lab_3.html#extracting-data",
     "title": "Importing Data into R",
     "section": "Extracting Data",
-    "text": "Extracting Data\nWe will use the dbplyr package to access the tables we are interested in. Start by loading the package in the packages chunk. The package works under the hood with dplyr to allow you to work with databases as if they were data frames. You will not notice that you are using the dbplyr.\nTo extract the artists table, use the command below:\n\nCodeartists &lt;- tbl(con, \"artists\")\n\n\nTo extract the albums table, use the command below:\n\nCodealbums &lt;- tbl(con, \"albums\")\n\n\nYou want to view the tables as tibbles (nice format that works well with tidyverse). To do this, use the as_tibble() function as shown below:\n\nCodeartists_tibble &lt;- as_tibble(artists)\n\n\n\nCodealbums_tibble &lt;- as_tibble(albums)"
+    "text": "Extracting Data\nWe will use the dbplyr package to access the tables we are interested in. Start by loading the package in the packages chunk. The package works under the hood with dplyr to allow you to work with databases as if they were data frames. You will not notice that you are using the dbplyr.\nTo extract the artists table, use the command below:\n\nCodeartists &lt;- tbl(con, \"artists\")\n\n\nTo extract the albums table, use the command below:\n\nCodealbums &lt;- tbl(con, \"albums\")\n\n\nYou want to view the tables as tibbles (nice format that works well with tidyverse). To do this, use the as_tibble() function as shown below:\n\nCodeartists_tibble &lt;- as_tibble(artists)\n\n\n\nCodealbums_tibble &lt;- as_tibble(albums)",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "labs/Lab_3.html#joining-tables-mutating-joins",
     "href": "labs/Lab_3.html#joining-tables-mutating-joins",
     "title": "Importing Data into R",
     "section": "Joining Tables: Mutating Joins",
-    "text": "Joining Tables: Mutating Joins\nBefore you do your analyses, you may want to merge the tables. This is done using joins. There are several types of joins, but the most common ones are:\n\n\nInner join: This only keeps observations found in both left(x) and right (y) tables.\n\nLeft join: This keeps all observations in the left table (artists) and only those in the right table (albums) that match.\n\nRight join: This keeps all observations in the right table and only those in the left table that match.\n\nFull join: This keeps any observations in x or y.\n\nInner Joins\nBelow is a diagrammatic illustration of an inner join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using an inner join, we use the function inner_join() as shown below. Notice that we are using tibble format for both albums and artists because tidyverse works best in this format.\n\nCodeinner_data &lt;- inner_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nLeft Joins\nBelow is a diagrammatic illustration of a left join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using a left join, we use the function left_join() as shown below:\n\nCodeleft_data &lt;- left_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nRight Joins\nA right join is similar to a left join, but it keeps all observations in the right table and only those in the left table that match. Right joins return rows with NA values in the left table where there is no match. To join the artists and albums tables using a right join, we use the function right_join() as shown below.\n\nCoderight_data &lt;- right_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote: The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.\nFull Joins\nLastly, a full join keeps any observations in x or y. NAs are used when data are missing for an observation(s). To join the artists and albums tables using a full join, we use the function full_join() as shown below.\n\nCodefull_data &lt;- full_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote:\n\nTo learn more about joins, Garrick Aden-Buie has a great resource on GitHub. Check it out: here.\nOur focus was on mutating joins. There are also the aspect of filtering joins that focuses on observations (rows)."
+    "text": "Joining Tables: Mutating Joins\nBefore you do your analyses, you may want to merge the tables. This is done using joins. There are several types of joins, but the most common ones are:\n\n\nInner join: This only keeps observations found in both left(x) and right (y) tables.\n\nLeft join: This keeps all observations in the left table (artists) and only those in the right table (albums) that match.\n\nRight join: This keeps all observations in the right table and only those in the left table that match.\n\nFull join: This keeps any observations in x or y.\n\nInner Joins\nBelow is a diagrammatic illustration of an inner join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using an inner join, we use the function inner_join() as shown below. Notice that we are using tibble format for both albums and artists because tidyverse works best in this format.\n\nCodeinner_data &lt;- inner_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nLeft Joins\nBelow is a diagrammatic illustration of a left join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using a left join, we use the function left_join() as shown below:\n\nCodeleft_data &lt;- left_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nRight Joins\nA right join is similar to a left join, but it keeps all observations in the right table and only those in the left table that match. Right joins return rows with NA values in the left table where there is no match. To join the artists and albums tables using a right join, we use the function right_join() as shown below.\n\nCoderight_data &lt;- right_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote: The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.\nFull Joins\nLastly, a full join keeps any observations in x or y. NAs are used when data are missing for an observation(s). To join the artists and albums tables using a full join, we use the function full_join() as shown below.\n\nCodefull_data &lt;- full_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote:\n\nTo learn more about joins, Garrick Aden-Buie has a great resource on GitHub. Check it out: here.\nOur focus was on mutating joins. There are also the aspect of filtering joins that focuses on observations (rows).",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
   },
   {
     "objectID": "course-downloads/templates.html",
