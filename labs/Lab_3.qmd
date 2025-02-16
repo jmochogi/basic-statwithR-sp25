@@ -19,7 +19,7 @@ library(tidyverse)
 library(RSQLite)
 library(dbplyr)
 library(dplyr)
-
+library(googlesheets4)
 ```
 
 # Introduction {.unnumbered}
@@ -100,7 +100,11 @@ As an example, we will read in a data set available on the link <https://docs.go
 This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):
 
 ``` toml
-g_sheet <-read_sheet("https://docs.google.com/spreadsheets/d/1Q
+g_sheet <-read_sheet("https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?gid=1024153496#gid=1024153496")
+```
+
+```{r, include=FALSE}
+g_sheet <-read_sheet("https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?gid=1024153496#gid=1024153496")
 ```
 
 # CSV Files
