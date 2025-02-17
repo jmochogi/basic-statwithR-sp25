@@ -138,7 +138,7 @@ In a relational database, data is stored in tables, and the tables are related t
 -   ***Courses:*** ID, course name, credits, grade, department, etc.
 -   ***Instructors:*** ID, name, email, rank, etc.
 
-Although each table contains different information, there is a common column in each of the tables that allows information to be linked (in this **ID**). The **ID** values are referred to as ***unique identifiers*** because they uniquely identify each student. No two students will have the same **ID**.
+Although each table contains different information, there is a common column in each of the tables that allows information to be linked (in this case **ID**). The **ID** values are referred to as ***unique identifiers*** because they uniquely identify each student. No two students will have the same **ID**.
 
 ## **Advantages**
 
@@ -162,9 +162,9 @@ We are going to use a database called `comany.db` containing several tables with
 
 Follow the following steps to connect to the database:
 
-1.  Download the database from [this link](https://drive.google.com/file/d/19u68_tknOIM_IPBQlvA7kTl2aTxbLH-v/view?usp=sharing) and unzip it. Upload it to your project.
+1.  Download the database from [this link](https://drive.google.com/file/d/19u68_tknOIM_IPBQlvA7kTl2aTxbLH-v/view?usp=sharing) and unzip it. Upload it to your project files.
 
-2.  Install and load the `RSQLite` package.
+2.  Install and load the `RSQLite` package in case you haven't already.
 
     ``` toml
     install.packages("RSQLite")
@@ -333,3 +333,13 @@ Running the above commands will create a new file in your project folder with th
     e)  ***(3 pts)*** Use the `mutate()` function to create a new column called `Physical activity level` that categorizes participants as `Low` if their Physical Activity is less than 90 minutes or `High` if their Physical Activity is at least 90 minutes.
 2.  ***(3 pts)*** Extract the `employees` and `customers` tables from the `company.db` database and join them using an inner join.
 3.  ***(3 pts)*** Repeat the above step using a left join. How do the data sets compare?
+
+
+
+
+
+
+
+
+
+
