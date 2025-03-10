@@ -569,7 +569,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Once you are done, render the document to a PDF and submit it to Canvas.</li>
 </ul>
 <ol type="1">
-<li>Download a csv file of the data set <code>Dry Eye Disease</code> from the link <a href="https://www.kaggle.com/datasets/dakshnagra/dry-eye-disease/data" class="uri">https://www.kaggle.com/datasets/dakshnagra/dry-eye-disease/data</a>.
+<li>
+<p>Download a csv file of the data set <code>Dry Eye Disease</code> from the link <a href="https://www.kaggle.com/datasets/dakshnagra/dry-eye-disease/data" class="uri">https://www.kaggle.com/datasets/dakshnagra/dry-eye-disease/data</a>.</p>
 <ol type="a">
 <li>
 <strong><em>(2 pts)</em></strong> Read the <code>Dry Eye Disease</code> data into your R project. Convert the data into a tibble format.</li>
@@ -583,10 +584,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong><em>(3 pts)</em></strong> Use the <code>mutate()</code> function to create a new column called <code>Physical activity level</code> that categorizes participants as <code>Low</code> if their Physical Activity is less than 90 minutes or <code>High</code> if their Physical Activity is at least 90 minutes.</li>
 </ol>
 </li>
-<li>
-<strong><em>(3 pts)</em></strong> Extract the <code>employees</code> and <code>customers</code> tables from the <code>company.db</code> database and join them using an inner join.</li>
-<li>
-<strong><em>(3 pts)</em></strong> Repeat the above step using a left join. How do the data sets compare?</li>
+<li><p><strong><em>(3 pts)</em></strong> Extract the <code>employees</code> and <code>customers</code> tables from the <code>company.db</code> database then convert them to <code>tibbles</code>. Use a left join to combine the two tibbles by <code>AlbumId</code> in the order <code>employees</code> then <code>customers</code>.</p></li>
+<li><p>Repeat number 2 above, but switch the order of the tables to <code>customers</code> then <code>employees</code>.</p></li>
+<li><p><strong><em>(3 pts)</em></strong> Use a right join to combine the <code>customers</code> and <code>employees</code> tables by <code>AlbumId</code> in the order <code>employees</code> then <code>customers</code>. What do you notice about this new table? In particular, how does the new table compare to the one in number 3 above?</p></li>
 </ol>
 
 

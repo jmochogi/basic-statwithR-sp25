@@ -326,20 +326,18 @@ Running the above commands will create a new file in your project folder with th
 -   Once you are done, render the document to a PDF and submit it to Canvas.
 
 1.  Download a csv file of the data set `Dry Eye Disease` from the link <https://www.kaggle.com/datasets/dakshnagra/dry-eye-disease/data>.
-    a) ***(2 pts)*** Read the `Dry Eye Disease` data into your R project. Convert the data into a tibble format.
+
+    a)  ***(2 pts)*** Read the `Dry Eye Disease` data into your R project. Convert the data into a tibble format.
     b)  ***(3 pts)*** Use the `select()` function to create a new data set that includes only the columns `Age`, `Gender`, `Sleep duration`, `Physical activity`, `Smart device before bed`, `Blue-light filter`, and `Dry Eye Disease`.
     c)  ***(3 pts)*** Use the `group_by()` and `summarize()` functions to find the average age of the participants by Gender. Comment on the output.
     d)  ***(3 pts)*** Use the `filter()` function to create a new data set that includes only participants who have a `Sleep duration` of more than 6 hours. How many participants are in this category?
     e)  ***(3 pts)*** Use the `mutate()` function to create a new column called `Physical activity level` that categorizes participants as `Low` if their Physical Activity is less than 90 minutes or `High` if their Physical Activity is at least 90 minutes.
-2.  ***(3 pts)*** Extract the `employees` and `customers` tables from the `company.db` database and join them using an inner join.
-3.  ***(3 pts)*** Repeat the above step using a left join. How do the data sets compare?
 
+2.  ***(3 pts)*** Extract the `employees` and `customers` tables from the `company.db` database then convert them to `tibbles`. Use a left join to combine the two tibbles by `AlbumId` in the order `employees` then `customers`.
 
+3.  Repeat number 2 above, but switch the order of the tables to `customers` then `employees`.
 
-
-
-
-
+4.  ***(3 pts)*** Use a right join to combine the `customers` and `employees` tables by `AlbumId` in the order `employees` then `customers`. What do you notice about this new table? In particular, how does the new table compare to the one in number 3 above?
 
 
 
