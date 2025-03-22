@@ -114,6 +114,7 @@ Below are the steps to perform the hypothesis test using `infer`:
 -   ***generate:*** Simulate the null distribution by running. You may think of this step as drawing cards (with replacement) from a deck that has 70% of the cards marked "central".
 
     ```{r, include=FALSE}
+    set.seed(123)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       hypothesize(null = "point", p = 0.4) %>%
@@ -123,6 +124,7 @@ Below are the steps to perform the hypothesis test using `infer`:
 -   ***calculate:*** For each replicate from the step above, we compute the proportion of cards that are marked "central".
 
     ```{r, include=FALSE}
+    set.seed(123)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       hypothesize(null = "point", p = 0.4) %>%
@@ -133,6 +135,7 @@ Below are the steps to perform the hypothesis test using `infer`:
 -   ***visualize (optional):*** Visualize the null distribution and the observed statistic. Also show the location of the observed statistic on the null distribution.
 
     ```{r}
+    set.seed(123)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       hypothesize(null = "point", p = 0.4) %>%
@@ -144,6 +147,7 @@ Below are the steps to perform the hypothesis test using `infer`:
 We call the above distribution a "null distribution" as it models the null hypothesis. Notice that it is centered around the null value (0.4). We want to answer the question, given this distribution, how likely is it to observe a proportion as extreme as 0.459? To do this we can calculate the percent of data beyond 0.459 (on both sides). This number is the p-value. Before we compute the number, let us visualize the p-value on the null distribution. See below
 
 ```{r}
+set.seed(123)
 duke_forest %>%
   specify(response = cooling, success = "central") %>%
   hypothesize(null = "point", p = 0.4) %>%
@@ -160,6 +164,7 @@ The vertical vertical line shows the location of the observed statistic (0.459) 
 To calculate the p-value, we can use the `get_p_value()` function. The argument `obs_stat` is used to specify the observed statistic while the `direction` argument is for specifying whether the test is left/right, or both-sided. In our case, it is both. Note also that we have dropped the `visualize()` function from the pipeline. See code below:
 
 ```{r}
+set.seed(123)
 duke_forest %>%
   specify(response = cooling, success = "central") %>%
   hypothesize(null = "point", p = 0.4) %>%
@@ -188,6 +193,7 @@ Top find the confidence interval using infer, we make slight modifications to th
 -   ***generate:*** We generate the bootstrap distribution by resampling the data many times. Bootstrap resampling is a method that involves drawing samples with replacement from the ***original data set***. Notice that because we are taking samples from the original sample, we expect the distribution to be centered around the observed statistic which arises from the data.
 
     ```{r, include=FALSE}
+    set.seed(1234)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       generate(reps = 1000, type = "bootstrap")
@@ -196,6 +202,7 @@ Top find the confidence interval using infer, we make slight modifications to th
 -   ***calculate:*** We calculate the confidence interval. The `conf_int()` function is used to calculate the confidence interval. The argument `level` is used to specify the confidence level. In our case, we will use a 95% confidence level.
 
     ```{r, include=FALSE}
+    set.seed(1234)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       generate(reps = 1000, type = "bootstrap") %>%
@@ -205,6 +212,7 @@ Top find the confidence interval using infer, we make slight modifications to th
 -   ***get_ci:*** Finally, we can get the lower and the upper limits of the confidence interval as follows:
 
     ```{r}
+    set.seed(1234)
     duke_forest %>%
       specify(response = cooling, success = "central") %>%
       generate(reps = 1000, type = "bootstrap") %>%
@@ -215,6 +223,7 @@ Top find the confidence interval using infer, we make slight modifications to th
 -   Let us save the above interval as CI. We will need this for visualizing the interval.
 
 ```{r}
+set.seed(1234)
 CI <- duke_forest %>%
   specify(response = cooling, success = "central") %>%
   generate(reps = 1000, type = "bootstrap") %>%
@@ -225,6 +234,7 @@ CI <- duke_forest %>%
 -   An optional step is to visualize the confidence interval. This can be done using the `visualize()` function. See below:
 
 ```{r}
+set.seed(1234)
 duke_forest %>%
   specify(response = cooling, success = "central") %>%
   generate(reps = 1000, type = "bootstrap") %>%
@@ -235,7 +245,7 @@ duke_forest %>%
 
 ### [Interpreting the Confidence Interval]{style="color:#4166f5;"}
 
-The confidence interval obtained is (0.41, 0.51). This means that we are 95% confident that the true proportion of homes in Duke Forest with central air conditioning is between 0.41 and 0.51. This interval includes the null value of 0.4, which is consistent with our hypothesis test results obtained earlier. Note that these results are based on the data we have and may not be current.
+The confidence interval obtained is (0.357, 0.561). This means that we are 95% confident that the true proportion of homes in Duke Forest with central air conditioning is between 0.41 and 0.51. This interval includes the null value of 0.4, which is consistent with our hypothesis test results obtained earlier. Note that these results are based on the data we have and may not be current.
 
 ## [Exercises]{style="color:#4166f5;"}
 
