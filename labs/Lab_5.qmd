@@ -1,5 +1,5 @@
 ---
-categories: "Lab 5"
+categories: "labs"
 execute:
   eval: true
 format:
