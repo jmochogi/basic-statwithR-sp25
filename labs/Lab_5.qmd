@@ -58,7 +58,7 @@ library(infer)
 
 ## [Loading the Data]{style="color:#4166f5;"}
 
-We will need the following data sets: `duke_forest` contained in the openintro package. Load the data sets using the commands below:
+We will need the following data sets: `duke_forest` contained in the openintro package. To load the data set into R, we use the command below:
 
 ```{r}
 data(duke_forest)
@@ -68,7 +68,7 @@ Before you proceed, examine these data to understand their context. You may run 
 
 ## [Scenario Description (Single Proportion)]{style="color:#4166f5;"}
 
-Suppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this.
+Suppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this. The data we will use is known as duke_forest.
 
 ### [Observed Statistic]{style="color:#4166f5;"}
 
@@ -251,7 +251,7 @@ The confidence interval obtained is (0.41, 0.51). This means that we are 95% con
 
 ***Questions:***
 
-1.  **(2 pts)** There is a data set called `age_at_mar` contained in the `openintro` package. The data provides ages at which thousands of women in US got married. Import this data set. use the mutate function to create a new variable called `mar_by_24?` that shows whether a woman was married by age 24. The variable should have two levels: `Yes` and `No`.
+1.  **(2 pts)** There is a data set called `age_at_mar` contained in the `openintro` package. The data provides ages at which thousands of women in US got married. Import this data set. Use the mutate function to create a new variable called `mar_by_24?` that shows whether a woman was married by age 24. The variable should have two levels: `Yes` and `No`.
 
 2.  **(4 pts)** Create a simple ***bar plot*** to visualize the distribution of the variable `mar_by_24?`.
 

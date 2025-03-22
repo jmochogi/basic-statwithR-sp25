@@ -338,5 +338,3 @@ Running the above commands will create a new file in your project folder with th
 3.  Repeat number 2 above, but switch the order of the tables to `customers` then `employees`.
 
 4.  ***(3 pts)*** Use a right join to combine the `customers` and `employees` tables by `Country` in the order `employees` then `customers`. What do you notice about this new table? In particular, how does the new table compare to the one in number 3 above?
-
-
