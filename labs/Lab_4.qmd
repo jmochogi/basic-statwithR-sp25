@@ -12,6 +12,7 @@ format:
     code-copy: true
 title: Data Visualization with ggplot2
 ---
+
 ```{r, include=FALSE}
 library(openintro)
 library(tidyverse)
@@ -29,7 +30,6 @@ To create your quarto file, follow the following steps:
 -   Go to File\>New File \> Quarto document. In the title field use `Introducing ggplot2` then write your name under the `Author` field. Change the output option to `pdf`.
 
 -   Next, save the document as `Lab_04`. If you did it correctly, the file `Lab_04.qmd` should appear under the files section with a `.qmd` extension.
-
 
 ## [Packages]{style="color:#4166f5;"}
 
@@ -55,7 +55,6 @@ data(sinusitis)
 ```
 
 Before you proceed, examine these data to understand their context. You may run the command `?duke_forest` and `?sinusitis` to learn more about the data sets.
-
 
 ## [Visualizing Numerical Data]{style="color:#4166f5;"}
 
@@ -90,7 +89,7 @@ ggplot(data = duke_forest,
        geom_dotplot()
 ```
 
-We can further customize the dots by adding arguments inside the `geom_dotplot()` function. For example, we can use a blue color for the dots and fill them in using orange color as shown below: 
+We can further customize the dots by adding arguments inside the `geom_dotplot()` function. For example, we can use a blue color for the dots and fill them in using orange color as shown below:
 
 ```{r}
 ggplot(data = duke_forest, 
@@ -99,7 +98,6 @@ ggplot(data = duke_forest,
        geom_dotplot(color = "blue", fill = "orange")
 
 ```
-
 
 We can also change the size of dots by adding the argument dotsize. For example, we can set the size of the dots to 0.5 as shown below:
 
@@ -110,7 +108,6 @@ ggplot(data = duke_forest,
        geom_dotplot(color = "blue", fill = "orange", dotsize = 0.5)
 ```
 
-
 We can also change the appearance of the canvas by changing the theme. The most commonly used theme is the minimal theme. To add this theme, just add the `theme_minimal()` function. This will remove the gray background and gridlines. See below:
 
 ```{r}
@@ -120,9 +117,6 @@ ggplot(data = duke_forest,
        geom_dotplot(color = "blue", fill = "orange", dotsize = 0.5) +
        theme_minimal()
 ```
-
-
-
 
 #### [Histogram]{style="color:#4166f5;"}
 
@@ -153,7 +147,6 @@ ggplot(data=duke_forest,
        geom_histogram(color = "blue", fill = "orange", binwidth = 100000)
 ```
 
-
 #### [Boxplot]{style="color:#4166f5;"}
 
 We can also create a boxplot in the same way but change the geometry to `geom_boxplot`. See below:
@@ -173,7 +166,6 @@ ggplot(data = duke_forest,
        ) + 
        geom_boxplot(color = "blue", fill = "orange")
 ```
-
 
 ***Question:***
 
@@ -245,11 +237,9 @@ ggplot(sinusitis %>% count(self_reported_improvement), aes(x = "", y = n, fill =
   theme_void()
 ```
 
-
 ### [Two Categorical Variables]{style="color:#4166f5;"}
 
 We can use stacked bar plots or side-by-side bar plots to visualize two categorical variables. For example, we may want to visualize the relationship between `group` and `self_reported_improvement` from the `sinuisitis` data set.
-
 
 #### [Stacked Bar Plots]{style="color:#4166f5;"}
 
@@ -277,8 +267,7 @@ ggplot(data = sinusitis,
 
 ## [Numerical variable by Category]{style="color:#4166f5;"}
 
-It is common to find bar plots that compare a numerical variable across levels of a categorical variable using a specified summary statistic such as the mean or the raw scores. For example, if you wanted to visualize the mean `price` across the type of `cooling` for the houses in the `duke_forest` data set, we can do this by declaring a `statistic` inside the `geom_bar()`  as shown below:
-
+It is common to find bar plots that compare a numerical variable across levels of a categorical variable using a specified summary statistic such as the mean or the raw scores. For example, if you wanted to visualize the mean `price` across the type of `cooling` for the houses in the `duke_forest` data set, we can do this by declaring a `statistic` inside the `geom_bar()` as shown below:
 
 ```{r}
 ggplot(duke_forest, aes(x = cooling, y = price/1000, fill=cooling)) +
@@ -300,8 +289,7 @@ ggplot(data = duke_forest,
             title = "Box Plot for House Price by Type of Cooling")
 ```
 
-We can also create density plots to visualize the distribution of the `price` variable by `cooling`. To do this, we use the `geom_density()` function. 
-Study the code below before running it. Change the value of the `alpha` argument to 0.9 to see what happens. 
+We can also create density plots to visualize the distribution of the `price` variable by `cooling`. To do this, we use the `geom_density()` function. Study the code below before running it. Change the value of the `alpha` argument to 0.9 to see what happens.
 
 ```{r}
 ggplot(data = duke_forest, 
@@ -313,19 +301,17 @@ ggplot(data = duke_forest,
             title = "Density Plot for House Price by Type of Cooling")
 ```
 
-
-
 ## [Exercises]{style="color:#4166f5;"}
 
 ***Instructions:***
 
-- Create a new quarto document and save it as lab_04_Exe. As for the title, use `Data Visualization with ggplot2 Exercises`. Write your name under the `Author` field. Change the output option to `pdf`. 
+-   Create a new quarto document and save it as lab_04_Exe. As for the title, use `Data Visualization with ggplot2 Exercises`. Write your name under the `Author` field. Change the output option to `pdf`.
 
-- Delete everything on the page except the YAML. Then, load the `openintro` and `tidyverse` packages. Make sure to use `include=FALSE` in the code chunk for packages.
+-   Delete everything on the page except the YAML. Then, load the `openintro` and `tidyverse` packages. Make sure to use `include=FALSE` in the code chunk for packages.
 
-- Copy and paste each question into the document and have a code chunk below the question if it needs code to answer.
+-   Copy and paste each question into the document and have a code chunk below the question if it needs code to answer.
 
-- Once you are done, render your document to PDF and submit the pdf on Canvas. 
+-   Once you are done, render your document to PDF and submit the pdf on Canvas.
 
 ***Questions:***
 
@@ -333,14 +319,13 @@ ggplot(data = duke_forest,
 
 2.  **(4 pts)** Create a simple ***bar plot*** to visualize the distribution of the variable `loan_purpose`. Based on your bar plot, what is the most frequent reason for which people in the sample took loans? What is the least frequent reason(s)? <br> ***NOTE:*** You may want to flip the coordinates to have the bars along the y-axis instead of the x-axis. This will provide more space for all categories to appear.
 
+3.  **(4 pts)** Create a ***dot plot*** to visualize the distribution of the variable `loan_amount`. Comment on the distribution.
 
-4.  **(4 pts)** Create a ***dot plot*** to visualize the distribution of the variable `loan_amount`. Comment on the distribution.
+4.  **(4 pts)** Suppose we want to answer the question, "do people with higher `total_income` tend to have higher `loan_amount`?. Create a scatter plot to visualize the relationship between `loan_amount` and `total_income`. Describe this relationship.
 
-5.  **(4 pts)** Suppose we want to answer the question, "do people with higher `total_income` tend to have higher `loan_amount`?. Create a scatter plot to visualize the relationship between `loan_amount` and `total_income`. Describe this relationship.
+5.  **(4 pts)** Create a new ***scatter plot*** that colors the dots on the scatter plot in question 5 above using the categorical variable `has_second_income` (i.e., whether someone has a second income or not). Comment on the new scatter plot.
 
-6.  **(4 pts)** Create a new ***scatter plot*** that colors the dots on the scatter plot in question 5 above using the categorical variable `has_second_income` (i.e., whether someone has a second income or not). Comment on the new scatter plot.
-
-7.  Create a ***contingency table*** to summarize the counts of the variables `loan_status` and `home_ownership`. Comment on this table. Please look up how to create a contingency table in R using the `tidyverse` workflow.
+6.  Create a ***contingency table*** to summarize the counts of the variables `loan_status` and `home_ownership`. Comment on this table. Please look up how to create a contingency table in R using the `tidyverse` workflow.
 
 ````{=html}
 <!--
