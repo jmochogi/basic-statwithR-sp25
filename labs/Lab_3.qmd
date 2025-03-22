@@ -333,11 +333,10 @@ Running the above commands will create a new file in your project folder with th
     d)  ***(3 pts)*** Use the `filter()` function to create a new data set that includes only participants who have a `Sleep duration` of more than 6 hours. How many participants are in this category?
     e)  ***(3 pts)*** Use the `mutate()` function to create a new column called `Physical activity level` that categorizes participants as `Low` if their Physical Activity is less than 90 minutes or `High` if their Physical Activity is at least 90 minutes.
 
-2.  ***(3 pts)*** Extract the `employees` and `customers` tables from the `company.db` database then convert them to `tibbles`. Use a left join to combine the two tibbles by `AlbumId` in the order `employees` then `customers`.
+2.  ***(3 pts)*** Extract the `employees` and `customers` tables from the `company.db` database then convert them to `tibbles`. Use a left join to combine the two tibbles by `Country` in the order `employees` then `customers`.
 
 3.  Repeat number 2 above, but switch the order of the tables to `customers` then `employees`.
 
-4.  ***(3 pts)*** Use a right join to combine the `customers` and `employees` tables by `AlbumId` in the order `employees` then `customers`. What do you notice about this new table? In particular, how does the new table compare to the one in number 3 above?
-
+4.  ***(3 pts)*** Use a right join to combine the `customers` and `employees` tables by `Country` in the order `employees` then `customers`. What do you notice about this new table? In particular, how does the new table compare to the one in number 3 above?
 
 

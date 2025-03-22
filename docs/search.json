@@ -231,226 +231,6 @@
     ]
   },
   {
-    "objectID": "labs/Lab_3.html",
-    "href": "labs/Lab_3.html",
-    "title": "Importing Data into R",
-    "section": "",
-    "text": "The goal of this lab is to introduce you to the concept of importing data into R. In the previous labs, we have been using data that is already available in R or in R packages. However, in real life, you will often need to import data from external sources such as Excel, CSV, or text files. In this lab, we will learn how to “import” data into R from various sources including:\n\nSpreadsheets:\n\nExcel files\nGoogle Sheets\n\n\nCSV files\nText files\nDatabases",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#excel-files",
-    "href": "labs/Lab_3.html#excel-files",
-    "title": "Importing Data into R",
-    "section": "Excel Files",
-    "text": "Excel Files\nReading excel files into R is made possible by the readxl package (installed above).\nTo read an excel file into R, we use the read_excel() function from the readxl package. Follow these steps:\n\nObtain your excel data (.xslx) data set and upload it into your project (files section) using the upload option.\n\nClick on the file then choose the import dataset option (see figure below). This will open a pop-up window that shows a preview of the data set and the file path. Click on import.\n\n\nImporting an Excel Spreadsheet\n\n\nFinally, open a code chunk for your data and use the read_excel() function to read the file into R as shown below. If the file is in a folder, make sure to set the correct path.\n\nread_excel(\"filename.xlsx\")\nPractice: You received an email with an attachment of an excel data set named absenteeism. Read file into your R.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#google-sheets",
-    "href": "labs/Lab_3.html#google-sheets",
-    "title": "Importing Data into R",
-    "section": "Google Sheets",
-    "text": "Google Sheets\nGoogle is a popular cloud-based platform for storing and sharing data. To read data stored in Google sheets, we the package googlesheets4.\nThe fact that Google documents live in the cloud makes sharing and updating data easy especially if there are multiple people collaborating on the same project. Since googlesheets4 allows R to read the data from Google directly, you do not have to download the data. If you share a link with edit privileges, people can enter the data directly and you can analyze it in real-time.\nGoogle Sheets API\nSince R and Google Sheets are different products, the two have to communicate in some way. This happens through what is known as Application Programming Interface (API). APIs are means through which different applications are able to communicate with one another. Google has an API that allows R to communicate with Google Sheets. To use this API, you will need to authenticate your R session with Google every time.\nAuthenticating API with Google\nTo set up the connection between Google Sheets and R, start by running the command gs4_auth() in the console. This will open a new page in your browser that asks you which Google account you’d like to have access to. Click on the appropriate Google user to provide googlesheets4 access to the Google Sheets API. After this, you will be given a code that you will need to copy and paste into your R console. This will authenticate your R session with Google Sheets.\nReading Data from Google Sheets\nThe last step is to read the data into R. We use the function read_sheet() for this. The function takes the URL of the Google Sheet as an argument. The URL can be obtained by clicking on the share button on the Google Sheet and copying the link. Make sure you have the correct permissions to access the data.\nAs an example, we will read in a data set available on the link https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):\ng_sheet &lt;-read_sheet(\"https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?gid=1024153496#gid=1024153496\")",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#relational-databases",
-    "href": "labs/Lab_3.html#relational-databases",
-    "title": "Importing Data into R",
-    "section": "Relational Databases",
-    "text": "Relational Databases\nIn a relational database, data is stored in tables, and the tables are related to each other. As an example, consider a college database that has several tables about their students including\n\n\nDemographics: ID, name, email, year of study, etc.\n\nCourses: ID, course name, credits, grade, department, etc.\n\nInstructors: ID, name, email, rank, etc.\n\nAlthough each table contains different information, there is a common column in each of the tables that allows information to be linked (in this case ID). The ID values are referred to as unique identifiers because they uniquely identify each student. No two students will have the same ID.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#advantages",
-    "href": "labs/Lab_3.html#advantages",
-    "title": "Importing Data into R",
-    "section": "Advantages",
-    "text": "Advantages\nStoring data in databases is considered secure, efficient, and reduces ambiguity.\n\nThe efficiency comes from the fact that databases are optimized for reading and writing data. Storing data in separate tables also limits the need to repeat information.\nThe security comes from the fact that databases can be set up to allow only authorized users to access certain data. If the data were all stored in one table, you lose this advantage.\nAmbiguity is reduced by, among other things, the fact that databases are better at handling multiple cases with same name but different characteristics.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#database-storage",
-    "href": "labs/Lab_3.html#database-storage",
-    "title": "Importing Data into R",
-    "section": "Database Storage",
-    "text": "Database Storage\nDatabases are stored in a database management system (DBMS). A DBMS is a software that allows you to interact with the database. The most common DBMS are MySQL and SQLite. In order to use data stored in a data base, there has to be a way to pull information from the database. Doing this is called querying the database. For example, one may want to know all female students who took MATH 240 at IC in the last 5 years. To do this, one would have to use SQL query commands. Using SQL commands is beyond the scope of this course, but you will learn how to use an R package known as RSQLite for establishing a connection to a database and using dbplr and dbplyr to work with relational data.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#connecting-to-a-database",
-    "href": "labs/Lab_3.html#connecting-to-a-database",
-    "title": "Importing Data into R",
-    "section": "Connecting to a Database",
-    "text": "Connecting to a Database\nWe are going to use a database called comany.db containing several tables with information about digital media (artistes, customers, artiste’s work, etc). We are going to focus only on artists and the albums tables. The unique identifier here will be artistId.\n\n\nImage credit: Carrie Wright, et al.\n\nFollow the following steps to connect to the database:\n\nDownload the database from this link and unzip it. Upload it to your project files.\n\nInstall and load the RSQLite package in case you haven’t already.\ninstall.packages(\"RSQLite\")\n# Do this in the console\nlibrary(RSQLite)\n# Do this in the packages code chunk\n\n\nSpecify driver and create a connection to the database.\n\nCodesqlite &lt;- dbDriver(\"SQLite\")\n\n\n\n\nCreate a connection to the database using the command below. Notice that the connection is saved as an object named con.\ncon &lt;- dbConnect(sqlite, \"company.db\")\n\n\nNote: that if you are using desktop version of R, you will need to specify a path to the database file.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#viewing-table-list",
-    "href": "labs/Lab_3.html#viewing-table-list",
-    "title": "Importing Data into R",
-    "section": "Viewing Table List",
-    "text": "Viewing Table List\nFirst, we want to know the tables contained in this database. To do this, use the function dbListTables() as shown below:\n\nCodedbListTables(con)\n\n [1] \"albums\"          \"artists\"         \"customers\"       \"employees\"      \n [5] \"genres\"          \"invoice_items\"   \"invoices\"        \"media_types\"    \n [9] \"playlist_track\"  \"playlists\"       \"sqlite_sequence\" \"sqlite_stat1\"   \n[13] \"tracks\"         \n\n\nNotice that there are 13 tables, but we are only interested in the artists and albums tables.\nAlthough here we are using a downloaded database, the common practice is to connect to databases remotely especially if they are huge in size.",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#extracting-data",
-    "href": "labs/Lab_3.html#extracting-data",
-    "title": "Importing Data into R",
-    "section": "Extracting Data",
-    "text": "Extracting Data\nWe will use the dbplyr package to access the tables we are interested in. Start by loading the package in the packages chunk. The package works under the hood with dplyr to allow you to work with databases as if they were data frames. You will not notice that you are using the dbplyr.\nTo extract the artists table, use the command below:\n\nCodeartists &lt;- tbl(con, \"artists\")\n\n\nTo extract the albums table, use the command below:\n\nCodealbums &lt;- tbl(con, \"albums\")\n\n\nYou want to view the tables as tibbles (nice format that works well with tidyverse). To do this, use the as_tibble() function as shown below:\n\nCodeartists_tibble &lt;- as_tibble(artists)\n\n\n\nCodealbums_tibble &lt;- as_tibble(albums)",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_3.html#joining-tables-mutating-joins",
-    "href": "labs/Lab_3.html#joining-tables-mutating-joins",
-    "title": "Importing Data into R",
-    "section": "Joining Tables: Mutating Joins",
-    "text": "Joining Tables: Mutating Joins\nBefore you do your analyses, you may want to merge the tables. This is done using joins. There are several types of joins, but the most common ones are:\n\n\nInner join: This only keeps observations found in both left(x) and right (y) tables.\n\nLeft join: This keeps all observations in the left table (artists) and only those in the right table (albums) that match.\n\nRight join: This keeps all observations in the right table and only those in the left table that match.\n\nFull join: This keeps any observations in x or y.\n\nInner Joins\nBelow is a diagrammatic illustration of an inner join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using an inner join, we use the function inner_join() as shown below. Notice that we are using tibble format for both albums and artists because tidyverse works best in this format.\n\nCodeinner_data &lt;- inner_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nLeft Joins\nBelow is a diagrammatic illustration of a left join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using a left join, we use the function left_join() as shown below:\n\nCodeleft_data &lt;- left_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nRight Joins\nA right join is similar to a left join, but it keeps all observations in the right table and only those in the left table that match. Right joins return rows with NA values in the left table where there is no match. To join the artists and albums tables using a right join, we use the function right_join() as shown below.\n\nCoderight_data &lt;- right_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote: The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.\nFull Joins\nLastly, a full join keeps any observations in x or y. NAs are used when data are missing for an observation(s). To join the artists and albums tables using a full join, we use the function full_join() as shown below.\n\nCodefull_data &lt;- full_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote:\n\nTo learn more about joins, Garrick Aden-Buie has a great resource on GitHub. Check it out: here.\nOur focus was on mutating joins. There are also the aspect of filtering joins that focuses on observations (rows).",
-    "crumbs": [
-      "Labs",
-      "Lab 3"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html",
-    "href": "labs/Lab_1.html",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "It is possible that some of you have heard/seen the phrase, Hello, World!, before. That is usually the first thing you learn in programming, i.e., to learn to write a computer program to print this sentence to screen. In this lab, we will not print Hello, World! to the screen. Instead, we will learn how to use R (via RStudio) to perform statistical analyses and to write reports in order to communicate the insights learned from data. While the analysis involves writing computer code, it is in no way going to involve writing computer programs. The goal of today’s lab is to introduce you to R and RStudio. You will learn to access and use RStudio, as well as perform the basic functions regarding statistical analysis. To clarify which is which: R is the name of the programming language itself and RStudio is a convenient interface (Integrated Development Environment or IDE) for working with R. I like to think about R as the car engine and RStudio as a nice driver dashboard. The engine drives the car, but the dashboard makes it easier for the driver to control the car. Most R users work with RStudio.\n\n\nCar Engine and Dashboard\n\nWe will work with the cloud (online) version of RStudio. To access RStudio online, click on the link https://posit.cloud to create an account or to sign in if you already have an account.\n\nAfter signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.\n\nYour new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.\n\nR is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.\n\nSuppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.\n\nYou can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.\n\nWe can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.\n\nYou can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))\n\n\n\n\n\n\n\n\n\nCreate an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?\n\n\n\n\n\n\n\nSubmission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#creating-a-new-project",
-    "href": "labs/Lab_1.html#creating-a-new-project",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "After signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#the-r-studio-interface",
-    "href": "labs/Lab_1.html#the-r-studio-interface",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "Your new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#r-packages",
-    "href": "labs/Lab_1.html#r-packages",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "R is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#creating-vectors-in-r",
-    "href": "labs/Lab_1.html#creating-vectors-in-r",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "Suppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#creating-data-frames",
-    "href": "labs/Lab_1.html#creating-data-frames",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "You can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#using-data-frames",
-    "href": "labs/Lab_1.html#using-data-frames",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "We can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#basic-visualizations",
-    "href": "labs/Lab_1.html#basic-visualizations",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "You can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#exercises",
-    "href": "labs/Lab_1.html#exercises",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "Create an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
-    "objectID": "labs/Lab_1.html#submission",
-    "href": "labs/Lab_1.html#submission",
-    "title": "Hello, World!",
-    "section": "",
-    "text": "Submission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
-    "crumbs": [
-      "Labs",
-      "Lab 1"
-    ]
-  },
-  {
     "objectID": "labs/Lab_2.html",
     "href": "labs/Lab_2.html",
     "title": "Reproducible Reports and Data Wrangling",
@@ -580,6 +360,303 @@
     "crumbs": [
       "Labs",
       "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html",
+    "href": "labs/Lab_1.html",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "It is possible that some of you have heard/seen the phrase, Hello, World!, before. That is usually the first thing you learn in programming, i.e., to learn to write a computer program to print this sentence to screen. In this lab, we will not print Hello, World! to the screen. Instead, we will learn how to use R (via RStudio) to perform statistical analyses and to write reports in order to communicate the insights learned from data. While the analysis involves writing computer code, it is in no way going to involve writing computer programs. The goal of today’s lab is to introduce you to R and RStudio. You will learn to access and use RStudio, as well as perform the basic functions regarding statistical analysis. To clarify which is which: R is the name of the programming language itself and RStudio is a convenient interface (Integrated Development Environment or IDE) for working with R. I like to think about R as the car engine and RStudio as a nice driver dashboard. The engine drives the car, but the dashboard makes it easier for the driver to control the car. Most R users work with RStudio.\n\n\nCar Engine and Dashboard\n\nWe will work with the cloud (online) version of RStudio. To access RStudio online, click on the link https://posit.cloud to create an account or to sign in if you already have an account.\n\nAfter signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.\n\nYour new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.\n\nR is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.\n\nSuppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.\n\nYou can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.\n\nWe can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.\n\nYou can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))\n\n\n\n\n\n\n\n\n\nCreate an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?\n\n\n\n\n\n\n\nSubmission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-a-new-project",
+    "href": "labs/Lab_1.html#creating-a-new-project",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "After signing in to R studio, our next step is to create a new project. You can think of a project as a folder or simply a collection of files. Our project will be called “MATH 240 Spring 2025”. Each lab that you complete will be saved in this project. To create the project, you start by clicking on “New Project” and then change the default name (UNTITLED PROJECT) to “MATH 240 Spring 2025”.\nYay! You now have your project ready. In the next section, we explain the meaning of the various panels on your screen.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#the-r-studio-interface",
+    "href": "labs/Lab_1.html#the-r-studio-interface",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Your new R studio project interface will look as follows:\n\n\n\nLeft Panel: The panel on the left is where the action happens. This panel is called the console. Every time you launch RStudio, it will have the same text at the top of the console telling you the version of R that you’re running. Below that information is the symbol ” &gt; “. This is where you enter your commands. When you enter and execute a command, the output will come right below it. These commands and their syntax have evolved over decades (literally) and now provide what many users feel is a fairly natural way to access data, organize, describe, and invoke statistical computations. Try typing 1 + 1 in the console and hit enter.\n\nCode1+1\n\n[1] 2\n\n\n\nUpper Right Panel: The panel in the upper right is called “environment”. It contains, among other things, the history of the actions or commands that you’ve previously entered.\nBottom Right Panel: The panel in the lower right contains tabs for browsing the files in your project folder, access help files for R functions, install and manage R packages, and inspecting visualizations through the viewer tab. By default, all data visualizations you make will appear directly below the code you used to create them. If you would rather your plots appear in the plots tab, you will need to change your global options.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#r-packages",
+    "href": "labs/Lab_1.html#r-packages",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "R is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. Packages are simply pre-written code meant to serve specific purposes and may contain other packages inside them. Packages may also contain data sets. Packages are stored in a directory called “Library”. For this lab, and many others in the future, we will use the following two packages:\n\nThe tidyverse package is a very popular “umbrella” package which houses a suite of many different R packages: for data wrangling (including tidying) and data visualization.\nThe openintro package for data and custom functions with the OpenIntro resources. You will notice that the readings frequently refer to data contained in the OpenIntro Package. This is the package.\n\n\nThe command to install a package in R takes the following format:\ninstall.packages(\"package name\")\nTo install tidyverse and openintro, run the following commands:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nNote: You only need to install packages once, but you need to load them each time you relaunch RStudio. To call load (activate) the above installed packages, you use the following command:\nlibrary(tidyverse)\nlibrary(openintro)\nWhy Tidyverse? We are choosing to use the tidyverse package collection because it consists of a set of packages necessary for different aspects of working with data, anything from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at tidyverse.org.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-vectors-in-r",
+    "href": "labs/Lab_1.html#creating-vectors-in-r",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Suppose we want to find the mean of the numbers 23,24,26,19,18,25,21, and 39. The first thing you want to do is to get these data into R. We can achieve this by running the code below:\n\nCodex &lt;- c(23,24,26,19,18,25,21, 39) \n# We use the symbol &lt;- for assigning elements to an object. \n\n\nHere, we are creating a vector (a series of numbers) and storing it in an object called x. The symbols &lt;- is used for assignment. In R, we use a # to designate a comment (text that should not be evaluated as code). In above chunk, the text after # is a comment. Comments are a good way to document your code.\nTo find the mean of those numbers, we simply run the command mean(x) as shown below.\n\nCodemean(x)\n\n[1] 24.375\n\n\nThe general format is do_this(on_this). Here, do_this is the function while x is the thing on which we want an action taken.\nTo find the median of the numbers, we run the command median(x) as shown below.\n\nCodemedian(x)\n\n[1] 23.5\n\n\nWe can also create a string object (i.e., a series of non-numerical elements or characters). We use quotes for string characters. See below:\n\nCodey &lt;- c( \"Jane\", \"John\", \"Jess\", \"Jeff\", \"Joe\", \"Holli\", \"Henry\", \"Han\") \n# We use quotes for strings.\n\n\nNow, try to run the command mean(y):\n\nCodemean(y)\n\nWarning in mean.default(y): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\nWhat do you get? Programming languages generally produce error messages when you try to perform an inappropriate operation or if there is a mistake in the code. Error messages are a good way to learn what you did wrong. In this case, the mean/average of the object y does not make sense because the entries of y are not numerical.\nYou can, however, perform other operations on y. For example, you may want to know how many Jane entries are in y. To do this, you may simply tabulate the entries in y as shown below:\n\nCodetable(y)\n\ny\n  Han Henry Holli  Jane  Jeff  Jess   Joe  John \n    1     1     1     1     1     1     1     1 \n\n\nWe see that there is only one Jane entry in y. While you could easily count the number of Jane entries in y, the table function is useful when you have many entries and you want to know how many times each entry appears.\nBefore we proceed, delete (or comment out) the mean(y) that you had written earlier.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#creating-data-frames",
+    "href": "labs/Lab_1.html#creating-data-frames",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "You can create a data frame by combining vectors of equal length. Before we do that, let us create two more vectors (a numeric one and a character one).\n\nCodea&lt;-c(3,3,2,2,3,4,1,2)\n\nb&lt;-c(\"F\", \"M\", \"F\", \"M\", \"M\", \"F\", \"M\", \"M\")\n\n\nYou can combine the vectors a, b, c, x, and y into a data frame (rectangular array) as follows. We store this in an object called practice_data and then print it.\n\nCodepractice_data &lt;- data.frame(name=y, age=x, sex=b, year=a)\nprint (practice_data)\n\n   name age sex year\n1  Jane  23   F    3\n2  John  24   M    3\n3  Jess  26   F    2\n4  Jeff  19   M    2\n5   Joe  18   M    3\n6 Holli  25   F    4\n7 Henry  21   M    1\n8   Han  39   M    2\n\n\nNote that for the object name, we use an underscore to separate the words practice and data. Do not use a blank space for object or variable names.\nNotice that the data frame looks like a more natural way that you are likely to encounter data. Most of the time, data is collected and stored in excel and can be imported into R for use. Throughout the course, you will learn how to import data from various sources into R.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#using-data-frames",
+    "href": "labs/Lab_1.html#using-data-frames",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "We can run various statistics from data frames. Because the data frame combines many vectors (variables) we need to specify the data frame name and the variable we are targeting. For example, to find the mean of age, we write the data frame name and variable name separated by a dollar sign as follows mean(practice_data$age).\n\nCodemean(practice_data$age)\n\n[1] 24.375\n\n\nYou can also find other statistics. For median, the command is median(data$variable). For standard deviation, the command is sd(data$variable).\nYou can also run multiple summary statistics at once using the command summary(median(data$variable)). See below:\n\nCodesummary(practice_data$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   20.50   23.50   24.38   25.25   39.00 \n\n\nThe summary command give you the minimum value, first quartile, median, mean, third quartile and maximum value.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#basic-visualizations",
+    "href": "labs/Lab_1.html#basic-visualizations",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "You can create basic plots in base R:\n\nTo create a scatter plot to visualize the relationship between age and year, you can use the code below:\n\nCodeplot(practice_data$age, practice_data$year)\n\n\n\n\n\n\n\n\nTo create a bar plot to visualize the distribution of M and F, you can use the command below:\n\nCodebarplot(table((practice_data$sex)))",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#exercises",
+    "href": "labs/Lab_1.html#exercises",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Create an object (name it income) containing the following numerical elements: 750, 810, 680, 1200, 1500, 1399,1525.\nFind the mean of the values in #1 above.\nCreate another object with names of your choosing and then combine it with the first object to make a data frame called my_data.\nRun the summary statistics for the income variable using my_data data frame that you created in #3 above.\nR comes with many pre-loaded data frames. One such data frame is called mtcars. Run the command ?mtcars to learn more about this data frame. Next, load this data frame into your work space by running the command data(mtcars).\nUse the mtcars data frame to find the median horsepower of the cars.\nCreate a histogram to visualize the distribution of the variable hp. What can you say about the distribution of hp based on the histogram?",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_1.html#submission",
+    "href": "labs/Lab_1.html#submission",
+    "title": "Hello, World!",
+    "section": "",
+    "text": "Submission Checklist\n\n\n\n\nAttempt all questions\nCopy and past your work into a word document. Be sure to number your work properly.\nSubmit the word document to canvas.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html",
+    "href": "labs/Lab_3.html",
+    "title": "Importing Data into R",
+    "section": "",
+    "text": "The goal of this lab is to introduce you to the concept of importing data into R. In the previous labs, we have been using data that is already available in R or in R packages. However, in real life, you will often need to import data from external sources such as Excel, CSV, or text files. In this lab, we will learn how to “import” data into R from various sources including:\n\nSpreadsheets:\n\nExcel files\nGoogle Sheets\n\n\nCSV files\nText files\nDatabases",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#excel-files",
+    "href": "labs/Lab_3.html#excel-files",
+    "title": "Importing Data into R",
+    "section": "Excel Files",
+    "text": "Excel Files\nReading excel files into R is made possible by the readxl package (installed above).\nTo read an excel file into R, we use the read_excel() function from the readxl package. Follow these steps:\n\nObtain your excel data (.xslx) data set and upload it into your project (files section) using the upload option.\n\nClick on the file then choose the import dataset option (see figure below). This will open a pop-up window that shows a preview of the data set and the file path. Click on import.\n\n\nImporting an Excel Spreadsheet\n\n\nFinally, open a code chunk for your data and use the read_excel() function to read the file into R as shown below. If the file is in a folder, make sure to set the correct path.\n\nread_excel(\"filename.xlsx\")\nPractice: You received an email with an attachment of an excel data set named absenteeism. Read file into your R.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#google-sheets",
+    "href": "labs/Lab_3.html#google-sheets",
+    "title": "Importing Data into R",
+    "section": "Google Sheets",
+    "text": "Google Sheets\nGoogle is a popular cloud-based platform for storing and sharing data. To read data stored in Google sheets, we the package googlesheets4.\nThe fact that Google documents live in the cloud makes sharing and updating data easy especially if there are multiple people collaborating on the same project. Since googlesheets4 allows R to read the data from Google directly, you do not have to download the data. If you share a link with edit privileges, people can enter the data directly and you can analyze it in real-time.\nGoogle Sheets API\nSince R and Google Sheets are different products, the two have to communicate in some way. This happens through what is known as Application Programming Interface (API). APIs are means through which different applications are able to communicate with one another. Google has an API that allows R to communicate with Google Sheets. To use this API, you will need to authenticate your R session with Google every time.\nAuthenticating API with Google\nTo set up the connection between Google Sheets and R, start by running the command gs4_auth() in the console. This will open a new page in your browser that asks you which Google account you’d like to have access to. Click on the appropriate Google user to provide googlesheets4 access to the Google Sheets API. After this, you will be given a code that you will need to copy and paste into your R console. This will authenticate your R session with Google Sheets.\nReading Data from Google Sheets\nThe last step is to read the data into R. We use the function read_sheet() for this. The function takes the URL of the Google Sheet as an argument. The URL can be obtained by clicking on the share button on the Google Sheet and copying the link. Make sure you have the correct permissions to access the data.\nAs an example, we will read in a data set available on the link https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?usp=sharing This is the same absenteeism data set that we read from an excel file earlier. Use the code below (notice that we are saving the data as g_sheet):\ng_sheet &lt;-read_sheet(\"https://docs.google.com/spreadsheets/d/1pEJ6vuGmyWrNPjHSorvIANAAvGBctRgpp1_mEBZkN-Q/edit?gid=1024153496#gid=1024153496\")",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#relational-databases",
+    "href": "labs/Lab_3.html#relational-databases",
+    "title": "Importing Data into R",
+    "section": "Relational Databases",
+    "text": "Relational Databases\nIn a relational database, data is stored in tables, and the tables are related to each other. As an example, consider a college database that has several tables about their students including\n\n\nDemographics: ID, name, email, year of study, etc.\n\nCourses: ID, course name, credits, grade, department, etc.\n\nInstructors: ID, name, email, rank, etc.\n\nAlthough each table contains different information, there is a common column in each of the tables that allows information to be linked (in this case ID). The ID values are referred to as unique identifiers because they uniquely identify each student. No two students will have the same ID.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#advantages",
+    "href": "labs/Lab_3.html#advantages",
+    "title": "Importing Data into R",
+    "section": "Advantages",
+    "text": "Advantages\nStoring data in databases is considered secure, efficient, and reduces ambiguity.\n\nThe efficiency comes from the fact that databases are optimized for reading and writing data. Storing data in separate tables also limits the need to repeat information.\nThe security comes from the fact that databases can be set up to allow only authorized users to access certain data. If the data were all stored in one table, you lose this advantage.\nAmbiguity is reduced by, among other things, the fact that databases are better at handling multiple cases with same name but different characteristics.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#database-storage",
+    "href": "labs/Lab_3.html#database-storage",
+    "title": "Importing Data into R",
+    "section": "Database Storage",
+    "text": "Database Storage\nDatabases are stored in a database management system (DBMS). A DBMS is a software that allows you to interact with the database. The most common DBMS are MySQL and SQLite. In order to use data stored in a data base, there has to be a way to pull information from the database. Doing this is called querying the database. For example, one may want to know all female students who took MATH 240 at IC in the last 5 years. To do this, one would have to use SQL query commands. Using SQL commands is beyond the scope of this course, but you will learn how to use an R package known as RSQLite for establishing a connection to a database and using dbplr and dbplyr to work with relational data.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#connecting-to-a-database",
+    "href": "labs/Lab_3.html#connecting-to-a-database",
+    "title": "Importing Data into R",
+    "section": "Connecting to a Database",
+    "text": "Connecting to a Database\nWe are going to use a database called comany.db containing several tables with information about digital media (artistes, customers, artiste’s work, etc). We are going to focus only on artists and the albums tables. The unique identifier here will be artistId.\n\n\nImage credit: Carrie Wright, et al.\n\nFollow the following steps to connect to the database:\n\nDownload the database from this link and unzip it. Upload it to your project files.\n\nInstall and load the RSQLite package in case you haven’t already.\ninstall.packages(\"RSQLite\")\n# Do this in the console\nlibrary(RSQLite)\n# Do this in the packages code chunk\n\n\nSpecify driver and create a connection to the database.\n\nCodesqlite &lt;- dbDriver(\"SQLite\")\n\n\n\n\nCreate a connection to the database using the command below. Notice that the connection is saved as an object named con.\ncon &lt;- dbConnect(sqlite, \"company.db\")\n\n\nNote: that if you are using desktop version of R, you will need to specify a path to the database file.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#viewing-table-list",
+    "href": "labs/Lab_3.html#viewing-table-list",
+    "title": "Importing Data into R",
+    "section": "Viewing Table List",
+    "text": "Viewing Table List\nFirst, we want to know the tables contained in this database. To do this, use the function dbListTables() as shown below:\n\nCodedbListTables(con)\n\n [1] \"albums\"          \"artists\"         \"customers\"       \"employees\"      \n [5] \"genres\"          \"invoice_items\"   \"invoices\"        \"media_types\"    \n [9] \"playlist_track\"  \"playlists\"       \"sqlite_sequence\" \"sqlite_stat1\"   \n[13] \"tracks\"         \n\n\nNotice that there are 13 tables, but we are only interested in the artists and albums tables.\nAlthough here we are using a downloaded database, the common practice is to connect to databases remotely especially if they are huge in size.",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#extracting-data",
+    "href": "labs/Lab_3.html#extracting-data",
+    "title": "Importing Data into R",
+    "section": "Extracting Data",
+    "text": "Extracting Data\nWe will use the dbplyr package to access the tables we are interested in. Start by loading the package in the packages chunk. The package works under the hood with dplyr to allow you to work with databases as if they were data frames. You will not notice that you are using the dbplyr.\nTo extract the artists table, use the command below:\n\nCodeartists &lt;- tbl(con, \"artists\")\n\n\nTo extract the albums table, use the command below:\n\nCodealbums &lt;- tbl(con, \"albums\")\n\n\nYou want to view the tables as tibbles (nice format that works well with tidyverse). To do this, use the as_tibble() function as shown below:\n\nCodeartists_tibble &lt;- as_tibble(artists)\n\n\n\nCodealbums_tibble &lt;- as_tibble(albums)",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_3.html#joining-tables-mutating-joins",
+    "href": "labs/Lab_3.html#joining-tables-mutating-joins",
+    "title": "Importing Data into R",
+    "section": "Joining Tables: Mutating Joins",
+    "text": "Joining Tables: Mutating Joins\nBefore you do your analyses, you may want to merge the tables. This is done using joins. There are several types of joins, but the most common ones are:\n\n\nInner join: This only keeps observations found in both left(x) and right (y) tables.\n\nLeft join: This keeps all observations in the left table (artists) and only those in the right table (albums) that match.\n\nRight join: This keeps all observations in the right table and only those in the left table that match.\n\nFull join: This keeps any observations in x or y.\n\nInner Joins\nBelow is a diagrammatic illustration of an inner join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using an inner join, we use the function inner_join() as shown below. Notice that we are using tibble format for both albums and artists because tidyverse works best in this format.\n\nCodeinner_data &lt;- inner_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nLeft Joins\nBelow is a diagrammatic illustration of a left join:\n\n\nImage credit: Carrie Wright, et al.\n\nTo join the artists and albums tables using a left join, we use the function left_join() as shown below:\n\nCodeleft_data &lt;- left_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nRight Joins\nA right join is similar to a left join, but it keeps all observations in the right table and only those in the left table that match. Right joins return rows with NA values in the left table where there is no match. To join the artists and albums tables using a right join, we use the function right_join() as shown below.\n\nCoderight_data &lt;- right_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote: The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.\nFull Joins\nLastly, a full join keeps any observations in x or y. NAs are used when data are missing for an observation(s). To join the artists and albums tables using a full join, we use the function full_join() as shown below.\n\nCodefull_data &lt;- full_join(artists_tibble, albums_tibble, by = \"ArtistId\")\n\n\nNote:\n\nTo learn more about joins, Garrick Aden-Buie has a great resource on GitHub. Check it out: here.\nOur focus was on mutating joins. There are also the aspect of filtering joins that focuses on observations (rows).",
+    "crumbs": [
+      "Labs",
+      "Lab 3"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html",
+    "href": "labs/Lab_5.html",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "",
+    "text": "In today’s lab, we will start working on statistical inference using the infer package. The infer package aims to simplify and clarify the process of statistical inference by providing an expressive and consistent grammar. The package seamlessly integrates with tidyverse and shifts the focus from memorizing specific statistical tests to understanding the underlying principles of inference.\nInfer is centered around four main verbs namely:\n\n\nspecify(): This verb is used to specify the variables of interest and the structure of the data.\n\nhypothesize(): This verb is used to declare the null hypothesis.\n\ngenerate(): This verb is used to simulate the null distribution.\n\ncalculate(): This verb is used to calculate the statistic of interest for each replicate in the simulation.\n\nOptionally, you can use the visualize() verb to visualize the null distribution and the observed statistic.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#introduction",
+    "href": "labs/Lab_5.html#introduction",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "",
+    "text": "In today’s lab, we will start working on statistical inference using the infer package. The infer package aims to simplify and clarify the process of statistical inference by providing an expressive and consistent grammar. The package seamlessly integrates with tidyverse and shifts the focus from memorizing specific statistical tests to understanding the underlying principles of inference.\nInfer is centered around four main verbs namely:\n\n\nspecify(): This verb is used to specify the variables of interest and the structure of the data.\n\nhypothesize(): This verb is used to declare the null hypothesis.\n\ngenerate(): This verb is used to simulate the null distribution.\n\ncalculate(): This verb is used to calculate the statistic of interest for each replicate in the simulation.\n\nOptionally, you can use the visualize() verb to visualize the null distribution and the observed statistic.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#creating-your-quarto-file",
+    "href": "labs/Lab_5.html#creating-your-quarto-file",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "Creating your Quarto File",
+    "text": "Creating your Quarto File\nTo create your quarto file, follow the following steps:\n\nGo to File&gt;New File &gt; Quarto document. In the title field use Introducing Statistical Inference with Infer then write your name under the Author field. Change the output option to pdf.\nNext, save the document as Lab_05. If you did it correctly, the file Lab_05.qmd should appear under the files section with a .qmd extension.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#packages",
+    "href": "labs/Lab_5.html#packages",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "Packages",
+    "text": "Packages\nWe will need the following packages in today’s lab:\n\n\nopenintro: contains some of the data sets that we will use.\n\ntidyverse: contains the ggplot2 package.\n\ninfer: contains the functions we will use for statistical inference.\n\nInstall the infer package then create a code chunk and load the following packages. Be sure to hit the green button to run the packages.\nlibrary(openintro)\nlibrary(tidyverse)\nlibrary(infer)",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#loading-the-data",
+    "href": "labs/Lab_5.html#loading-the-data",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "Loading the Data",
+    "text": "Loading the Data\nWe will need the following data sets: duke_forest contained in the openintro package. Load the data sets using the commands below:\n\nCodedata(duke_forest)\n\n\nBefore you proceed, examine these data to understand their context. You may run the command ?duke_forest to learn more about the data sets.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#scenario-description-single-proportion",
+    "href": "labs/Lab_5.html#scenario-description-single-proportion",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "Scenario Description (Single Proportion)",
+    "text": "Scenario Description (Single Proportion)\nSuppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this.\nObserved Statistic\nBefore we start, we need to find the observed statistic. The observed statistic is the proportion of homes in Duke Forest with central air conditioning based on the data we have. Notice that the variable is named as cooling in the data and it has two levels (central air, and other). We can find the proportion by counting the cooling variable then dividing the count by the total. See below:\n\nCodeduke_forest %&gt;%\n  count(cooling) %&gt;%\n  mutate(prop = n/sum(n))\n\n# A tibble: 2 × 3\n  cooling     n  prop\n  &lt;fct&gt;   &lt;int&gt; &lt;dbl&gt;\n1 other      53 0.541\n2 central    45 0.459\n\n\nHere, we see that the proportion of homes with central air conditioning is 0.459.\nQuestion: Based on the observed statistic, what can you say about the claim that the proportion of houses in Duke Forest that have central air cooling is 40%?\nHypotheses Testing\nTo test the claim via a hypothesis test, we have to state the hypotheses first:\n\nNull Hypothesis (\\(H_0\\)): The proportion of homes in Duke Forest with central air conditioning is 0.4. In symbols, the null hypothesis is \\(H_0: p = 0.4\\).\nAlternative Hypothesis (\\(H_A\\)): The proportion of homes in Duke Forest with central air conditioning is not 0.4. In symbols, the alternative hypothesis is \\(H_A: p \\neq 0.4\\).\nPerforming the Hypothesis Test\nBelow are the steps to perform the hypothesis test using infer:\n\nspecify: Specify the variables. Be sure to set success to central because that is the level of interest.\nhypothesize: The next step is to declare the null hypothesis. In this case, we are testing whether the proportion of homes with central air conditioning is 0.70.\ngenerate: Simulate the null distribution by running. You may think of this step as drawing cards (with replacement) from a deck that has 70% of the cards marked “central”.\ncalculate: For each replicate from the step above, we compute the proportion of cards that are marked “central”.\n\nvisualize (optional): Visualize the null distribution and the observed statistic. Also show the location of the observed statistic on the null distribution.\n\nCodeduke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  hypothesize(null = \"point\", p = 0.4) %&gt;%\n  generate(reps = 1000, type = \"draw\") %&gt;%\n  calculate(stat = \"prop\") %&gt;%\n  visualize()\n\n\n\n\n\n\n\n\n\nWe call the above distribution a “null distribution” as it models the null hypothesis. Notice that it is centered around the null value (0.4). We want to answer the question, given this distribution, how likely is it to observe a proportion as extreme as 0.459? To do this we can calculate the percent of data beyond 0.459 (on both sides). This number is the p-value. Before we compute the number, let us visualize the p-value on the null distribution. See below\n\nCodeduke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  hypothesize(null = \"point\", p = 0.4) %&gt;%\n  generate(reps = 1000, type = \"draw\") %&gt;%\n  calculate(stat = \"prop\") %&gt;%\n  visualize()+\n  shade_p_value(obs_stat = 0.459, direction = \"both\")\n\n\n\n\n\n\n\nThe vertical vertical line shows the location of the observed statistic (0.459) on the null distribution. The shaded regions represent the p-value. The p-value is the probability of observing a proportion as extreme as 0.459 or more extreme, assuming the null hypothesis is true.\nCalculating the p-value\nTo calculate the p-value, we can use the get_p_value() function. The argument obs_stat is used to specify the observed statistic while the direction argument is for specifying whether the test is left/right, or both-sided. In our case, it is both. Note also that we have dropped the visualize() function from the pipeline. See code below:\n\nCodeduke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  hypothesize(null = \"point\", p = 0.4) %&gt;%\n  generate(reps = 1000, type = \"draw\") %&gt;%\n  calculate(stat = \"prop\") %&gt;%\n  get_p_value(obs_stat = 0.459, direction = \"both\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.288\n\n\nInterpreting the p-value\nThe p-value obtained is fairly large (over 20%). This means that the observed proportion of 0.459 is not unusual assuming that the true proportion of homes with central air conditioning is 0.4. Therefore, the data does not provide enough evidence to reject the claim that the proportion of homes with central heating is different from 0.4.\nConfidence Interval\nNotice that in the hypothesis test, our conclusion was that we do not have sufficient evidence to reject the null hypothesis. A natural question that may arise here is, “what is the plausible range of values within which we expect the true proportion to be?” This range of values is known as a confidence interval. We often set a confidence level for each interval (e.g., 95%, 99%). The confidence level represents the proportion of intervals that will contain the true parameter if we were to repeat the sampling process many times.\nTop find the confidence interval using infer, we make slight modifications to the pipeline:\n\nspecify: This stays the same as for the hypothesis test.\ngenerate: We generate the bootstrap distribution by resampling the data many times. Bootstrap resampling is a method that involves drawing samples with replacement from the original data set. Notice that because we are taking samples from the original sample, we expect the distribution to be centered around the observed statistic which arises from the data.\ncalculate: We calculate the confidence interval. The conf_int() function is used to calculate the confidence interval. The argument level is used to specify the confidence level. In our case, we will use a 95% confidence level.\n\nget_ci: Finally, we can get the lower and the upper limits of the confidence interval as follows:\n\nCodeduke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  calculate(stat = \"prop\", conf_level = 0.95) %&gt;%\n  get_ci()\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1    0.357    0.561\n\n\n\nLet us save the above interval as CI. We will need this for visualizing the interval.\n\n\nCodeCI &lt;- duke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  calculate(stat = \"prop\", conf_level = 0.95) %&gt;%\n  get_ci()\n\n\n\nAn optional step is to visualize the confidence interval. This can be done using the visualize() function. See below:\n\n\nCodeduke_forest %&gt;%\n  specify(response = cooling, success = \"central\") %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  calculate(stat = \"prop\", conf_level = 0.95) %&gt;%\n  visualize() +\n  shade_confidence_interval(endpoints = CI)\n\n\n\n\n\n\n\nInterpreting the Confidence Interval\nThe confidence interval obtained is (0.41, 0.51). This means that we are 95% confident that the true proportion of homes in Duke Forest with central air conditioning is between 0.41 and 0.51. This interval includes the null value of 0.4, which is consistent with our hypothesis test results obtained earlier. Note that these results are based on the data we have and may not be current.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_5.html#exercises",
+    "href": "labs/Lab_5.html#exercises",
+    "title": "Introducing Statistical Inference with Infer",
+    "section": "Exercises",
+    "text": "Exercises\nInstructions:\n\nCreate a new quarto document and save it as lab_05_Exe. Use the title Introduction to Infer. Write your name under the Author field. Change the output option to pdf.\nDelete everything on the page except the YAML. Then, load the packages openintro, infer, and tidyverse. Make sure to use include=FALSE in the code chunk for packages.\nCopy and paste each question into the document and have a code chunk below the question if it needs code to answer.\nOnce you are done, render your document to PDF and submit the pdf on Canvas.\n\nQuestions:\n\n(2 pts) There is a data set called age_at_mar contained in the openintro package. The data provides ages at which thousands of women in US got married. Import this data set. use the mutate function to create a new variable called mar_by_24? that shows whether a woman was married by age 24. The variable should have two levels: Yes and No.\n(4 pts) Create a simple bar plot to visualize the distribution of the variable mar_by_24?.\n(4 pts) What proportion of women were married by age 24?\n(4 pts) An article from 2010 claims that only 35% of women in US get married at or before age 24. The goal is to use the age_at_mar data to test this claim statistically via hypothesis testing. State the null and alternative hypotheses to be tested.\n(4 pts) Use the infer workflow to perform the hypothesis test from number 4 above. Be sure to interpret the results in context.\nUse the infer workflow to create a 95% confidence interval to estimate the proportion of women that got married by age 24. Interpret the interval in context and state whether it is consistent with the hypothesis test results.",
+    "crumbs": [
+      "Labs",
+      "Lab 5"
     ]
   },
   {
