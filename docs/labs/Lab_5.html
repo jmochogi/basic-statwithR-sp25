@@ -372,14 +372,14 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">infer</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="loading-the-data" class="level2"><h2 class="anchored" data-anchor-id="loading-the-data"><span style="color:#4166f5;">Loading the Data</span></h2>
-<p>We will need the following data sets: <code>duke_forest</code> contained in the openintro package. Load the data sets using the commands below:</p>
+<p>We will need the following data sets: <code>duke_forest</code> contained in the openintro package. To load the data set into R, we use the command below:</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">duke_forest</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Before you proceed, examine these data to understand their context. You may run the command <code>?duke_forest</code> to learn more about the data sets.</p>
 </section><section id="scenario-description-single-proportion" class="level2"><h2 class="anchored" data-anchor-id="scenario-description-single-proportion"><span style="color:#4166f5;">Scenario Description (Single Proportion)</span></h2>
-<p>Suppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this.</p>
+<p>Suppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this. The data we will use is known as duke_forest.</p>
 <section id="observed-statistic" class="level3"><h3 class="anchored" data-anchor-id="observed-statistic"><span style="color:#4166f5;">Observed Statistic</span></h3>
 <p>Before we start, we need to find the observed statistic. The observed statistic is the proportion of homes in Duke Forest with central air conditioning based on the data we have. Notice that the variable is named as <code>cooling</code> in the data and it has two levels (<code>central air</code>, and <code>other</code>). We can find the proportion by counting the cooling variable then dividing the count by the total. See below:</p>
 <div class="cell">
@@ -456,7 +456,7 @@ window.Quarto = {
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.288</code></pre>
+1   0.298</code></pre>
 </div>
 </div>
 </section><section id="interpreting-the-p-value" class="level3"><h3 class="anchored" data-anchor-id="interpreting-the-p-value"><span style="color:#4166f5;">Interpreting the p-value</span></h3>
@@ -523,7 +523,7 @@ window.Quarto = {
 </ul>
 <p><strong><em>Questions:</em></strong></p>
 <ol type="1">
-<li><p><strong>(2 pts)</strong> There is a data set called <code>age_at_mar</code> contained in the <code>openintro</code> package. The data provides ages at which thousands of women in US got married. Import this data set. use the mutate function to create a new variable called <code>mar_by_24?</code> that shows whether a woman was married by age 24. The variable should have two levels: <code>Yes</code> and <code>No</code>.</p></li>
+<li><p><strong>(2 pts)</strong> There is a data set called <code>age_at_mar</code> contained in the <code>openintro</code> package. The data provides ages at which thousands of women in US got married. Import this data set. Use the mutate function to create a new variable called <code>mar_by_24?</code> that shows whether a woman was married by age 24. The variable should have two levels: <code>Yes</code> and <code>No</code>.</p></li>
 <li><p><strong>(4 pts)</strong> Create a simple <strong><em>bar plot</em></strong> to visualize the distribution of the variable <code>mar_by_24?</code>.</p></li>
 <li><p><strong>(4 pts)</strong> What proportion of women were married by age 24?</p></li>
 <li><p><strong>(4 pts)</strong> An article from 2010 claims that only 35% of women in US get married at or before age 24. The goal is to use the <code>age_at_mar</code> data to test this claim statistically via hypothesis testing. State the null and alternative hypotheses to be tested.</p></li>
