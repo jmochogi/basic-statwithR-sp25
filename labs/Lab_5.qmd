@@ -103,7 +103,7 @@ Below are the steps to perform the hypothesis test using `infer`:
       specify(response = cooling, success = "central")
     ```
 
--   ***hypothesize:*** The next step is to declare the null hypothesis. In this case, we are testing whether the proportion of homes with central air conditioning is 0.70.
+-   ***hypothesize:*** The next step is to declare the null hypothesis. In this case, we are testing whether the proportion of homes with central air conditioning is 0.4.
 
     ```{r, include=FALSE}
     duke_forest %>%
@@ -111,7 +111,7 @@ Below are the steps to perform the hypothesis test using `infer`:
       hypothesize(null = "point", p = 0.4)
     ```
 
--   ***generate:*** Simulate the null distribution by running. You may think of this step as drawing cards (with replacement) from a deck that has 70% of the cards marked "central".
+-   ***generate:*** Simulate the null distribution by running. You may think of this step as drawing cards (with replacement) from a deck that has 40% of the cards marked "central".
 
     ```{r, include=FALSE}
     set.seed(123)
@@ -271,4 +271,4 @@ The confidence interval obtained is (0.357, 0.561). This means that we are 95% c
 
 5.  **(4 pts)** Use the infer workflow to perform the hypothesis test from number 4 above. Be sure to interpret the results in context.
 
-6.  Use the infer workflow to create a 95% ***confidence interval*** to estimate the proportion of women that got married by age 24. Interpret the interval in context and state whether it is consistent with the hypothesis test results.
+6.  **(2 pts)** Use the infer workflow to create a 95% ***confidence interval*** to estimate the proportion of women that got married by age 24. Interpret the interval in context and state whether it is consistent with the hypothesis test results.
