@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.36">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introducing Statistical Inference with Infer – MATH 240</title>
+<title>lab_2 – MATH 240</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project/first_project.qmd" rel="next">
-<link href="../labs/Lab_4.html" rel="prev">
+<link href="../labs/Lab_3.html" rel="next">
+<link href="../labs/Lab_1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,40 +97,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-<meta property="og:title" content="Introducing Statistical Inference with Infer – MATH 240">
-<meta property="og:description" content="Homepage for MATH 240 - Basic Statistics with R, Spring 2025.">
-<meta property="og:image" content="https://jmochogi.github.io/basic-statwithR-sp25/labs/Lab_5_files/figure-html/unnamed-chunk-8-1.png">
+}</script>
+<meta property="og:title" content="MATH 240">
+<meta property="og:image" content="https://jmochogi.github.io/basic-statwithR-sp25/labs/images/a2.jpeg">
 <meta property="og:site_name" content="MATH 240">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
-<meta name="twitter:title" content="Introducing Statistical Inference with Infer – MATH 240">
-<meta name="twitter:description" content="Homepage for MATH 240 - Basic Statistics with R, Spring 2025.">
+<meta name="twitter:title" content="MATH 240">
 <meta name="twitter:image" content="https://jmochogi.github.io/basic-statwithR-sp25/labs/img/twitter-card.png">
 <meta name="twitter:creator" content="@jmochogi">
 <meta name="twitter:card" content="summary_large_image">
@@ -142,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_5.html">Lab 5</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_2.html">Lab 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -222,7 +193,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/Lab_2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
@@ -240,7 +211,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/Lab_5.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/Lab_5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 5</span></a>
   </div>
 </li>
@@ -257,14 +228,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/first_project.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/final_project.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project 2</span></a>
+  <a href="../project/final_project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
   </div>
 </li>
       </ul>
@@ -300,30 +265,48 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span style="color:#4166f5;">Introduction</span></a></li>
-  <li><a href="#creating-your-quarto-file" id="toc-creating-your-quarto-file" class="nav-link" data-scroll-target="#creating-your-quarto-file"><span style="color:#4166f5;">Creating your Quarto File</span></a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span style="color:#4166f5;">Packages</span></a></li>
-  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data"><span style="color:#4166f5;">Loading the Data</span></a></li>
-  <li>
-<a href="#scenario-description-single-proportion" id="toc-scenario-description-single-proportion" class="nav-link" data-scroll-target="#scenario-description-single-proportion"><span style="color:#4166f5;">Scenario Description (Single Proportion)</span></a>
+<li>
+<a href="#reproducible-reports-and-data-wrangling" id="toc-reproducible-reports-and-data-wrangling" class="nav-link active" data-scroll-target="#reproducible-reports-and-data-wrangling">Reproducible Reports and Data Wrangling</a>
   <ul class="collapse">
-<li><a href="#observed-statistic" id="toc-observed-statistic" class="nav-link" data-scroll-target="#observed-statistic"><span style="color:#4166f5;">Observed Statistic</span></a></li>
-  <li><a href="#hypotheses-testing" id="toc-hypotheses-testing" class="nav-link" data-scroll-target="#hypotheses-testing"><span style="color:#4166f5;">Hypotheses Testing</span></a></li>
-  <li><a href="#performing-the-hypothesis-test" id="toc-performing-the-hypothesis-test" class="nav-link" data-scroll-target="#performing-the-hypothesis-test"><span style="color:#4166f5;">Performing the Hypothesis Test</span></a></li>
-  <li><a href="#calculating-the-p-value" id="toc-calculating-the-p-value" class="nav-link" data-scroll-target="#calculating-the-p-value"><span style="color:#4166f5;">Calculating the p-value</span></a></li>
-  <li><a href="#interpreting-the-p-value" id="toc-interpreting-the-p-value" class="nav-link" data-scroll-target="#interpreting-the-p-value"><span style="color:#4166f5;">Interpreting the p-value</span></a></li>
-  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval"><span style="color:#4166f5;">Confidence Interval</span></a></li>
-  <li><a href="#interpreting-the-confidence-interval" id="toc-interpreting-the-confidence-interval" class="nav-link" data-scroll-target="#interpreting-the-confidence-interval"><span style="color:#4166f5;">Interpreting the Confidence Interval</span></a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing Packages</a></li>
+  <li><a href="#creating-a-quarto-file" id="toc-creating-a-quarto-file" class="nav-link" data-scroll-target="#creating-a-quarto-file">Creating a quarto file</a></li>
+  <li><a href="#notes-on-rendering" id="toc-notes-on-rendering" class="nav-link" data-scroll-target="#notes-on-rendering">Notes on Rendering</a></li>
+  <li><a href="#tidyverse-framework" id="toc-tidyverse-framework" class="nav-link" data-scroll-target="#tidyverse-framework">Tidyverse Framework</a></li>
+  <li>
+<a href="#the-structre-of-a-quarto-document" id="toc-the-structre-of-a-quarto-document" class="nav-link" data-scroll-target="#the-structre-of-a-quarto-document">The Structre of a Quarto Document</a>
+  <ul class="collapse">
+<li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   </ul>
 </li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span style="color:#4166f5;">Exercises</span></a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data">Loading Data</a></li>
+  <li>
+<a href="#a-little-more-about-tidyverse" id="toc-a-little-more-about-tidyverse" class="nav-link" data-scroll-target="#a-little-more-about-tidyverse">A little more about Tidyverse</a>
+  <ul class="collapse">
+<li><a href="#tidyverse-workflow" id="toc-tidyverse-workflow" class="nav-link" data-scroll-target="#tidyverse-workflow">Tidyverse Workflow</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#basic-data-wrangling" id="toc-basic-data-wrangling" class="nav-link" data-scroll-target="#basic-data-wrangling">Basic Data Wrangling</a>
+  <ul class="collapse">
+<li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">select()</a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate">mutate()</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter">filter()</a></li>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by">group_by()</a></li>
+  <li><a href="#drop_na" id="toc-drop_na" class="nav-link" data-scroll-target="#drop_na">drop_na()</a></li>
+  </ul>
+</li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_5.html">Lab 5</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Introducing Statistical Inference with Infer</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/Lab_1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/Lab_2.html">Lab 2</a></li></ol></nav><div class="quarto-title">
   <div class="quarto-categories">
-    <div class="quarto-category">labs</div>
+    <div class="quarto-category">Lab 2</div>
   </div>
   </div>
 
@@ -338,207 +321,170 @@ window.Quarto = {
   
 
 
-</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction"><span style="color:#4166f5;">Introduction</span></h2>
-<p>In today’s lab, we will start working on statistical inference using the <code>infer</code> package. The infer package aims to simplify and clarify the process of statistical inference by providing an expressive and consistent grammar. The package seamlessly integrates with <code>tidyverse</code> and shifts the focus from memorizing specific statistical tests to understanding the underlying principles of inference.</p>
-<p>Infer is centered around four main verbs namely:</p>
+</header><section id="reproducible-reports-and-data-wrangling" class="level1 unnumbered"><h1 class="unnumbered">Reproducible Reports and Data Wrangling</h1>
+<section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In today’s lab, we introduce an interface known as quarto that is helpful in creating reproducible reports. Reproducible reports seamlessly integrate code and narrative within the same document in order to allow others to easily replicate your results by running the embedded code.</p>
+<p>Quarto documents can be set up to produce (render) reports in various formats including pdf, html, MS Word, among others.</p>
+<p><strong><em>Note:</em></strong> If you are using the desktop version of quarto, you will need to download quarto from <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a> before you proceed.</p>
+</section><section id="installing-packages" class="level2"><h2 class="anchored" data-anchor-id="installing-packages">Installing Packages</h2>
+<p>In today’s lab, we will need the <code>openintro</code> and <code>tidyverse</code> packages. You should have these packages already but in case you don’t, you will need to install them first. To install a package run the command below <span style="color:red">in the console</span>. Replace the <code>package_name</code> with the name of the package you want to install.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">install.packages</span><span class="er">(</span><span class="dt">"package_name"</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>An alternative way to install a package in RStudio is to use the <code>install</code> button in the packages tab.</p>
+</section><section id="creating-a-quarto-file" class="level2"><h2 class="anchored" data-anchor-id="creating-a-quarto-file">Creating a quarto file</h2>
+<p>To create your First Quarto file, follow the following steps:</p>
+<p>Go to File&gt;New File &gt; Quarto document. See below:</p>
+<p><img src="images/a2.jpeg" class="img-fluid" style="width:90.0%"></p>
+<p>After clicking Quarto document,a pop up window will appear with fields for the title and author. Enter the title of the document as <code>Introducing Quarto and Data Wrangling</code> because that is what we are doing today.</p>
+<p>Write your name in the <code>author</code> field. The output format can stay as HTML. You can always change these options even after creating the document. The popup window looks as follows:</p>
+<p><img src="images/a3.jpeg" class="img-fluid" style="width:70.0%"></p>
+<p>Click create to create the document. Note that the document appears with the name Untitled. Click on <code>file</code> then navigate to <code>save</code> then change the name to <code>Lab_02</code>. Remember, we do not want to use a space for the document name. Click on save. Your document should appear under the files section with the name <code>Lab_02.qmd</code> (notice that you do not type the <code>.qmd</code> part, it automatically comes). With this document saved here, you can always return to it any time and continue working.</p>
+<p>When you look at the body of the document, you will note that the it has both plain text and some code chunks. Anything that you want interpreted as code goes into the code chunks. Otherwise, you can use the white space outside code chunks. Note, however, that you can still comment out stuff that you do not want to run as code inside code chunks using the hash tag.</p>
+<p>To add your own code chunk at a given location in the document, place the cursor these, then click on <code>code</code> then go to add new <code>chunk</code>. Alternatively, use the keyboard shortcut <code>cmd+opt+I</code> on a MacOS and <code>control+opt+I</code> on Windows PCs.</p>
+<p>By default, the code chunks are for R code. Quarto supports other languages such as <code>python</code>, and <code>julia</code>. To use other languages, verify that it is supported, then change the <code>r</code> to python (you may have to click on <code>source</code> to see the architecture of code chunks.</p>
+</section><section id="notes-on-rendering" class="level2"><h2 class="anchored" data-anchor-id="notes-on-rendering">Notes on Rendering</h2>
 <ul>
-<li>
-<code>specify()</code>: This verb is used to specify the variables of interest and the structure of the data.</li>
-<li>
-<code>hypothesize()</code>: This verb is used to declare the null hypothesis.</li>
-<li>
-<code>generate()</code>: This verb is used to simulate the null distribution.</li>
-<li>
-<code>calculate()</code>: This verb is used to calculate the statistic of interest for each replicate in the simulation.</li>
-</ul>
-<p>Optionally, you can use the <code>visualize()</code> verb to visualize the null distribution and the observed statistic.</p>
-</section><section id="creating-your-quarto-file" class="level2"><h2 class="anchored" data-anchor-id="creating-your-quarto-file"><span style="color:#4166f5;">Creating your Quarto File</span></h2>
-<p>To create your quarto file, follow the following steps:</p>
-<ul>
-<li><p>Go to File&gt;New File &gt; Quarto document. In the title field use <code>Introducing Statistical Inference with Infer</code> then write your name under the <code>Author</code> field. Change the output option to <code>pdf</code>.</p></li>
-<li><p>Next, save the document as <code>Lab_05</code>. If you did it correctly, the file <code>Lab_05.qmd</code> should appear under the files section with a <code>.qmd</code> extension.</p></li>
-</ul></section><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages"><span style="color:#4166f5;">Packages</span></h2>
-<p>We will need the following packages in today’s lab:</p>
-<ul>
-<li>
-<strong><em>openintro:</em></strong> contains some of the data sets that we will use.</li>
-<li>
-<strong><em>tidyverse:</em></strong> contains the <code>ggplot2</code> package.</li>
-<li>
-<strong><em>infer:</em></strong> contains the functions we will use for statistical inference.</li>
-</ul>
-<p>Install the <code>infer</code> package then create a code chunk and load the following packages. Be sure to hit the green button to run the packages.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">infer</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="loading-the-data" class="level2"><h2 class="anchored" data-anchor-id="loading-the-data"><span style="color:#4166f5;">Loading the Data</span></h2>
-<p>We will need the following data sets: <code>duke_forest</code> contained in the openintro package. To load the data set into R, we use the command below:</p>
+<li><p>When you are ready to generate your report, you click on the <code>render</code> button. Put this to the test by clicking on the render button. Study the report. If you want any changes, you make them in the source file (quarto), then click on render to see the results. It takes a while to become good with editing quarto documents, but most of that stuff is easily found online.</p></li>
+<li><p>When you render a quarto document, quarto outputs your report by running all code chunks <strong><em>sequentially</em></strong> from top to bottom. All operations in code chunks should be laid out in the right order. For example, if operation A must run before operation B, the code chunk in which operation A runs should come before the code chunk in which operation B runs.</p></li>
+<li><p>Operations such as installing packages that <span style="color:red">should be done only in the console</span>. If any code chunk has code for package installation, quarto will try to install the package every time you render the document (imagine if you had to install TikTok on your phone evry time you needed to use it!!).</p></li>
+<li><p>Operations such as activating (waking up) packages, i.e., <code>library(package name)</code>, can be included in the code chunks.</p></li>
+</ul></section><section id="tidyverse-framework" class="level2"><h2 class="anchored" data-anchor-id="tidyverse-framework">Tidyverse Framework</h2>
+<p>The tidyverse is a collection of open-source R packages that help with data manipulation, exploration, and visualization. In the first lab, our code was mostly base R (not Tidyverse). In this lab, you be introduced to the <code>tidyverse</code> as a framework for working with data structures in R. Although we will use Tidyverse for most of this lab and future labs, there are certain commands that are easier to do in base R. So, expect to see both Tidyverse and base R code from time to time.</p>
+</section><section id="the-structre-of-a-quarto-document" class="level2"><h2 class="anchored" data-anchor-id="the-structre-of-a-quarto-document">The Structre of a Quarto Document</h2>
+<section id="yaml" class="level3"><h3 class="anchored" data-anchor-id="yaml">YAML</h3>
+<p>The top portion of your quarto file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
+</section><section id="packages" class="level3"><h3 class="anchored" data-anchor-id="packages">Packages</h3>
+<p>We will use the first code chunk to load (activate) any packages that are needed for a specific quarto document. For example, to day, we will need the following packages: <code>openintro</code> and <code>tidyverse</code>. Copy and paste the following code in the <strong>first</strong> code chunk:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">openintro</span><span class="er">)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">library</span><span class="er">(</span><span class="dt">tidyverse</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Run the code chunk with the packages to ensure that they are all working. If any of them is missing, R will prompt you to install them. Go ahead and do so.</p>
+</section></section><section id="loading-data" class="level2"><h2 class="anchored" data-anchor-id="loading-data">Loading Data</h2>
+<p>There are several ways to load data into a quarto document. Today, we will explore the first way - loading data stored in a package (openintro to be specific). Remember that the openintro package contains the data that comes with the openintro text. To view a complete list of the data frames in <code>openintro</code>, visit the site <a href="https://www.openintro.org/data/" class="uri">https://www.openintro.org/data/</a>. Today, we will use a data frame called <code>nycflights</code> contained in the <code>openintro</code> package. To load this data into your work space, you will use the following command after running the packages.</p>
+<p>To learn more about this data frame, run the following code in the <strong><em>nycflights</em></strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">data</span><span class="er">(</span><span class="dt">nycflights</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">duke_forest</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"nycflights"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Before you proceed, examine these data to understand their context. You may run the command <code>?duke_forest</code> to learn more about the data sets.</p>
-</section><section id="scenario-description-single-proportion" class="level2"><h2 class="anchored" data-anchor-id="scenario-description-single-proportion"><span style="color:#4166f5;">Scenario Description (Single Proportion)</span></h2>
-<p>Suppose an article claims that 40 percent of homes in Duke Forest have central air conditioning. You are skeptical of this claim and want to use the duke_forest data to investigate this. The data we will use is known as duke_forest.</p>
-<section id="observed-statistic" class="level3"><h3 class="anchored" data-anchor-id="observed-statistic"><span style="color:#4166f5;">Observed Statistic</span></h3>
-<p>Before we start, we need to find the observed statistic. The observed statistic is the proportion of homes in Duke Forest with central air conditioning based on the data we have. Notice that the variable is named as <code>cooling</code> in the data and it has two levels (<code>central air</code>, and <code>other</code>). We can find the proportion by counting the cooling variable then dividing the count by the total. See below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">count</span><span class="op">(</span><span class="va">cooling</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  cooling     n  prop
-  &lt;fct&gt;   &lt;int&gt; &lt;dbl&gt;
-1 other      53 0.541
-2 central    45 0.459</code></pre>
-</div>
-</div>
-<p>Here, we see that the proportion of homes with central air conditioning is 0.459.</p>
-<p><strong><em>Question:</em></strong> Based on the observed statistic, what can you say about the claim that the proportion of houses in Duke Forest that have central air cooling is 40%?</p>
-</section><section id="hypotheses-testing" class="level3"><h3 class="anchored" data-anchor-id="hypotheses-testing"><span style="color:#4166f5;">Hypotheses Testing</span></h3>
-<p>To test the claim via a hypothesis test, we have to state the hypotheses first:</p>
+<p>When you run the above code, a new object should appear in the environment area. Click on <code>penguins</code> to view and study the data.</p>
+<p>To learn more about this data frame, you can run the command <code>?nycflights</code> in the console. It is <strong><em>very important</em></strong> that you do this.</p>
+</section><section id="a-little-more-about-tidyverse" class="level2"><h2 class="anchored" data-anchor-id="a-little-more-about-tidyverse">A little more about Tidyverse</h2>
+<p>The creators of the tidyverse noted that it is “an opionated collection of R packages designed for data science.” It’s a suite of packages designed with a consistent philosophy and aesthetic. This is nice because all of the packages are designed to work well together, providing a consistent framework to do many of the most common tasks in R, including, but not limited to…</p>
 <ul>
-<li><p><strong><em>Null Hypothesis (</em></strong><span class="math inline">\(H_0\)</span>): The proportion of homes in Duke Forest with central air conditioning is 0.4. In symbols, the null hypothesis is <span class="math inline">\(H_0: p = 0.4\)</span>.</p></li>
-<li><p><strong><em>Alternative Hypothesis (</em></strong><span class="math inline">\(H_A\)</span>): The proportion of homes in Duke Forest with central air conditioning is not 0.4. In symbols, the alternative hypothesis is <span class="math inline">\(H_A: p \neq 0.4\)</span>.</p></li>
-</ul></section><section id="performing-the-hypothesis-test" class="level3"><h3 class="anchored" data-anchor-id="performing-the-hypothesis-test"><span style="color:#4166f5;">Performing the Hypothesis Test</span></h3>
-<p>Below are the steps to perform the hypothesis test using <code>infer</code>:</p>
-<ul>
-<li><p><strong><em>specify:</em></strong> Specify the variables. Be sure to set success to <code>central</code> because that is the level of interest.</p></li>
-<li><p><strong><em>hypothesize:</em></strong> The next step is to declare the null hypothesis. In this case, we are testing whether the proportion of homes with central air conditioning is 0.70.</p></li>
-<li><p><strong><em>generate:</em></strong> Simulate the null distribution by running. You may think of this step as drawing cards (with replacement) from a deck that has 70% of the cards marked “central”.</p></li>
-<li><p><strong><em>calculate:</em></strong> For each replicate from the step above, we compute the proportion of cards that are marked “central”.</p></li>
-<li>
-<p><strong><em>visualize (optional):</em></strong> Visualize the null distribution and the observed statistic. Also show the location of the observed statistic on the null distribution.</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"point"</span>, p <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"draw"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">visualize</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</li>
+<li>data manipulation (<code>dplyr</code>)</li>
+<li>reshaping data (<code>tidyr</code>)</li>
+<li>data visualization (<code>ggplot</code>)</li>
+<li>working with strings (<code>stringr</code>)</li>
 </ul>
-<p>We call the above distribution a “null distribution” as it models the null hypothesis. Notice that it is centered around the null value (0.4). We want to answer the question, given this distribution, how likely is it to observe a proportion as extreme as 0.459? To do this we can calculate the percent of data beyond 0.459 (on both sides). This number is the p-value. Before we compute the number, let us visualize the p-value on the null distribution. See below</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"point"</span>, p <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"draw"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">visualize</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>  <span class="fu">shade_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="fl">0.459</span>, direction <span class="op">=</span> <span class="st">"both"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The vertical vertical line shows the location of the observed statistic (0.459) on the null distribution. The shaded regions represent the p-value. The p-value is the probability of observing a proportion as extreme as 0.459 or more extreme, assuming the null hypothesis is true.</p>
-</section><section id="calculating-the-p-value" class="level3"><h3 class="anchored" data-anchor-id="calculating-the-p-value"><span style="color:#4166f5;">Calculating the p-value</span></h3>
-<p>To calculate the p-value, we can use the <code>get_p_value()</code> function. The argument <code>obs_stat</code> is used to specify the observed statistic while the <code>direction</code> argument is for specifying whether the test is left/right, or both-sided. In our case, it is both. Note also that we have dropped the <code>visualize()</code> function from the pipeline. See code below:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"point"</span>, p <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"draw"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="fl">0.459</span>, direction <span class="op">=</span> <span class="st">"both"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  p_value
-    &lt;dbl&gt;
-1   0.266</code></pre>
-</div>
-</div>
-</section><section id="interpreting-the-p-value" class="level3"><h3 class="anchored" data-anchor-id="interpreting-the-p-value"><span style="color:#4166f5;">Interpreting the p-value</span></h3>
-<p>The p-value obtained is fairly large (over 20%). This means that the observed proportion of 0.459 is not unusual assuming that the true proportion of homes with central air conditioning is 0.4. Therefore, the data does not provide enough evidence to reject the claim that the proportion of homes with central heating is different from 0.4.</p>
-</section><section id="confidence-interval" class="level3"><h3 class="anchored" data-anchor-id="confidence-interval"><span style="color:#4166f5;">Confidence Interval</span></h3>
-<p>Notice that in the hypothesis test, our conclusion was that we do not have sufficient evidence to reject the null hypothesis. A natural question that may arise here is, “what is the plausible range of values within which we expect the true proportion to be?” This range of values is known as a confidence interval. We often set a confidence level for each interval (e.g., 95%, 99%). The confidence level represents the proportion of intervals that will contain the true parameter if we were to repeat the sampling process many times.</p>
-<p>Top find the confidence interval using infer, we make slight modifications to the pipeline:</p>
+<p>It is important to note that tidyverse functions are designed to be like grammar for their tasks, so we’ll be using functions that are named as verbs to discuss the tidyverse. The idea is that you can string these grammatical elements together to form more complex statements, just like with language.</p>
+<section id="tidyverse-workflow" class="level3"><h3 class="anchored" data-anchor-id="tidyverse-workflow">Tidyverse Workflow</h3>
+<p>In lab_01, we performed the analyses using base R code. We saw that to compute the mean of a given variable in a data frame, you use <code>data_frame_name$variable_name</code>.</p>
+<p>For example, to compute the mean of the variable <code>hour</code> in the nycflights data, you would write your code as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">mean</span><span class="er">(</span><span class="dt">nycflights</span><span class="er">$</span><span class="dt">hour</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the tidyverse, the code for the mean of the bill length would be</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">nyflights</span> <span class="er">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">summarize</span><span class="er">(</span><span class="dt">avg</span> <span class="op">=</span> <span class="dt">mean</span><span class="er">(</span><span class="dt">hour</span><span class="er">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The symbol <code>%&gt;%</code> is called a pipe and is very common in tidyverse. It takes anything on its left and sends it (pipes it) to the function on the right. Here, we are taking the nycflights data frame and piping it into the summarize function (the function for summary statistics). Inside the function, we specify the variable and the statistic (in this case the <strong><em>mean</em></strong>). We have chosen to name the output as <code>avg</code> but this could be changed.</p>
+<p>You can compute other summary statistics in a similar manner as above and if there is an NA one way to deal with would be to remove it. In some cases, one would replace NA with the average of the other values.</p>
+</section></section><section id="basic-data-wrangling" class="level2"><h2 class="anchored" data-anchor-id="basic-data-wrangling">Basic Data Wrangling</h2>
+<p>Data wrangling, broadly speaking, means getting your data into a useful form for visualizing and modelling it. Hadley Wickham, who has developed a lot of the tidyverse, conceptualizes the main steps involved in data wrangling as follows:</p>
 <ul>
-<li><p><strong><em>specify:</em></strong> This stays the same as for the hypothesis test.</p></li>
-<li><p><strong><em>generate:</em></strong> We generate the bootstrap distribution by resampling the data many times. Bootstrap resampling is a method that involves drawing samples with replacement from the <strong><em>original data set</em></strong>. Notice that because we are taking samples from the original sample, we expect the distribution to be centered around the observed statistic which arises from the data.</p></li>
-<li><p><strong><em>calculate:</em></strong> We calculate the confidence interval. The <code>conf_int()</code> function is used to calculate the confidence interval. The argument <code>level</code> is used to specify the confidence level. In our case, we will use a 95% confidence level.</p></li>
-<li>
-<p><strong><em>get_ci:</em></strong> Finally, we can get the lower and the upper limits of the confidence interval as follows:</p>
-<div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
-<span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span>, conf_level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">get_ci</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 2
-  lower_ci upper_ci
-     &lt;dbl&gt;    &lt;dbl&gt;
-1    0.357    0.561</code></pre>
-</div>
-</div>
-</li>
-<li><p>Let us save the above interval as CI. We will need this for visualizing the interval.</p></li>
+<li>Importing your data</li>
+<li>Tidying your data</li>
+<li>Transforming your data</li>
 </ul>
+<p>Data is considered tidy if</p>
+<ul>
+<li>Each variable has its own column</li>
+<li>Each observation/case has its own row</li>
+<li>Each value has its own cell.</li>
+</ul>
+<p>The figure below illustrate the idea of tidy data:</p>
+<p><img src="images/tidy.jpeg" class="img-fluid" style="width:70.0%"></p>
+<p>If your data is not already in tidy format when you import it, you can use functions from the <code>tidyR</code> package, e.g.&nbsp;<code>gather()</code> and <code>spread()</code>, to “reshape” your data to get it into tidy format.</p>
+<p>Today we are going to look at the following important functions: <code>select()</code>, <code>mutate()</code>, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>arrange()</code>, <code>group_by()</code>, and <code>drop_na()</code>.</p>
+<section id="select" class="level3"><h3 class="anchored" data-anchor-id="select">select()</h3>
+<p>The select function is used to select specific variables (columns) from a larger data set.</p>
+<p>The nycflights data frame has many variables. Suppose we are interested in the variables carrier, origin, arrival delay, and destination only. We achieve this as follows:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
-<span><span class="va">CI</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span>, conf_level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">get_ci</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nycflights_a</span> <span class="op">&lt;-</span> <span class="va">nycflights</span> <span class="op">%&gt;%</span> </span>
+<span><span class="fu">select</span> <span class="op">(</span><span class="va">carrier</span>, <span class="va">arr_delay</span>, <span class="va">dest</span>, <span class="va">origin</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>An optional step is to visualize the confidence interval. This can be done using the <code>visualize()</code> function. See below:</li>
-</ul>
+<li>A new object named <code>nycflights_a</code> appears in the environment area when you run the above code.</li>
+<li>The variable spelling in your code must match the names used in the data frame. This is a common mistake many students make.</li>
+</ul></section><section id="mutate" class="level3"><h3 class="anchored" data-anchor-id="mutate">mutate()</h3>
+<p>The mutate function alters (mutates) an existing variable in some way and creates a new column(variable) with a name that you designate. Suppose you want to create a new variable called converts the arrival delay to hours (note that it is provided in minutes). You can run the following code:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
-<span><span class="va">duke_forest</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">specify</span><span class="op">(</span>response <span class="op">=</span> <span class="va">cooling</span>, success <span class="op">=</span> <span class="st">"central"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"prop"</span>, conf_level <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">visualize</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">shade_confidence_interval</span><span class="op">(</span>endpoints <span class="op">=</span> <span class="va">CI</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="Lab_5_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nycflights_b</span> <span class="op">&lt;-</span> <span class="va">nycflights</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span> <span class="op">(</span>arr_delay_hr <span class="op">=</span> <span class="va">arr_delay</span><span class="op">/</span><span class="fl">60</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-</div>
-</div>
-</section><section id="interpreting-the-confidence-interval" class="level3"><h3 class="anchored" data-anchor-id="interpreting-the-confidence-interval"><span style="color:#4166f5;">Interpreting the Confidence Interval</span></h3>
-<p>The confidence interval obtained is (0.357, 0.561). This means that we are 95% confident that the true proportion of homes in Duke Forest with central air conditioning is between 0.41 and 0.51. This interval includes the null value of 0.4, which is consistent with our hypothesis test results obtained earlier. Note that these results are based on the data we have and may not be current.</p>
-</section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises"><span style="color:#4166f5;">Exercises</span></h2>
-<p><strong><em>Instructions:</em></strong></p>
+<p><strong>Note:</strong></p>
 <ul>
-<li><p>Create a new quarto document and save it as lab_05_Exe. Use the title <code>Introduction to Infer</code>. Write your name under the <code>Author</code> field. Change the output option to <code>pdf</code>.</p></li>
-<li><p>Delete everything on the page except the YAML. Then, load the packages <code>openintro</code>, <code>infer</code>, and <code>tidyverse</code>. Make sure to use <code>include=FALSE</code> in the code chunk for packages.</p></li>
-<li><p>Copy and paste each question into the document and have a code chunk below the question if it needs code to answer.</p></li>
-<li><p>Once you are done, render your document to PDF and submit the pdf on Canvas.</p></li>
-</ul>
-<p><strong><em>Questions:</em></strong></p>
+<li>After running the above code, the new data frame will have one more variable (at the end). This is the new variable (column) you created. Check it out.</li>
+<li>Most mathematical operations can be done as above as long as it makes sense to do so. For example, you cannot perform the divide operation on a variable such as <code>origin</code>.</li>
+</ul></section><section id="filter" class="level3"><h3 class="anchored" data-anchor-id="filter">filter()</h3>
+<p>Just like we can <code>select</code> certain variables (columns) from a data set, it is possible to filter a certain rows (cases/observations) in a data set.</p>
+<p>Suppose you have you interested in flights that originated from JFK only. You can achieve this by using the filter function as follows:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nycflights_c</span> <span class="op">&lt;-</span> <span class="va">nycflights</span> <span class="op">%&gt;%</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span> <span class="op">(</span><span class="va">origin</span> <span class="op">==</span> <span class="st">"JFK"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="group_by" class="level3"><h3 class="anchored" data-anchor-id="group_by">group_by()</h3>
+<p>Group_by is a special kind of filtering that is commonly used alongside a <code>summarize()</code> function. For example, suppose you want to compute the average arrival delay by airport. To do this, you first use the group_by function to group the cases by origin, then run the summarize function and call the mean. See code below:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nycflights</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span> <span class="op">(</span><span class="va">origin</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>avg_arr_delay<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">arr_delay</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  origin avg_arr_delay
+  &lt;chr&gt;          &lt;dbl&gt;
+1 EWR             9.33
+2 JFK             5.98
+3 LGA             5.71</code></pre>
+</div>
+</div>
+<p>Here, you can see the delay times by origin airport.</p>
+</section><section id="drop_na" class="level3"><h3 class="anchored" data-anchor-id="drop_na">drop_na()</h3>
+<p>Some statistics may not be computed with if the variable of interest has missing values (these appear as na in R). In such cases, it might be necessary to drop missing values before moving forward with your analysis. To drop missing values from a given column (variable), you use the drop_na() function as shown below:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">name_of_your_choice</span> <span class="er">&lt;</span><span class="dt">-</span> <span class="dt">original_data</span> <span class="er">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">drop_na</span><span class="er">(</span><span class="dt">variable_name</span><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you want to drop_na from multiple variables, you simply list the variables in the drop_na function separated by commas.</p>
+</section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>Answer the following exercises. Be sure to show/explain your work on each question. You can copy and paste each question into the quarto document that you will submit. Have the code chunks below each question that requires code.</p>
 <ol type="1">
-<li><p><strong>(2 pts)</strong> There is a data set called <code>age_at_mar</code> contained in the <code>openintro</code> package. The data provides ages at which thousands of women in US got married. Import this data set. Use the mutate function to create a new variable called <code>mar_by_24?</code> that shows whether a woman was married by age 24. The variable should have two levels: <code>Yes</code> and <code>No</code>.</p></li>
-<li><p><strong>(4 pts)</strong> Create a simple <strong><em>bar plot</em></strong> to visualize the distribution of the variable <code>mar_by_24?</code>.</p></li>
-<li><p><strong>(4 pts)</strong> What proportion of women were married by age 24?</p></li>
-<li><p><strong>(4 pts)</strong> An article from 2010 claims that only 35% of women in US get married at or before age 24. The goal is to use the <code>age_at_mar</code> data to test this claim statistically via hypothesis testing. State the null and alternative hypotheses to be tested.</p></li>
-<li><p><strong>(4 pts)</strong> Use the infer workflow to perform the hypothesis test from number 4 above. Be sure to interpret the results in context.</p></li>
-<li><p>Use the infer workflow to create a 95% <strong><em>confidence interval</em></strong> to estimate the proportion of women that got married by age 24. Interpret the interval in context and state whether it is consistent with the hypothesis test results.</p></li>
-</ol>
+<li><p><strong><em>(4 pts)</em></strong> Create a new quarto document with the title “Basic Data Wrangling”. Save the document as <code>Lab_02_Exe</code>. Delete everything on the page EXCEPT the YAML section. In the YAML area change the output format to pdf, and make sure your name is written under author.</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Create a code chunk and load the packages <code>openintro</code> and <code>tidyverse</code>. Run these packages to make sure they are properly loaded. Next, create a new code chunk and load the a data set called <code>ames</code> (this is contained in the <code>openintro</code> package). How many variables and how many observations/cases does this data fame have?</p></li>
+<li><p><strong><em>(4 pts)</em></strong> Examine the detailed documentation of this dataset by clicking on the link <a href="https://jse.amstat.org/v19n3/decock/DataDocumentation.txt" class="uri">https://jse.amstat.org/v19n3/decock/DataDocumentation.txt</a>. What does the variable <code>Bsmt.Qual</code> measure? Be sure to provide information on each level/value of this variable.</p></li>
+<li><p><strong><em>(2 pts)</em></strong> Create a new data set and save it as <code>ames_new</code>. This new data set should have the variables price, <code>Bsmt.Qual</code>, and <code>Lot.Shape</code> only.</p></li>
+<li><p><strong><em>(2 pts)</em></strong> Determine the number of cases in the <code>ames_new</code> data frame that have the value <code>Gd</code> for the variable <code>Bsmt.Qual</code>. To do this, you may use the <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> function.</p></li>
+<li><p><strong><em>(6 pts)</em></strong> Use the group_by() function to create a summary table that shows the average house prices by lot shape (<code>Lot.Shape</code>). What can you comment based on this result?</p></li>
+</ol></section><section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Submission Checklist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Attempt all questions</li>
+<li>Render your work to pdf. Do not take pictures of your screen.</li>
+<li>Submit the pdf to Canvas</li>
+<li>If code errors prevent you from rendering your quarto file, you can suppress them (look this up). This should be a last resort thing. Consider seeking support early if you need it.</li>
+</ul>
+</div>
+</div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1099,13 +1045,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../labs/Lab_4.html" class="pagination-link" aria-label="Lab 4">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 4</span>
+      <a href="../labs/Lab_1.html" class="pagination-link" aria-label="Lab 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../project/first_project.qmd" class="pagination-link" aria-label="Project 1">
-        <span class="nav-page-text">Project 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/Lab_3.html" class="pagination-link" aria-label="Lab 3">
+        <span class="nav-page-text">Lab 3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1116,7 +1062,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jmochogi/basic-statwithR.git/edit/main/labs/Lab_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jmochogi/basic-statwithR.git/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

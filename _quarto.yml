@@ -90,10 +90,10 @@ website:
             
       - section: "Projects"
         contents:
-          - href: project/first_project.qmd
-            text: Project 1
+          #- href: project/first_project.qmd
+           # text: Project 1
           - href: project/final_project.qmd
-            text: Project 2
+            text: Final Project
             
       #- section: "Problem Sets"
        # contents:
