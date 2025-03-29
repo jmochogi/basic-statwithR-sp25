@@ -1,0 +1,265 @@
+---
+categories: "Lab"
+title: "Inference for Difference in two proportions"
+execute:
+  eval: true
+format:
+  html: 
+    code-link: true #Supposed to create a link to documentation but its not, for some reason.
+   # code-block-bg: true # "lightblue" Does not work well with dark mode.
+    code-block-border-left: "#31BAE9"
+    code-fold: show #also try true OR false and decide if you like it.
+    code-tools: false
+    code-copy: true
+---
+
+```{r, include=FALSE}
+library(openintro)
+library(tidyverse)
+library(infer)
+```
+
+## [Introduction]{style="color:#4166f5;"}
+
+In Lab 5, we introduced the `infer` package and performed simulation-based statistical inference for a single proportion. In this lab, we will use the `infer` package to perform simulation-based inference for a difference in two proportions.
+
+## [Creating a quarto file]{style="color:#4166f5;"}
+
+To create your quarto file, follow the following steps:
+
+-   Go to File\>New File \> Quarto document. In the title field use **Inference for Difference in two proportions** then write your name under the `Author` field. Change the output option to `PDF`.
+
+-   Next, save the document as `Lab_06`. If you did it correctly, the file `Lab_06.qmd` should appear under the files section with a `.qmd` extension.
+
+## [Packages]{style="color:#4166f5;"}
+
+In this lab, you will need the following packages: `openintro`, `tidyverse`, and `infer`. Load them into your work space and run them by clicking the green button at the end of the chunk. If you are missing any of the packages, the program will prompt you to install them.
+
+``` toml
+library(openintro)
+library(tidyverse)
+library(infer)
+```
+
+## [Scenario Description and Data]{style="color:#4166f5;"}
+
+We consider a study investigating sex discrimination in the 1970s, which is set in the context of personnel decisions within a bank. The research question we hope to answer is, “Are individuals who identify as female discriminated against in promotion decisions made by their managers who identify as male?” (Rosen and Jerdee 1974)
+
+The data set we will use is called `sex_discrimination` and is contained in the `openintro` package. The data set contains 48 cases (rows) and two variables (columns). Load the data into your work space:
+
+``` toml
+data(sex_discrimination)
+```
+
+Examine the data before you proceed. Verify that it actually has 48 rows (cases) and two columns (variables). To learn more about that data, you can run `?sex_discrimination` in the console or double click on the new object in the environment area to view it in an excel-like format.
+
+## [Hypotheses Statement]{style="color:#4166f5;"}
+
+The research question of interest here is: ***"Are individuals who identify as female discriminated against in promotion decisions made by their managers who identify as male?"***
+
+The null and alternative hypotheses for the sex discrimination study are as follows:
+
+***Null Hyp:*** There is no discrimination in hiring decisions against individuals who identify as female. In other words, there is no difference in promotion rates (proportions) between male and female candidates.
+
+$$H_0 : p_1-p_2=0$$
+
+Where,
+
+$p_1$ and $p_2$ represent the proportion of males and females respectively that were promoted.
+
+***Alternative Hyp:*** The variables sex and decision are not independent. There is a difference in promotion rates between male and female candidates in favor for male ones (i.e., There is discrimination against female candidates in promotion decisions).
+
+$$H_A : p_1-p_2>0$$
+
+## [Observed Statistic and Data Visualization]{style="color:#4166f5;"}
+
+An observed statistic in this scenario would be the difference in promotion rates in the data at hand. The statistic of interest here is ***the difference in proportions*** between male and female candidates.
+
+We use the observed statistic as an estimate of the true population difference (note that we do not know the true difference in the population). The observed statistic is also called ***point estimate***.
+
+Let us make a grouped bar graph to show the distribution of males and females and the promotion decisions.
+
+```{r}
+ggplot(sex_discrimination, aes(x = sex, fill = decision)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Decision by Sex", x = "Sex", y = "Count") +
+  scale_fill_manual(values = c("lightblue", "lightpink"), 
+                    labels = c("Yes", "No"))
+```
+
+It is often useful to have counts on the bars to make your visualization easy to interpret. We can add the `geom_text()` function as shown below.As usual, play around with the values for the `width` and the `vjust` to see what happens.
+
+```{r, warning=FALSE}
+ggplot(data= sex_discrimination, aes(x=sex, fill=decision)) + 
+  geom_bar(position = "dodge") +
+  labs(title = "Decision by Sex", x = "Sex", y = "Count") +
+  scale_fill_manual(values = c("lightblue", "lightpink"), 
+                    labels = c("Yes", "No"))+
+  geom_text(stat='count', aes(label=..count..), position=position_dodge(width=0.9), vjust=-0.2)
+```
+
+Let us compute the proportions for the promotions. We can use the `count()` function to count the cases by sex and decision. After that, we group by sex then make a new column for proportions using `mutate`. See code below:
+
+```{r}
+sex_discrimination %>%
+				  count(sex, decision) %>%
+				  group_by(sex) %>%
+				  mutate(prop = n/sum(n))
+# Note that the grouping (predictor) variable is gender, not decision.
+```
+
+From this table, we see that,
+
+\begin{align}
+\hat{p}_{diff}&=\hat{p}_1-\hat{p}_{2}\\
+&=87.5-58.33\\
+&= 0.292
+\end{align}
+
+Thus, the observed statistic is $0.292$.
+
+## [Running Simulations]{style="color:#4166f5;"}
+
+Next, we use the `infer` pipeline to run 1,000 simulations as shown below. Be sure to study the code and understand what each step does. I have included notes in the form of comments to help you understand the code.
+
+```{r}
+simulated_diffs <- sex_discrimination %>%
+		      specify(decision ~ sex, success = "promoted") %>%
+			    hypothesize(null = "independence") %>%
+			    generate(reps = 1000, type = "permute") %>%
+			    calculate(stat = "diff in props", order = c("male", "female"))
+# specify: The response variable is decision and predictor is sex
+# Our "success" level in the case is "promoted".
+# Hypothesize: We set null to "independence" (i.e., decision and sex are independent)
+# Generate: We generate 1000 samples by permutation/randomization.
+# Calculate: The statistic of interest is "diff in props", and we subtract in order of male - female
+```
+
+Run the above code and study the object `simulated_diffs` that appears in the environment area. The column titled **replicate** represents the shuffle number. We have 1,000 shuffles (replicates). The second column (**stat**) represents the differences computed from each replicate.
+
+### [Using Infer for Observed Statistic]{style="color:#4166f5;"}
+
+As an option, you ca use the infer pipeline to compute the observed statistic as shown below. This is a much quicker way to compute the observed statistic.
+
+```{r}
+sex_discrimination %>% 
+  specify(decision ~ sex, success = "promoted") %>%
+  calculate(stat = "diff in props", order = c("male", "female"))
+```
+
+## [Visulaizing the Null Distribution]{style="color:#4166f5;"}
+
+Next, we want to create a histogram to visualize the distribution of the differences computed above. Remember we stored the differences as `simulated_diffs`. We will also place a vertical line to visualize the location of the observed statistic (the original difference of 0.292):
+
+```{r}
+			ggplot(data=simulated_diffs, aes(x = stat)) + 
+			geom_histogram()+
+			geom_vline(aes(xintercept = .292), color = "red")
+```
+
+## [Getting the P-Value]{style="color:#4166f5;"}
+
+The P-value is the percent of scores that are at or beyond the observed statistic (i.e., the red line). It is the probability of observing a difference as extreme as 0.292 assuming that the null hypothesis is true (i.e., that there is no discrimination going on). The infer package comes with a function known as `get-p-value()` for computing the p-value from the null distribution (i.e., our simulated_diffs). See code below:
+
+```{r}
+simulated_diffs %>%
+			get_p_value(obs_stat = 0.292, direction = "greater")
+# The argument obs_stat is for the observed statistic.
+# The argument direction is for the kind of hyp test (in this case right-tailed)
+```
+
+## [The conclusion in Contex]{style="color:#4166f5;"}
+
+The whole point of doing this is to answer the question, "Is there discrimination going on against female applicants?". Now, with a P-value as small as we have, it means that if there was no discrimination going on we would would expect to see a difference of 0.292 about 3% of the time. As you would agree, this is a very rare observation hence the results are **statistically discernible**. This means that the data provides strong evidence against the null hypothesis. We can conclude that discrimination is likely going on against female candidates.
+
+It is common to use a cut off point of 5% to decide whether the null hypothesis is likely false. The cut off point used is often called a **discernibility level**. This is the value used in many parts of the text.
+
+## [Creating a Confidence Interval]{style="color:#4166f5;"}
+
+The hypothesis test tells us whether there is discrimination going on or not. It does not tell us anything about the magnitude (the difference in proportions) of the discrimination in the population. To estimate the magnitude of this difference, we create confidence interval, i.e., a range of values within which we expect to find the true difference in promotion rates (i.e., $p_1-p_2$). In most cases, we run both hypotheses tests and confidence intervals because the two compliment each other.
+
+Below is the process for creating the confidence interval:
+
+### [Find the Observed statistic]{style="color:#4166f5;"}
+
+Just like in the hypothesis test case, we need to find the observed statistic first. We can use `infer` to do this. Notice that we are skipping the `hypothesis` and `generate` steps. We are also saving the observed statistic as `d_hat`.
+
+```{r}
+d_hat <- sex_discrimination %>% 
+  specify(decision ~ sex, success = "promoted") %>%
+  calculate(stat = "diff in props", order = c("male", "female"))
+print(d_hat)
+```
+
+### [Generate the Bootstrap Distribution]{style="color:#4166f5;"}
+
+Next, we generate the bootstrap distribution. This is not the same as the null distribution found earlier. Bootstrap samples are generated by taking multiple samples from the sample (resampling) with replacement. We will generate 1,000 samples in this case. See code below:
+
+```{r}
+boot_dist <- sex_discrimination %>%
+  specify(decision ~ sex, success = "promoted") %>%
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "diff in props", order = c("male", "female"))
+```
+
+Once you run the bootstrap samples, click to view the data. You have a list of 1000 differences generated via bootstrapping. Notice that we skipped the ***hypothesis*** step in the infer pipeline because this is not a hypothesis test.
+
+### [Visualize the Bootstrap Distribution]{style="color:#4166f5;"}
+
+Next, you can create a histogram distribution of this distribution. Notice that it is centered around 0.292. This should not come as a surprise.
+
+```{r}
+ggplot(data=boot_dist, aes(x = stat)) + 
+			geom_histogram(binwidth = .03)+
+			geom_vline(aes(xintercept = .292), color = "red")
+```
+
+### [Getting the Confidence Interval]{style="color:#4166f5;"}
+
+The function `get_ci` is used to create the confidence interval once you have generated the bootstrap distribution. By default, function creates a 95% confidence interval. This gives you the middle 95% of the data (in this case the simulated differences). The interval is built around the observed statistic.
+
+```{r}
+percentile_ci <- get_ci(boot_dist)
+print(percentile_ci)
+```
+
+Below is a way to use the built-in infer function to visualize the interval:
+
+```{r}
+visualize(boot_dist) +
+  shade_confidence_interval(endpoints = percentile_ci)
+```
+
+### [Interpreting the Confidence Interval]{style="color:#4166f5;"}
+
+We interpret the interval as follows: We are 95% confident that the true difference in promotion rates between male and female applicants is between 0.06 and 0.53 (or 6% and 53%).
+
+Notice that the interval we found does not include 0. This means that 0 is not a viable value. We had also rejected null hypothesis and so the results of the confidence interval and the null hypothesis are in agreement.
+
+## [Exercises]{style="color:#4166f5;"}
+
+Research Question: How rational and consistent is the behavior of the typical American college student?
+
+One-hundred and fifty students were recruited in a study that aimed to understand whether reminding college students about saving money for later would make them more thriftier. The students were split into 2 equal groups (control and experiment) and were asked to respond to the following prompt:
+
+*"Imagine that you have been saving some extra money on the side to make some purchases, and on your most recent visit to the video store you come across a special sale on a new video. This video is one with your favorite actor or actress, and your favorite type of movie (such as a comedy, drama, thriller, etc.). This particular video that you are considering is one you have been thinking about buying for a long time. It is available for a special sale price of \$14.99. What would you do in this situation? Buy video or Not buy video?"*
+
+The data set for this study is available in the openintro package and is called `opportunity_cost`. Load all required packages (openintro, infer, and, tidyverse) and then load the data into your work space. As usual, you want to explore the data before you start your analyses.
+
+Recommended reading: Section 11.2 of the course text.
+
+1.  ***(2 pts)*** State the hypotheses (null and alternative) in words and in symbols.
+
+2.  ***(2 pts)*** Create a dodged bar graph to visualize the data. Be sure to show the frequencies on the bars.
+
+3.  ***(2 pts)*** Use the `count` and `group_by` functions to create a summary table summarizing the results. Compute the observed statistic.
+
+4.  In this problem, you will run a simulation-based hypothesis test to test the null hypothesis that you stated in exercise 1 above.
+
+    a)  ***(4 pts)*** Use the infer package to run 1000 simulations for the hypothesis test. Save the simulations as simulated_data.
+
+    b)  ***(2 pts)*** Create a histogram to visualize the distribution of the simulated_data. Include a vertical line showing the location of the observed statistic.
+
+    c)  ***(2 pts)*** Use the `get_p_value` function to find the P-value. Based on this P-value and a significance level of 0.05, write a conclusion for your hypothesis test in context.
+
+5.  ***(6 pts)*** Create a confidence interval to estimate the parameter of interest. Write an interpretation of your interval and state whether it agrees with the results of your hypothesis test.
