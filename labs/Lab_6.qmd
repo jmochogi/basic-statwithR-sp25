@@ -1,5 +1,5 @@
 ---
-categories: "Lab"
+categories: "Lab 6"
 title: "Inference for Difference in two proportions"
 execute:
   eval: true
