@@ -434,7 +434,8 @@ window.Quarto = {
 </section><section id="running-simulations" class="level2"><h2 class="anchored" data-anchor-id="running-simulations"><span style="color:#4166f5;">Running Simulations</span></h2>
 <p>Next, we use the <code>infer</code> pipeline to run 1,000 simulations as shown below. Be sure to study the code and understand what each step does. I have included notes in the form of comments to help you understand the code.</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simulated_diffs</span> <span class="op">&lt;-</span> <span class="va">sex_discrimination</span> <span class="op">%&gt;%</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">simulated_diffs</span> <span class="op">&lt;-</span> <span class="va">sex_discrimination</span> <span class="op">%&gt;%</span></span>
 <span>              <span class="fu">specify</span><span class="op">(</span><span class="va">decision</span> <span class="op">~</span> <span class="va">sex</span>, success <span class="op">=</span> <span class="st">"promoted"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>                <span class="fu">hypothesize</span><span class="op">(</span>null <span class="op">=</span> <span class="st">"independence"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>                <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"permute"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
@@ -487,14 +488,14 @@ Explanatory: sex (factor)
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.003</code></pre>
+1   0.007</code></pre>
 </div>
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># The argument obs_stat is for the observed statistic.</span></span>
 <span><span class="co"># The argument direction is for the kind of hyp test (in this case right-tailed)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="the-conclusion-in-contex" class="level2"><h2 class="anchored" data-anchor-id="the-conclusion-in-contex"><span style="color:#4166f5;">The conclusion in Contex</span></h2>
-<p>The whole point of doing this is to answer the question, “Is there discrimination going on against female applicants?”. Now, with a P-value as small as we have, it means that if there was no discrimination going on we would would expect to see a difference of 0.292 about 3% of the time. As you would agree, this is a very rare observation hence the results are <strong>statistically discernible</strong>. This means that the data provides strong evidence against the null hypothesis. We can conclude that discrimination is likely going on against female candidates.</p>
+<p>The whole point of doing this is to answer the question, “Is there discrimination going on against female applicants?”. Now, with a P-value as small as we have, it means that if there was no discrimination going on we would would expect to see a difference of 0.292 about 0.7% of the time. As you would agree, this is a very rare observation hence the results are <strong>statistically discernible</strong>. This means that the data provides strong evidence against the null hypothesis. We can conclude that discrimination is likely going on against female candidates.</p>
 <p>It is common to use a cut off point of 5% to decide whether the null hypothesis is likely false. The cut off point used is often called a <strong>discernibility level</strong>. This is the value used in many parts of the text.</p>
 </section><section id="creating-a-confidence-interval" class="level2"><h2 class="anchored" data-anchor-id="creating-a-confidence-interval"><span style="color:#4166f5;">Creating a Confidence Interval</span></h2>
 <p>The hypothesis test tells us whether there is discrimination going on or not. It does not tell us anything about the magnitude (the difference in proportions) of the discrimination in the population. To estimate the magnitude of this difference, we create confidence interval, i.e., a range of values within which we expect to find the true difference in promotion rates (i.e., <span class="math inline">\(p_1-p_2\)</span>). In most cases, we run both hypotheses tests and confidence intervals because the two compliment each other.</p>
@@ -518,7 +519,8 @@ Explanatory: sex (factor)
 </section><section id="generate-the-bootstrap-distribution" class="level3"><h3 class="anchored" data-anchor-id="generate-the-bootstrap-distribution"><span style="color:#4166f5;">Generate the Bootstrap Distribution</span></h3>
 <p>Next, we generate the bootstrap distribution. This is not the same as the null distribution found earlier. Bootstrap samples are generated by taking multiple samples from the sample (resampling) with replacement. We will generate 1,000 samples in this case. See code below:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">boot_dist</span> <span class="op">&lt;-</span> <span class="va">sex_discrimination</span> <span class="op">%&gt;%</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">boot_dist</span> <span class="op">&lt;-</span> <span class="va">sex_discrimination</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">specify</span><span class="op">(</span><span class="va">decision</span> <span class="op">~</span> <span class="va">sex</span>, success <span class="op">=</span> <span class="st">"promoted"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">generate</span><span class="op">(</span>reps <span class="op">=</span> <span class="fl">1000</span>, type <span class="op">=</span> <span class="st">"bootstrap"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">calculate</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"diff in props"</span>, order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -547,7 +549,7 @@ Explanatory: sex (factor)
 <pre><code># A tibble: 1 × 2
   lower_ci upper_ci
      &lt;dbl&gt;    &lt;dbl&gt;
-1   0.0420    0.532</code></pre>
+1   0.0490    0.522</code></pre>
 </div>
 </div>
 <p>Below is a way to use the built-in infer function to visualize the interval:</p>
@@ -562,7 +564,7 @@ Explanatory: sex (factor)
 </div>
 </div>
 </section><section id="interpreting-the-confidence-interval" class="level3"><h3 class="anchored" data-anchor-id="interpreting-the-confidence-interval"><span style="color:#4166f5;">Interpreting the Confidence Interval</span></h3>
-<p>We interpret the interval as follows: We are 95% confident that the true difference in promotion rates between male and female applicants is between 0.06 and 0.53 (or 6% and 53%).</p>
+<p>We interpret the interval as follows: We are 95% confident that the true difference in promotion rates between male and female applicants is between 0.049 and 0.52.</p>
 <p>Notice that the interval we found does not include 0. This means that 0 is not a viable value. We had also rejected null hypothesis and so the results of the confidence interval and the null hypothesis are in agreement.</p>
 </section></section><section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises"><span style="color:#4166f5;">Exercises</span></h2>
 <p>Research Question: How rational and consistent is the behavior of the typical American college student?</p>
