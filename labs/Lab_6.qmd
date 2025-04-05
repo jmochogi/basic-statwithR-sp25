@@ -171,7 +171,7 @@ simulated_diffs %>%
 
 ## [The conclusion in Contex]{style="color:#4166f5;"}
 
-The whole point of doing this is to answer the question, "Is there discrimination going on against female applicants?". Now, with a P-value as small as we have, it means that if there was no discrimination going on we would would expect to see a difference of 0.292 about 0.7\% of the time. As you would agree, this is a very rare observation hence the results are **statistically discernible**. This means that the data provides strong evidence against the null hypothesis. We can conclude that discrimination is likely going on against female candidates.
+The whole point of doing this is to answer the question, "Is there discrimination going on against female applicants?". Now, with a P-value as small as we have, it means that if there was no discrimination going on we would would expect to see a difference of 0.292 about 0.7% of the time. As you would agree, this is a very rare observation hence the results are **statistically discernible**. This means that the data provides strong evidence against the null hypothesis. We can conclude that discrimination is likely going on against female candidates.
 
 It is common to use a cut off point of 5% to decide whether the null hypothesis is likely false. The cut off point used is often called a **discernibility level**. This is the value used in many parts of the text.
 

@@ -982,5 +982,203 @@
       "Labs",
       "Lab 6"
     ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#introduction",
+    "href": "labs/Lab_7.html#introduction",
+    "title": "Inference for Linear Regression",
+    "section": "Introduction",
+    "text": "Introduction\nIn this lab, we will perform statistical inference for a single mean via linear regression modelling approach. We will start by examining a numerical predictor variable then proceed to a categorical predictor variable with two levels (equivalent to a t-test). Note that in both cases, the response variable is numerical.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#creating-a-quarto-file",
+    "href": "labs/Lab_7.html#creating-a-quarto-file",
+    "title": "Inference for Linear Regression",
+    "section": "Creating a quarto file",
+    "text": "Creating a quarto file\nTo create your quarto file, follow the following steps:\n\nGo to File&gt;New File &gt; Quarto document. In the title field use Inference for a Single Mean then write your name under the Author field. Change the output option to PDF.\nNext, save the document as Lab_07. If you did it correctly, the file Lab_07.qmd should appear under the files section with a .qmd extension.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#packages",
+    "href": "labs/Lab_7.html#packages",
+    "title": "Inference for Linear Regression",
+    "section": "Packages",
+    "text": "Packages\nYou will need the following packages: openintro, tidyverse, infer, and tidymodels. The package tidymodels is new so you will need to install it before you proceed. Once you have installed it, load the packages using the command below:\nlibrary(openintro)\nlibrary(tidyverse)\nlibrary(infer)\nlibrary(tidymodels)",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#the-data",
+    "href": "labs/Lab_7.html#the-data",
+    "title": "Inference for Linear Regression",
+    "section": "The Data",
+    "text": "The Data\nTo answer the above research question, we will use a data set called births14 contained in the openintro package. Load this data using the command below then examine it to understand its variables (including units) and cases:\ndata(births14)",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#hypotheses",
+    "href": "labs/Lab_7.html#hypotheses",
+    "title": "Inference for Linear Regression",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nThe null and alternative hypotheses are as follows:\nNull Hypothesis: There is no linear relationship between mothers’ age and birth weight.\nIn symbols: \\(H_0:β=0.\\)\nAlternative: There is a linear relationship between mothers’ age and birth weight.\nIn symbols: \\(H_A:β\\neq 0.\\)",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#visualizing-with-scatter-plots",
+    "href": "labs/Lab_7.html#visualizing-with-scatter-plots",
+    "title": "Inference for Linear Regression",
+    "section": "Visualizing with Scatter plots",
+    "text": "Visualizing with Scatter plots\nLet us start by creating a scatter plot to visualize the relationship between mothers’ age and baby birth weight (weight). Use the code below:\n\nCodeggplot(data=births14, aes(x=mage, y=weight)) + geom_jitter()\n\n\n\n\n\n\n\nDescribe the relationship between age and weight. What does the scatter plot suggest? Would you say there is a linear relationship?",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#the-observed-statistic",
+    "href": "labs/Lab_7.html#the-observed-statistic",
+    "title": "Inference for Linear Regression",
+    "section": "The Observed Statistic",
+    "text": "The Observed Statistic\nFirst, we want to find the observed statistic. Note that for this scenario, the statistic is the slope of the linear model predicting baby weight based on mother’s age.\n\nCodeobs_stat&lt;- lm(weight~mage, data=births14)\ntidy(obs_stat)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic   p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)   6.79     0.208       32.7  1.15e-159\n2 mage          0.0142   0.00717      1.99 4.72e-  2\n\n\nHere, the observed statistic (slope of the model) is 0.0142428. This means that on average, birth weight increases by 0.0142428 lbs for every additional year in mother’s age.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#running-simulations",
+    "href": "labs/Lab_7.html#running-simulations",
+    "title": "Inference for Linear Regression",
+    "section": "Running Simulations",
+    "text": "Running Simulations\nThe one slope obtained from the data above may have happened due to the natural variability inherent in data. The next step is to run several a simulation to generate several statistics assuming that the null hypothesis is true (null distribution). We will then compare our observed statistic with the null distribution. We will store this as simulated_slopes. Use code below:\n\nCodeset.seed(123)\nsimulated_slopes&lt;- births14%&gt;%\n  specify(response = weight, explanatory = mage )%&gt;%\n  hypothesise(null=\"independence\")%&gt;%\n  generate(reps=1000, type=\"permute\")%&gt;%\n  calculate(stat=\"slope\")\n\n\nClick on the new object simulated_slopes. You should see a data frame with 1,000 rows and 2 columns. The first column is the replicate and the second is the slope (written in scientific notation). You may convert the slope to ordinary form by mutating the format as shown below. Note that we are changing the name to simulated_slopes_2.\n\nCodeset.seed(123)\nsimulated_slopes_2 &lt;- simulated_slopes %&gt;%\n  mutate(stat = format(stat, scientific = FALSE))",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#visualizing-the-null-distribution",
+    "href": "labs/Lab_7.html#visualizing-the-null-distribution",
+    "title": "Inference for Linear Regression",
+    "section": "Visualizing the Null Distribution",
+    "text": "Visualizing the Null Distribution\nWe want to create a histogram to visualize the distribution of the statistics (slopes) created above. We also include a vertical red line to show the location of our observed statistic.\n\nCodevisualize(simulated_slopes) +\n  geom_vline(xintercept = 0.0142428, color=\"red\") +\n  labs(title=\"Null Distribution of Slope\",\n       x=\"Slope\",\n       y=\"Count\") +\n  shade_p_value(obs_stat = 0.0142428, direction = \"both\")\n\n\n\n\n\n\n\nAs expected, the histogram is centered about 0 because the null hypothesis assumes no relationship (i.e., zero slope) between the variables. The observed statistic is to the right and the P-value will be the percent of data in the shaded region (two-sided test).",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#computing-the-p-value",
+    "href": "labs/Lab_7.html#computing-the-p-value",
+    "title": "Inference for Linear Regression",
+    "section": "Computing the P-value",
+    "text": "Computing the P-value\nIn order to make a conclusion about the hypothesis test, we need to obtain the P-value. The P-value is the probability of getting a slope of 0.0142428 by chance alone assuming that the null hypothesis is true. The function for getting the P-value is get-p-value(). See below:\n\nCodesimulated_slopes%&gt;%\nget_p_value(obs_stat = 0.0142428, direction=\"both\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.072\n\n\nThe P-value means that there is a 7.2% chance of observing a slope as large as 0.0142428 by chance alone assuming the null hypothesis is true. Since this value is fairly large, we say that the data does not produce sufficient evidence to reject the null hypothesis. Thus, we can conclude that there is likely no relationship between mother’s age and birth weight. We often use a cut off of 5% to make this conclusion.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#confidence-interval",
+    "href": "labs/Lab_7.html#confidence-interval",
+    "title": "Inference for Linear Regression",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nWe now want to create a bootstrap confidence interval to estimate the range within which expect to find the true population slope for the model predicting babies’ birth weight based on mothers’ age. To do this, we first create 1000 bootstrap samples using the code below. Take not of the difference between the code below and the one used earlier to generate the 1000 slopes for hypothesis test.\n\nCodebootstrap_samples &lt;- births14 %&gt;%\n   specify (weight ~ mage) %&gt;% \n   generate (reps = 1000, type = \"bootstrap\") %&gt;%\n   calculate (stat = \"slope\")\n\n\nOnce you run the above code, the object bootstrap_samples will appear in the environment area. Click to view it. If we create a histogram to visualize the distribution of these values, what would you expect the histogram to look like?",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#visualize-the-bootstrap-distribution",
+    "href": "labs/Lab_7.html#visualize-the-bootstrap-distribution",
+    "title": "Inference for Linear Regression",
+    "section": "Visualize The Bootstrap Distribution",
+    "text": "Visualize The Bootstrap Distribution\nWe want to create a histogram to visualize the bootstrap distribution. We will also indicate the location of the observed statistic using a vertical red line.\n\nCodevisualize(bootstrap_samples)+\n  geom_vline(xintercept = 0.0142428, color=\"red\")\n\n\n\n\n\n\n\nQuestion: How different is the bootstrap distribution from the null distribution? Why the difference?",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#getting-the-ci",
+    "href": "labs/Lab_7.html#getting-the-ci",
+    "title": "Inference for Linear Regression",
+    "section": "Getting the CI",
+    "text": "Getting the CI\nOur next step is to find the lower and the upper boundaries of our 95% confidence interval. We use the function get_ci() from the infer package. See code below:\n\nCodebootstrap_samples %&gt;% get_ci(type = \"percentile\")\n\n# A tibble: 1 × 2\n   lower_ci upper_ci\n      &lt;dbl&gt;    &lt;dbl&gt;\n1 0.0000925   0.0292\n\nCode#By default, get-ci returns the 95% CI unless you specify otherwise.\n\n\nThe lower limit is the 2.5th percentile (0.0000925) and the upper limit is the 97.5th percentile (0.0292). This means that we are 95% confident that the true population slope lies between these two values. Note that the interval does not include 0. This means that the interval and the hypothesis test do not agree but are very close. Zero is barely outside the interval.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#hypotheses-1",
+    "href": "labs/Lab_7.html#hypotheses-1",
+    "title": "Inference for Linear Regression",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nWe could state the hypotheses as follows: Null Hypothesis: There is no difference in weight between babies born to smoking mothers and those born to non smoking mothers.\n\\(H_0:\\mu_1=\\mu_2\\) where, \\(\\mu_1\\)= average weight of babies born to non-smoking mothers and \\(\\mu_2\\)= average weight of babies born to smoking mothers.\nAlternative Hypothesis: Babies born to smoking mothers weight more on average than those born to non-smoking mothers.\n\\(H_A:\\mu_1&gt;\\mu_2\\) .",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#observed-statistic",
+    "href": "labs/Lab_7.html#observed-statistic",
+    "title": "Inference for Linear Regression",
+    "section": "Observed Statistic",
+    "text": "Observed Statistic\nThe observed statistic is the difference in mean weight between babies born to smoking mothers and those born to non-smoking mothers in the data. Observe that the smoking status of a mother is stored as habit in the data set. To see the means side-by-side we can run the code below. Notice that we drop na values (empty cells) before grouping and summarizing.\n\nCodebirths14 %&gt;% \n drop_na(habit, weight)%&gt;%\n group_by(habit) %&gt;%\n summarize(mean(weight))\n\n# A tibble: 2 × 2\n  habit     `mean(weight)`\n  &lt;chr&gt;              &lt;dbl&gt;\n1 nonsmoker           7.27\n2 smoker              6.68\n\n\nThus, our observed statistic would be 0.59268.",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#repeated-simulations",
+    "href": "labs/Lab_7.html#repeated-simulations",
+    "title": "Inference for Linear Regression",
+    "section": "Repeated Simulations",
+    "text": "Repeated Simulations\nWe can now run repeated simulations to obtain more statistics to give us a null distribution. Take a moment to examine the code line by line. Most parts of the code should be familiar by now.\n\nCodeset.seed(1234)\nsimulated_data_2 &lt;-births14 %&gt;% \ndrop_na (habit, weight)%&gt;%\n     specify (weight ~ habit) %&gt;%\n     hypothesize (null =\"independence\") %&gt;%\n     generate (reps =1000, type =\"permute\") %&gt;%\n     calculate (stat =\"diff in means\", order =c(\"smoker\", \"nonsmoker\"))",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#visualize-the-distribution",
+    "href": "labs/Lab_7.html#visualize-the-distribution",
+    "title": "Inference for Linear Regression",
+    "section": "Visualize the Distribution",
+    "text": "Visualize the Distribution\nWe can visualize the distribution and also include the observed statistic as before:\n\nCodevisualize(simulated_data_2) +  \n  shade_p_value(obs_stat = 0.59268, direction =\"two-sided\")\n\n\n\n\n\n\n\nBased on the above histogram, what do you expect the P-value to be?",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
+  },
+  {
+    "objectID": "labs/Lab_7.html#get-the-p-value",
+    "href": "labs/Lab_7.html#get-the-p-value",
+    "title": "Inference for Linear Regression",
+    "section": "Get the P-value",
+    "text": "Get the P-value\nRun the code below to get the P-value then write the conclusion in context.\n\nCodesimulated_data_2 %&gt;%\n  get_p_value (obs_stat = 0.59268, direction = \"greater\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0",
+    "crumbs": [
+      "Labs",
+      "Lab 7"
+    ]
   }
 ]

@@ -81,6 +81,8 @@ website:
             text: Lab 5
           - href: labs/Lab_6.qmd
             text: Lab 6
+          - href: labs/Lab_7.qmd
+            text: Lab 7
             
             
      # - section: "Problem Posing"
